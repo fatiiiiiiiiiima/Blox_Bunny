@@ -13,7 +13,7 @@
     display: flex;
     /* flex-wrap: wrap; */
     justify-content: center;
-    gap: 2rem;
+    gap: 4rem;
     padding-bottom: 50px;
   }
   
@@ -40,7 +40,7 @@
   .linkspara{
     display: flex;
     flex-direction: column;
-    margin-left: 15rem;
+    margin-left: 18rem;
     max-width: 225.91px;
   }
 

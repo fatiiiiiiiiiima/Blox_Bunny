@@ -1,0 +1,42 @@
+.mainbody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainbody h1{
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Jost',sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+.mainbody p {
+    font-size: 35.2px;
+    font-weight: 400;
+    font-family: 'Jost',sans-serif;
+}
+
+.blogs{
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.blogs-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.blogs-article{
+    overflow: hidden;
+    border-radius: 4px;
+}
