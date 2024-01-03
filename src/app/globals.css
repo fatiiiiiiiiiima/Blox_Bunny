@@ -9,11 +9,54 @@ html, body {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vh; 
+    height: 120vh; 
+    color: #FFFFFF;
     overflow: hidden;
     margin: 0; 
 }
 
+.mainheadings{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-right: 200px;
+    margin-top: 150px;
+    height: 392.67px;
+}
+.mainheadings h1{
+    font-family: 'Jost',sans-serif;
+    font-weight: 700;
+    font-size: 73px;
+    text-align: right;
+    max-width: 414.9px;
+    margin-top: 0.02rem;
+    margin-bottom: 0.02rem;
+}
+.mainheadings p{
+    font-family: 'Jost',sans-serif;
+    font-weight: 700;
+    font-size: 35.2px;
+    text-align: right;
+    max-width: 414.9px;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+.mainheadings button{
+    margin-top: 20px;
+    padding: 15px 20px;
+    background-color: #FAFAFA; 
+    color: #7A7A7A;
+    border: 1px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 35.2px; 
+    font-weight: 600;
+    max-width: 345px;
+    font-family: 'Jost', sans-serif;
+    text-align: center; 
+    margin-bottom: 20px;
+}
 @font-face {
     font-family: 'Jost';
     src: local('Jost'), url('/fonts/Jost-Bold.ttf') format('truetype');
@@ -59,16 +102,67 @@ html, body {
     align-items: start;
 }
 
-.feature-article{
+.feature-column{
     overflow: hidden;
     border-radius: 4px;
+    background-color: #FAFAFA;
+    height: 536.78px;
+    width: 348px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.feature-column h1{
+    
+    color: #4479D9;
+    font-weight: 700;
+    font-size: 35.2px;
+    text-align: center;
+    /* max-width: 300px; */
+}
+
+.feature-column p{
+    color: #353535;
+    font-weight: 700;
+    font-size: 19.2px;
+    text-align: center;
+    max-width: 300px;
+}
+
+.view{
+    padding-top: 50px;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 150px;
+}
+.view h1{
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Jost',sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+.view p{
+    font-size: 19.2px;
+    font-weight: 400;
+    color: #232323;
+    margin-bottom: 20px;
+    font-family: 'Jost',sans-serif;
+    margin-top: 0.05rem;
+    margin-bottom: 3rem;
+}
 .payplan{
     background-color: #FAFAFA;
     display: flex;
     justify-content: center;
     padding-bottom: 100px;
+    
 }
 .pay-grid{
     margin-top: 80px;
@@ -77,12 +171,79 @@ html, body {
     gap: 2rem;
     justify-content: center;
     align-items: start;
+    
 }
-.display{
-    max-width: 1000px;
-    padding-top: 20px;
+.pay-column{
+    background-color: #FFFFFF;
+    width: 348px;
+    height: 536.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pay-column h1{
+    color: #232323;
+    font-weight: 700;
+    font-size: 35.2px;
+    text-align: center;
+    font-family: 'Jost',sans-serif;
+    margin-top: 0.05rem;
+    margin-bottom: 0.05rem;
 }
 
+.pay-column h2{
+    color: #6592E6;
+    font-weight: 700;
+    font-size: 73.6px;
+    text-align: center;
+    font-family: 'Jost',sans-serif;
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+}
+.pay-column h3{
+    color: #232323;
+    font-weight: 700;
+    font-size: 19.2px;
+    text-align: center;
+    font-family: 'Jost',sans-serif;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+.pay-column p{
+    color: #232323;
+    font-weight: 400;
+    max-width: 250px;
+    font-size: 19.2px;
+    text-align: center;
+    font-family: 'Jost',sans-serif;
+    border-bottom: 1px solid #0000001A;
+}
+
+.pay-column button{
+    margin-top: 50px;
+    background-color: #6592E6;
+    color: #FFFFFF;
+    border: 1px;
+    border-radius: 4px;
+    height: 47.58px;
+    width: 129.16px;
+    font-size: 17.6px;
+    font-weight: 600;
+    font-family: 'Jost',sans-serif;
+}
+.pay-column button:hover {
+    background-color:#4479D9 ; 
+  }
+.paytext{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.paytext p{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
 .estimate{
     display: flex;
     flex-direction: column;
@@ -91,6 +252,7 @@ html, body {
     max-width: 950px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 100px;
 }
 
 .estimate h1{
@@ -107,12 +269,12 @@ html, body {
 }
 
 .updateform{
-    /* background-image: url('/updatebg.png');
+    background-image: url('/updatebg.png');
     background-size: cover;
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     width: 100%;
     height: 100vh; 
-    /* overflow: hidden; */
+    overflow: hidden;
     margin: 0; 
     display: flex;
     flex-direction: column;
@@ -140,7 +302,11 @@ html, body {
     gap: 2rem;
     margin-bottom: 30px;
   }
+.form-row input[type="text"]:hover,
+.form-row input[type="email"]:hover{
 
+    border: 1px solid #6592E6;
+}
   .form-row input[type="text"],
   .form-row input[type="email"] {
     width: 304.16px; 
@@ -162,4 +328,69 @@ html, body {
     font-size: 17.6px; 
     font-weight: 600;
     max-width: 119.7px; 
+  }
+  button:hover {
+    background-color:#ccc ; 
+  }
+
+  .form-row button:hover {
+    background-color:#4479D9 ; 
+  }
+
+  .video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+  @media screen and (max-width: 1024px) {
+    .mainheadings {
+    align-items: center;
+    margin-right: 0;
+    text-align: center;
+    }
+    .feature-grid, .pay-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .form-row input[type="text"],
+    .form-row input[type="email"],
+    .form-row button {
+        width: 90%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .feature-grid, .pay-grid {
+    grid-template-columns: 1fr;
+    }
+    .feature-column, .pay-column {
+        width: 90%;
+        margin: auto;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .mainheadings h1 {
+    font-size: 48px;
+    }
+    .mainheadings p,
+.mainheadings button {
+    font-size: 24px;
+}
   }

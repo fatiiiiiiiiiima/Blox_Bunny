@@ -20,38 +20,73 @@ export default function Home(){
         <div>
             <section className='mainimage'>
                <Navbar/>
+               <div className='mainheadings'>
+               <h1>ROBLOX INSIGHTS</h1>
+               <p>REVENUE ESTIMATIONS FOR EACH GAME</p>
+               <button>START NOW</button>
+               </div>
             </section>
 
             <section className='feature'>
                 <h1>Features</h1>
                 <div className="feature-grid">
-        {features.map((src, index) => (
-          <div key={index} className="feature-article">
-            <Image src={src} alt={`Feature ${index + 1}`} width={300} height={200} layout="responsive" />
-          </div>
-        ))}
-      </div> 
+                    <div className='feature-column'>
+                        <Image src='./feature2.png' alt='feature' width={348} height={195.91}></Image>
+                        <h1>DETAILED COMPETITOR TRACKING</h1>
+                        <p>See how many players and how much money your competitors make</p>
+                    </div>
+                    <div className='feature-column'>
+                        <Image src='./feature2.png' alt='feature' width={348} height={195.91}></Image>
+                        <h1>GAMES REVENUE ESTIMATES</h1>
+                        <p>Did you ever wonder how much Roblox developers earn?</p>
+                    </div>
+                    <div className='feature-column'>
+                        <Image src='./feature3.png' alt='feature3' width={348} height={195.91}></Image>
+                        <h1>SPOT OPPORTUNITIES IN THE MARKET</h1>
+                        <p>Analyze the market before starting to work on your next project</p>
+                    </div>
+                </div> 
             </section>
 
             <section className='payplan'>
-                <div className='display'>
-            <div className="pay-grid">
-        {payplan.map((src, index) => (
-          <div key={index} className="feature-article">
-            <Image src={src} alt={`PayPlan ${index + 1}`} width={348} height={536.5} layout="responsive" />
-          </div>
-        ))}
-      </div> 
-      </div>
+                 <div className="pay-grid">
+                    <div className='pay-column'>
+                        <h1>Free</h1>
+                        <h2>$0</h2>
+                        <h3>Per month</h3>
+                        <div className='paytext'>
+                        <p>Access to market overview </p> <p>CCU and New Favorites data</p><p> Top games on Roblox</p>
+                        </div>
+                        <button>Get started</button>
+                    </div>
+                    <div className='pay-column'>
+                        <h1>Indie</h1>
+                        <h2>$19</h2>
+                        <h3>Per month</h3>
+                        <div className='paytext'>
+                        <p>Access to Free</p> <p>Access to last 90 days of data</p><p>Access to revenue estimations</p>
+                        </div>
+                        <button>Get started</button>
+                    </div>
+                    <div className='pay-column'>
+                        <h1>Pro</h1>
+                        <h2>$99</h2>
+                        <h3>Per month</h3>
+                        <div className='paytext'>
+                        <p>Access to Indie </p> <p>Access last 365 days of data</p><p>Detailed ranking of games</p>
+                        </div>
+                        <button>Get started</button>
+                    </div>
+                </div>
             </section>
 
-            <section className='feature'>
+            <section className='view'>
             <h1>View in Action</h1>
             <p>Watch an introduction to out platform</p>
 
-            <div>
-                <Image src='./vidbody.png' alt='Video body' width={918} height={545}></Image>
-            </div>
+            <div className="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/LnemDzWNE2A?si=dhdhVKp8khYvv4Gx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
             </section>
 
             <section className='estimate'>
