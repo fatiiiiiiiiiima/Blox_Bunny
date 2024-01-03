@@ -17,7 +17,7 @@ export default function Home(){
         './pro.png'
     ];
     return(
-        <div>
+        <div className='fontstyling'>
             <section className='mainimage'>
                <Navbar/>
             </section>

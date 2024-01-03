@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
     margin: 0;
+    font-family: 'Jost',sans-serif;
 }
 
 .mainimage {
@@ -13,6 +14,16 @@ html, body {
     margin: 0; 
 }
 
+@font-face {
+    font-family: 'Jost';
+    src: local('Jost'), url('/fonts/Jost-Bold.ttf') format('truetype');
+    font-weight:700 ;
+}
+@font-face {
+    font-family: 'Jost';
+    src: local('Jost'), url('/fonts/Jost-Regular.ttf') format('truetype');
+    font-weight:400 ;
+}
 
 .feature{
     padding-top: 50px;
@@ -29,6 +40,7 @@ html, body {
 .feature h1{
     font-size: 48px;
     font-weight: 700;
+    font-family: 'Jost',sans-serif;
 }
 
 .feature p{
@@ -36,6 +48,7 @@ html, body {
     font-weight: 400;
     color: #232323;
     margin-bottom: 20px;
+    font-family: 'Jost',sans-serif;
 }
 
 .feature-grid{
@@ -83,11 +96,14 @@ html, body {
 .estimate h1{
     font-weight: 700;
     font-size: 48px;
+    font-family: 'Jost',sans-serif;
 }
 
 .estimate p {
     font-weight: 400;
     font-size: 35.2px;
+    font-family: 'Jost',sans-serif;
+    text-align: center;
 }
 
 .updateform{
@@ -107,6 +123,7 @@ html, body {
 .updateform h1{
     font-size: 48px;
     font-weight: 700;
+    font-family: 'Jost',sans-serif;
 }
 
 .updateform p{
@@ -114,7 +131,7 @@ html, body {
     font-weight: 400;
     color: #232323;
     margin-bottom: 20px;
-   
+    font-family: 'Jost',sans-serif;
 }
 
 .form-row {
