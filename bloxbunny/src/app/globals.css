@@ -1,27 +1,165 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Jost',sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.mainimage {
+    background-image: url('/robloxbg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+    margin: 0; 
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: local('Jost'), url('/fonts/Jost-Bold.ttf') format('truetype');
+    font-weight:700 ;
+}
+@font-face {
+    font-family: 'Jost';
+    src: local('Jost'), url('/fonts/Jost-Regular.ttf') format('truetype');
+    font-weight:400 ;
+}
+
+.feature{
+    padding-top: 50px;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 150px;
+}
+
+.feature h1{
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Jost',sans-serif;
+}
+
+.feature p{
+    font-size: 19.2px;
+    font-weight: 400;
+    color: #232323;
+    margin-bottom: 20px;
+    font-family: 'Jost',sans-serif;
+}
+
+.feature-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.feature-article{
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.payplan{
+    background-color: #FAFAFA;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+.pay-grid{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: start;
+}
+.display{
+    max-width: 1000px;
+    padding-top: 20px;
+}
+
+.estimate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.estimate h1{
+    font-weight: 700;
+    font-size: 48px;
+    font-family: 'Jost',sans-serif;
+}
+
+.estimate p {
+    font-weight: 400;
+    font-size: 35.2px;
+    font-family: 'Jost',sans-serif;
+    text-align: center;
+}
+
+.updateform{
+    /* background-image: url('/updatebg.png');
+    background-size: cover;
+    background-repeat: no-repeat; */
+    width: 100%;
+    height: 100vh; 
+    /* overflow: hidden; */
+    margin: 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.updateform h1{
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Jost',sans-serif;
+}
+
+.updateform p{
+    font-size: 19.2px;
+    font-weight: 400;
+    color: #232323;
+    margin-bottom: 20px;
+    font-family: 'Jost',sans-serif;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 30px;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  .form-row input[type="text"],
+  .form-row input[type="email"] {
+    width: 304.16px; 
+    padding: 10px;
+    height:20px;
+    border: 1px solid #ccc; 
+    border-radius: 2px;
+  }
+
+
+  .form-row button{
+   
+    padding: 10px 20px;
+    background-color:   #6592E6; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 17.6px; 
+    font-weight: 600;
+    max-width: 119.7px; 
+  }
