@@ -159,9 +159,18 @@ html, body {
 }
 .payplan{
     background-color: #FAFAFA;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    padding-bottom: 100px;
+    padding-bottom: 100px; */
+    padding-top: 50px;
+    /* max-width: 1000px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 150px;
     
 }
 .pay-grid{
@@ -181,6 +190,10 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    overflow: hidden;
+    border-radius: 4px;
+
 }
 .pay-column h1{
     color: #232323;
@@ -352,7 +365,6 @@ html, body {
     height: 100%;
 }
 
-
   @media screen and (max-width: 1024px) {
     .mainheadings {
     align-items: center;
@@ -373,24 +385,159 @@ html, body {
     .form-row button {
         width: 90%;
     }
+    .feature-column,
+.pay-column {
+    width: 90%;
+}
   }
   
   @media screen and (max-width: 768px) {
     .feature-grid, .pay-grid {
     grid-template-columns: 1fr;
     }
-    .feature-column, .pay-column {
+    .feature-column{
         width: 90%;
         margin: auto;
     }
+   
+    .pay-column{
+        width: 390px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    
+    .mainheadings {
+        align-items: center;
+        margin-right: 0;
+        margin-top: 100px;
+        }
+
+        .estimate{
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .estimate h1{
+            text-align: center;
+            font-size: 30.5px;
+            margin-left: 10px;
+            font-family: 'Jost',sans-serif;
+        }
+        
+        .estimate p{
+            font-size: 24.7px;
+            font-family: 'Jost',sans-serif;
+        }
+        .updateform h1{
+            font-size: 30.5px;
+            font-weight: 700;
+            margin-left: 10px;
+            font-family: 'Jost',sans-serif;
+            text-align: center;
+            color: #232323;
+        }
+        
+        .updateform p{
+            font-size: 17.4px;
+            font-weight: 400;
+            text-align: center;
+            font-family: 'Jost',sans-serif;
+            color: #232323;
+        }
+        
+        .form-row button{
+            width: 90%;
+        }
   }
   
   @media screen and (max-width: 480px) {
     .mainheadings h1 {
     font-size: 48px;
     }
-    .mainheadings p,
-.mainheadings button {
-    font-size: 24px;
+        .mainheadings p,
+    .mainheadings button {
+        font-size: 24px;
+    }
+    .mainheadings {
+        align-items: center;
+        margin-right: 0;
+        margin-top: 100px;
+        }
+
+    .feature-grid, .pay-grid {
+        grid-template-columns: 1fr;
+        }
+
+        .feature-column{
+            width: 90%;
+            margin: auto;
+        }
+        .payplan{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .pay-column{
+            width: 90%;
+        }
+
+.form-row {
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"] {
+    width: 90%;
+}
+
+.estimate{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.estimate h1{
+    text-align: center;
+    font-size: 30.5px;
+    margin-left: 10px;
+    font-family: 'Jost',sans-serif;
+}
+
+.estimate p{
+    font-size: 24.7px;
+    font-family: 'Jost',sans-serif;
+}
+
+.updateform h1{
+    font-size: 30.5px;
+    font-weight: 700;
+    margin-left: 10px;
+    font-family: 'Jost',sans-serif;
+    text-align: center;
+    color: #232323;
+}
+
+.updateform p{
+    font-size: 17.4px;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Jost',sans-serif;
+    color: #232323;
+}
+
+.form-row button{
+    width: 90%;
 }
   }

@@ -5,15 +5,24 @@ import { useRouter } from 'next/navigation';
 import './globals.css'
 const Navbar = () => {
   const router = useRouter();
+  const [isOpen, setIsOpen] = React.useState(false);
   const navigatetoblog = () => {
     router.push('/blogpage')
   }
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+};
     return(
         <div className='navbar'>
             <div className="logo">
         <Image src="/navbarlogo.png" alt="BloxBunny Logo" width={169.34} height={60.8}/>
       </div>
-      <div className="navlinks">
+      <div className="burger-menu" onClick={toggleMenu}>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+      <div className={`navlinks ${isOpen ? 'open' : ''}`}>
       <p>DASHBOARD</p>
         <p>ROBLOX OVERVIEW</p>
         <p onClick={navigatetoblog}>BLOG</p>
@@ -25,6 +34,7 @@ const Navbar = () => {
         <button className='getstarted'>GET STARTED</button>
         </div>
       </div>
+      {isOpen && <div className="overlay" onClick={toggleMenu}></div>}
         </div>
     );
 }
