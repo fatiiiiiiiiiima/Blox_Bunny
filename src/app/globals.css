@@ -371,6 +371,7 @@ html, body {
     margin-right: 0;
     text-align: center;
     }
+    
     .feature-grid, .pay-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -410,9 +411,24 @@ html, body {
     .mainheadings {
         align-items: center;
         margin-right: 0;
+        justify-content: flex-end;
         margin-top: 100px;
+        font-family: 'Jost',sans-serif;
         }
 
+        .mainheadings h1 {
+            font-size: 42px;
+            margin-left: 30px;
+            }
+                .mainheadings p {
+                font-size: 24.7px;
+
+            }
+            
+            .mainheadings button {
+                font-size: 24.7px;
+                margin-left: 230px;
+            }
         .estimate{
             width: 90%;
             display: flex;
@@ -458,11 +474,11 @@ html, body {
   
   @media screen and (max-width: 480px) {
     .mainheadings h1 {
-    font-size: 48px;
+    font-size: 42px;
     }
         .mainheadings p,
     .mainheadings button {
-        font-size: 24px;
+        font-size: 24.7px;
     }
     .mainheadings {
         align-items: center;
