@@ -121,6 +121,14 @@
         padding: 10px 20px;
     }
 
+    .navlinks img{
+      padding: 10px 20px;
+    }
+    .ButtonContainer{
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+    }
     .overlay {
       position: fixed;
       top: 0;
