@@ -5,6 +5,7 @@
      width: 100%;
      max-width: 100vw;
      border-bottom: 1px solid #E6E6E6;
+     position: fixed;
    }
    
    .navlinks {
@@ -19,18 +20,19 @@
    }
    
    .navlinks p {
-     color: black;
+     color: #232323;
      font-weight: 700;
      font-size: 17.6px;
      text-decoration: none;
      padding: 0.5rem 1rem;
      cursor: pointer;
      transition: color 0.3s ease;
+     font-family: 'Jost',sans-serif;
    }
    
    .navlinks p:hover,
    .navlinks p:focus {
-     color: #ffae00;
+     color: black;
    }
    
    .ButtonContainer{
@@ -48,6 +50,10 @@
     cursor: pointer;
     color: white;
     transition: background-color 0.3s ease;
+    font-family: 'Jost',sans-serif;
+   }
+   .login:hover{
+    background-color: #4479D9;
    }
    .getstarted{
     background-color:#232323;
@@ -58,8 +64,12 @@
     cursor: pointer;
     color: white;
     transition: background-color 0.3s ease;
+    font-family: 'Jost',sans-serif;
    }
-
+.getstarted:hover{
+  background-color: black;
+}
    .logo{
     margin-left: 50px;
+    margin-top: 10px;
    }
