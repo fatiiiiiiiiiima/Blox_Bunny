@@ -64,3 +64,27 @@
     gap: 0.5rem;
   }
   
+  @media (max-width: 768px) {
+    .footer {
+      grid-template-columns: 1fr; 
+    }
+  
+    .linksSection {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .linksColumn {
+      align-items: center; 
+      text-align: center;
+    }
+    .linkspara{
+      align-items: center; 
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* .linkspara {
+      margin-left: 0; 
+    } */
+  }  
