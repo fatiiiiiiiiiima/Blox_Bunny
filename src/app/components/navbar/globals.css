@@ -89,6 +89,31 @@
     background-color: #232323;
 }
 
+@media screen and (max-width: 1024px) {
+ 
+  .navlinks {
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .navlinks p, .navlinks img {
+    padding: 0.5rem;
+    font-size: 15px; 
+  }
+
+  .ButtonContainer {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .burger-menu {
+    display: none; 
+  }
+}
+
 @media screen and (max-width: 590px) {
     .burger-menu {
         display: flex;
