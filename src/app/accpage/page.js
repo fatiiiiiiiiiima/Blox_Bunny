@@ -19,7 +19,7 @@ export default function Accpage(){
                 <button type='submit'>Create Account</button>
                 <div className='googlesign'>
                 <button >
-                    <Image src='./googleicon.png' alt='Google Icon' className='google-icon' width={48} height={48}></Image>
+                    <Image src='/googleicon.png' alt='Google Icon' className='google-icon' width={48} height={48}></Image>
                     Sign in with Google
                     </button>
                     </div>
@@ -31,7 +31,7 @@ export default function Accpage(){
                 <p>Support us on Patreon to get access to more of our goodues. Make sure to use the same email address as the one you have created your BloxBunny account with.</p>
             </section>
 
-            <section className='payplan'>
+            <section id="payplan" className='payplan'>
                  <div className="pay-grid">
                     <div className='pay-column'>
                         <h1>Free</h1>
@@ -110,7 +110,7 @@ export default function Accpage(){
                 
             </section>
 
-            <section className='access'>
+            <section id='contact us' className='access'>
                 <h1>Contact us</h1>
             <div className='form-container'>
                 <form>
