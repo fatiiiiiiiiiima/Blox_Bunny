@@ -52,17 +52,8 @@ export default function Reviewpage(){
                 </section>
             </section>
 
-            <section className='patreon'>
-              
-                <h1>TOTAL VISITS</h1>
-                <p>SUPPORT US ON PATREON TO VIEW THIS DATA</p>
-                <button>Become a Patron</button>
-              
-                <h1>GAME REVENUE</h1>
-                <p>SUPPORT US ON PATREON TO VIEW THIS DATA</p>
-                <button>Become a Patron</button>
-                  
 
+      <section className='patreon'>
             </section>
             <section>
               <LineChart data={chartData} />
@@ -74,4 +65,5 @@ export default function Reviewpage(){
             </section>
         </div>
     );
+
 }
