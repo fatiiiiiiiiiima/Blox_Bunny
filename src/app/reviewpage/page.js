@@ -1,10 +1,17 @@
+"use client"
 import React from 'react';
 import Navbar from '../components/navbar/navbar'
 import Image from 'next/image';
 import FOOTER from '../components/bloxfooter/bloxfooter';
+import LineChart from '../components/linechart/linechart';
 import './globals.css'
 
 export default function Reviewpage(){
+
+  const chartData = {
+    labels: ['Aug 2022', 'Sep 2022', 'Oct 2022', 'Nov 2022', 'Dec 2022', 'Jan 2023'],
+    values: [1000000, 2000000, 3000000, 4000000, 3500000, 2500000],
+  };
     return(
         <div>
             <Navbar/>
@@ -16,7 +23,7 @@ export default function Reviewpage(){
                 <div className='blogscol'>
                   <Image src='/review1.png' alt='blog1' width={348} height={300}></Image>
                   <h1>Roblox usage</h1>
-                  <h3>Get an overview iver how "Visits" develop on the platform</h3>
+                  <h3>Get an overview iver how &quot;Visits&quot; develop on the platform</h3>
                   <p>How ebgaging is the platform? Are the post-Covid user platforms here to stay? Take a look at our calculated metric-</p>
                   <span>Total Visits on Roblox</span>
                   <div className='designbutton1'>
@@ -57,9 +64,13 @@ export default function Reviewpage(){
                   
 
             </section>
-
             <section>
+              <LineChart data={chartData} />
+              </section>
+            <section>
+            
               <FOOTER/>
+             
             </section>
         </div>
     );
