@@ -26,23 +26,40 @@ export default function Reviewpage(){
                 <div className='blogscol'>
                   <Image src='/review2.png' alt='blog1' width={348} height={300}></Image>
                   <h1>Stock Prize</h1>
-                  <h3>by <span>BLOXBUNNY TEAM</span></h3>
-                  <p>Welcome on www.bloxbunny.com - a great tool for understanding how much other Roblox games are generating in revenue.</p>
-                  <div className='designbutton1'>
+                  <h3>Correlate stock price with our data</h3>
+                  <p>Bloxbunny is the go to place for all Roblox investors. On our platform, you will be able to see if there are any correlations between usage and the stock price.</p>
+                  <div className='designbutton2'>
                   <button>See Data</button>
                   </div>
                 </div>
                 <div className='blogscol'>
                   <Image src='/review3.png' alt='blog1' width={348} height={300}></Image>
-                  <h1>How to monetize your Roblox game?</h1>
-                  <h3>by <span>BLOXBUNNY TEAM</span></h3>
-                  <p>Welcome on www.bloxbunny.com - a great tool for understanding how much other Roblox games are generating in revenue.</p>
-                  <div className='designbutton1'>
+                  <h1>Daily revenue</h1>
+                  <h3>Using our properietary algorithm, we can estimate platform revenue</h3>
+                  <p>The estimated daily revenue is not 100% accurate but using our algorithm, we have created a way to scientifically approximate daily revenue.</p>
+                  <div className='designbutton3'>
                   <button>See Data</button>
                   </div>
                 </div>
                 </div>
                 </section>
+            </section>
+
+            <section className='patreon'>
+              
+                <h1>TOTAL VISITS</h1>
+                <p>SUPPORT US ON PATREON TO VIEW THIS DATA</p>
+                <button>Become a Patron</button>
+              
+                <h1>GAME REVENUE</h1>
+                <p>SUPPORT US ON PATREON TO VIEW THIS DATA</p>
+                <button>Become a Patron</button>
+                  
+
+            </section>
+
+            <section>
+              <FOOTER/>
             </section>
         </div>
     );

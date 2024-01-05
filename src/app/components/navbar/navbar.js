@@ -9,6 +9,9 @@ const Navbar = () => {
   const navigatetoblog = () => {
     router.push('/blogpage')
   }
+  const navigatetoreview = () => {
+    router.push('/reviewpage')
+  }
   const toggleMenu = () => {
     setIsOpen(!isOpen);
 };
@@ -24,7 +27,7 @@ const Navbar = () => {
             </div>
       <div className={`navlinks ${isOpen ? 'open' : ''}`}>
       <p>DASHBOARD</p>
-        <p>ROBLOX OVERVIEW</p>
+        <p onClick={navigatetoreview}>ROBLOX OVERVIEW</p>
         <p onClick={navigatetoblog}>BLOG</p>
         <p>PRICING</p>
         <p>CONTACT US</p>
