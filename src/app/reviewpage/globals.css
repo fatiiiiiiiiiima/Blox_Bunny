@@ -95,7 +95,9 @@
     font-size: 19.2px;
     font-family: 'Jost',sans-serif;
 }
-
+.chart{
+    width: 750px;
+}
 .blogscol button:hover{
     background-color: #4479D9;
 }
