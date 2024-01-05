@@ -70,11 +70,11 @@ export default function Accpage(){
 
             <section className='plan'>
                 <div className='indie'>
-                    <h1>Who should get the "Indie" plan?</h1>
-                    <p>We imagine you are a creator which have obtained some degree of success on Roblox. You already have a published game but didn't find real success yet. You are close to nailing it but you are only one person and it is really hard to find the time to have a complete overview of the Roblox platform. You need more data and support to be able to iterate and start making really successful games. You might also be a Roblox YouTuber or a data nerd.</p>
+                    <h1>Who should get the &quot;Indie&quot; plan?</h1>
+                    <p>We imagine you are a creator which have obtained some degree of success on Roblox. You already have a published game but didn&apos;t find real success yet. You are close to nailing it but you are only one person and it is really hard to find the time to have a complete overview of the Roblox platform. You need more data and support to be able to iterate and start making really successful games. You might also be a Roblox YouTuber or a data nerd.</p>
                 </div>
                 <div className='pro'>
-                    <h1>Who should get the "Pro" plan?</h1>
+                    <h1>Who should get the &quot;Pro&quot; plan?</h1>
                     <p>You are part of a team that found success on Roblox. You might also be part of non-Roblox gaming studio who is looking at Roblox as a potential distribution platform. You might be a Games VC willing to find a studio/group of people for their next game. You might also be a games professional but a Roblox Noob.</p>
                 </div>
             </section>
