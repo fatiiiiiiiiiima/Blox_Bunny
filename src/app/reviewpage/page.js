@@ -4,63 +4,63 @@ import Image from 'next/image';
 import FOOTER from '../components/bloxfooter/bloxfooter';
 import './globals.css'
 
-export default function Reviewpage(){
-    return(
-        <div>
-            <Navbar/>
-            <section className='mainbody'>
-                <h1>ROBLOX PLATFORM OVERVIEW</h1>
+export default function Reviewpage() {
+  return (
+    <div>
+      <Navbar />
+      <section className='mainbody'>
+        <h1>ROBLOX PLATFORM OVERVIEW</h1>
 
-                <section className='blogs'>
-                <div className='blogs-grid'>
-                <div className='blogscol'>
-                  <Image src='/review1.png' alt='blog1' width={348} height={300}></Image>
-                  <h1>Roblox usage</h1>
-                  <h3>Get an overview iver how "Visits" develop on the platform</h3>
-                  <p>How ebgaging is the platform? Are the post-Covid user platforms here to stay? Take a look at our calculated metric-</p>
-                  <span>Total Visits on Roblox</span>
-                  <div className='designbutton1'>
-                  <button>See Data</button>
-                  </div>
-                </div>
-                <div className='blogscol'>
-                  <Image src='/review2.png' alt='blog1' width={348} height={300}></Image>
-                  <h1>Stock Prize</h1>
-                  <h3>Correlate stock price with our data</h3>
-                  <p>Bloxbunny is the go to place for all Roblox investors. On our platform, you will be able to see if there are any correlations between usage and the stock price.</p>
-                  <div className='designbutton2'>
-                  <button>See Data</button>
-                  </div>
-                </div>
-                <div className='blogscol'>
-                  <Image src='/review3.png' alt='blog1' width={348} height={300}></Image>
-                  <h1>Daily revenue</h1>
-                  <h3>Using our properietary algorithm, we can estimate platform revenue</h3>
-                  <p>The estimated daily revenue is not 100% accurate but using our algorithm, we have created a way to scientifically approximate daily revenue.</p>
-                  <div className='designbutton3'>
-                  <button>See Data</button>
-                  </div>
-                </div>
-                </div>
-                </section>
-            </section>
+        <section className='blogs'>
+          <div className='blogs-grid'>
+            <div className='blogscol'>
+              <Image src='/review1.png' alt='blog1' width={348} height={300}></Image>
+              <h1>Roblox usage</h1>
+              <h3>Get an overview iver how {'"Visits"'} develop on the platform</h3>
+              <p>How ebgaging is the platform? Are the post-Covid user platforms here to stay? Take a look at our calculated metric-</p>
+              <span>Total Visits on Roblox</span>
+              <div className='designbutton1'>
+                <button>See Data</button>
+              </div>
+            </div>
+            <div className='blogscol'>
+              <Image src='/review2.png' alt='blog1' width={348} height={300}></Image>
+              <h1>Stock Prize</h1>
+              <h3>Correlate stock price with our data</h3>
+              <p>Bloxbunny is the go to place for all Roblox investors. On our platform, you will be able to see if there are any correlations between usage and the stock price.</p>
+              <div className='designbutton2'>
+                <button>See Data</button>
+              </div>
+            </div>
+            <div className='blogscol'>
+              <Image src='/review3.png' alt='blog1' width={348} height={300}></Image>
+              <h1>Daily revenue</h1>
+              <h3>Using our properietary algorithm, we can estimate platform revenue</h3>
+              <p>The estimated daily revenue is not 100% accurate but using our algorithm, we have created a way to scientifically approximate daily revenue.</p>
+              <div className='designbutton3'>
+                <button>See Data</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
 
-            <section className='patreon'>
-              
-                <h1>TOTAL VISITS</h1>
-                <p>SUPPORT US ON PATREON TO VIEW THIS DATA</p>
-                <button>Become a Patron</button>
-              
-                <h1>GAME REVENUE</h1>
-                <p>SUPPORT US ON PATREON TO VIEW THIS DATA</p>
-                <button>Become a Patron</button>
-                  
+      <section className='patreon'>
 
-            </section>
+        <h1>TOTAL VISITS</h1>
+        <p>SUPPORT US ON PATREON TO VIEW THIS DATA</p>
+        <button>Become a Patron</button>
 
-            <section>
-              <FOOTER/>
-            </section>
-        </div>
-    );
+        <h1>GAME REVENUE</h1>
+        <p>SUPPORT US ON PATREON TO VIEW THIS DATA</p>
+        <button>Become a Patron</button>
+
+
+      </section>
+
+      <section>
+        <FOOTER />
+      </section>
+    </div>
+  );
 }
