@@ -9,6 +9,10 @@ const Navbar = () => {
   const navigatetoblog = () => {
     router.push('/blogpage')
   }
+
+  const navigatetosign = () => {
+    router.push('/signin')
+
   const navigatetoreview = () => {
     router.push('/reviewpage')
   }
@@ -43,7 +47,7 @@ const Navbar = () => {
         <p onClick={navigatetocontact}>CONTACT US</p>
         <Image src='/twittericon.png' alt="Twitter Logo" width={28} height={28}></Image>
         <div className='ButtonContainer'>
-        <button className='login' onClick={navigatetoacc}>LOGIN</button>
+        <button className='login' onClick={navigatetosign}>LOGIN</button>
         <button className='getstarted' onClick={navigatetoacc}>GET STARTED</button>
         </div>
       </div>
