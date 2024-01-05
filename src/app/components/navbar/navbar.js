@@ -9,12 +9,26 @@ const Navbar = () => {
   const navigatetoblog = () => {
     router.push('/blogpage')
   }
+
   const navigatetosign = () => {
     router.push('/signin')
+
+  const navigatetoreview = () => {
+    router.push('/reviewpage')
   }
   const toggleMenu = () => {
     setIsOpen(!isOpen);
 };
+
+  const navigatetopay = () => {
+    router.push('/accpage#payplan')
+  }
+  const navigatetocontact = () => {
+    router.push('/accpage#contact us')
+  }
+  const navigatetoacc = () => {
+    router.push('/accpage')
+  }
     return(
         <div className='navbar'>
             <div className="logo">
@@ -27,14 +41,14 @@ const Navbar = () => {
             </div>
       <div className={`navlinks ${isOpen ? 'open' : ''}`}>
       <p>DASHBOARD</p>
-        <p>ROBLOX OVERVIEW</p>
+        <p onClick={navigatetoreview}>ROBLOX OVERVIEW</p>
         <p onClick={navigatetoblog}>BLOG</p>
-        <p>PRICING</p>
-        <p>CONTACT US</p>
+        <p onClick={navigatetopay}>Pricing</p>
+        <p onClick={navigatetocontact}>CONTACT US</p>
         <Image src='/twittericon.png' alt="Twitter Logo" width={28} height={28}></Image>
         <div className='ButtonContainer'>
         <button className='login' onClick={navigatetosign}>LOGIN</button>
-        <button className='getstarted'>GET STARTED</button>
+        <button className='getstarted' onClick={navigatetoacc}>GET STARTED</button>
         </div>
       </div>
       {isOpen && <div className="overlay" onClick={toggleMenu}></div>}
