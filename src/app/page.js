@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './components/navbar/navbar'
+import Navbar from '../app/components/navbar/navbar'
 import Image from 'next/image';
 import FOOTER from './components/bloxfooter/bloxfooter';
 import './globals.css'
@@ -108,6 +108,10 @@ export default function Home(){
             <section>
                 <FOOTER></FOOTER>
             </section>
-        </div>
-    );  
+        </div> 
+              
+    );
 }
+
+               
+      
