@@ -55,9 +55,17 @@ export default function Reviewpage(){
 
       <section className='patreon'>
             </section>
-            <section>
+            <section className='users'>
+              <h1>CONCURRENT USERS</h1>
+            
               <LineChart data={chartData} />
-              </section>
+           
+              <h1>
+                NEW FAVORITES
+              </h1>
+             
+              <LineChart data={chartData} />
+           </section> 
             <section>
             
               <FOOTER/>

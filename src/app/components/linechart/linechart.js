@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
-import './globals.css';
 
 const LineChart = ({ data }) => {
   const chartRef = useRef(null);
@@ -18,10 +17,10 @@ const LineChart = ({ data }) => {
         labels: data.labels,
         datasets: [
           {
-            label: 'Line Chart Example',
+            label: 'Line',
             data: data.values,
             fill: false,
-            borderColor: 'rgba(75, 192, 192, 1)',
+            borderColor: '#6592E6', // Set line color to blue
             tension: 0.1,
           },
         ],
@@ -42,7 +41,8 @@ const LineChart = ({ data }) => {
         },
         plugins: {
           legend: {
-            position: 'top', // Set legend position to 'top'
+            position: 'top',
+            align: 'end',
           },
         },
       },
@@ -54,7 +54,7 @@ const LineChart = ({ data }) => {
   }, [data]);
 
   return (
-    <div style={{ paddingLeft: '150px', paddingRight: '150px' }}>
+    <div style={{ width: '90%', maxWidth: '750px', padding: '0 15px' }}>
       <canvas ref={chartRef} style={{ width: '100%', height: '300px' }} />
     </div>
   );
