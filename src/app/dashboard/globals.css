@@ -1,0 +1,36 @@
+.heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.textcontent h1{
+    font-family: 'Jost',sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #000;
+    
+}
+.textcontent p{
+    color: #7C8DB5;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'Jost',sans-serif;
+}
+.headicons h2{
+    font-family: 'Jost',sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+}
+.headicons{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.cardcontainer{
+    border-radius: 10px;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    padding: 10px;
+}
