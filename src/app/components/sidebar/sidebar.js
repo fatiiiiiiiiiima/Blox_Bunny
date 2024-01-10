@@ -35,18 +35,21 @@ const Sidebar = () => {
         }
     }, [router]);
     return (
-        <>       
+        <div >   
+
+          <div className='logoContainer'>
+                <Link legacyBehavior href="/">
+                <a><Image src="/navbarlogo.png" alt="BLOXBUNNY" width={150} height={50} /></a>
+                </Link>
+            </div>   
          <button onClick={toggleSidebar} className="burger-icon">
                 <div></div>
                 <div></div>
                 <div></div>
             </button> 
+           
         <nav className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-            <div className='logoContainer'>
-                <Link legacyBehavior href="/">
-                <a><Image src="/navbarlogo.png" alt="BLOXBUNNY" width={150} height={50} /></a>
-                </Link>
-            </div>
+            
             <ul className='sideList'>
                 <li>
                     <Link legacyBehavior href="/dashboard">
@@ -74,7 +77,7 @@ const Sidebar = () => {
                 </li>
             </ul>
         </nav>
-        </>
+        </div>
 
     );
 
