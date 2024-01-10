@@ -1,0 +1,97 @@
+// Import Next.js Image component for image rendering
+"use client"
+import Image from 'next/image';
+import { useEffect } from 'react';
+import './globals.css';
+const GamesAnalyticsTable = () => {
+    useEffect(() => {
+        const tableCells = document.querySelectorAll('.table-container td');
+        
+        tableCells.forEach(cell => {
+          if (cell.textContent.trim() === '0' || cell.textContent.trim().toLowerCase() === 'free') {
+            cell.classList.add('grey-text');
+          }
+        });
+      }, []);
+    
+  return (
+    <div className="table-container">
+      <table>
+        <tbody>
+          {/* Repeat for each game entry */}
+          <tr>
+            <td>
+              <div className="game-info">
+                <Image src="/deadcells.png" alt="Game Image" width={40} height={40} />
+                <span>Dead Cells</span>
+              </div>
+            </td>
+            <td><p className='heading'>DAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td ><p className='heading'>NEW PLAYERS</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td><p className='heading'>ARPDAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td ><p className='heading'>AVG. PRICE</p>22.30$</td>
+            <td><p className='heading'>STORES</p>8</td>
+            <td>
+            <div className='menu-dots' >
+            <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
+            </div></td>
+          </tr>
+          <tr>
+            <td>
+              <div className="game-info">
+                <Image src="/dino.png" alt="Game Image" width={40} height={40} />
+                <span>Dino RPG</span>
+              </div>
+            </td>
+            <td ><p className='heading'>DAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td ><p className='heading'>NEW PLAYERS</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td ><p className='heading'>ARPDAU</p>0 </td>
+            <td ><p className='heading'>AVG. PRICE</p>Free</td>
+            <td ><p className='heading'>STORES</p>0</td>
+            <td>
+            <div className='menu-dots' >
+            <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
+            </div></td>
+          </tr>
+          <tr>
+            <td>
+              <div className="game-info">
+                <Image src="/teacher.png" alt="Game Image" width={40} height={40} />
+                <span>Teacher Story</span>
+              </div>
+            </td>
+            <td ><p className='heading'>DAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td ><p className='heading'>NEW PLAYERS</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td ><p className='heading'>ARPDAU</p>0 </td>
+            <td ><p className='heading'>AVG. PRICE</p>Free</td>
+            <td ><p className='heading'>STORES</p>0</td>
+            <td>
+            <div className='menu-dots' >
+            <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
+            </div></td>
+          </tr>
+          <tr>
+            <td>
+              <div className="game-info">
+                <Image src="/teacher.png" alt="Game Image" width={40} height={40} />
+                <span>Teacher Story</span>
+              </div>
+            </td>
+            <td ><p className='heading'>DAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td ><p className='heading'>NEW PLAYERS</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td ><p className='heading'>ARPDAU</p>0 </td>
+            <td ><p className='heading'>AVG. PRICE</p>Free</td>
+            <td ><p className='heading'>STORES</p>0</td>
+            <td>
+                <div className='menu-dots' >
+            <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
+            </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default GamesAnalyticsTable;

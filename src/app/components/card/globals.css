@@ -1,0 +1,43 @@
+.card {
+    border-right: 1px solid #EAEAEA; 
+    padding: 20px;
+    background-color: #ffffff; 
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  }
+  
+  .mainText {
+    font-size: 28px;
+    font-family: 'Jost',sans-serif; 
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .label {
+    font-size: 16px; 
+    font-family: 'Jost',sans-serif; 
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  
+  .trend {
+    display: flex;
+    align-items: center;
+  }
+  
+  .trend span {
+    margin-left: 5px;
+    font-size: 14px; 
+    font-family: 'Jost',sans-serif; 
+    font-weight: 400;
+    color: #7C8DB5;
+  }
+  .rightsection .cornerIcon{
+    border-radius: 10px;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    padding: 10px;
+  }
+  
