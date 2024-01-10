@@ -1,9 +1,17 @@
+"use client"
 import Layout from '../components/layout/layout';
 import './globals.css'
 import Image from 'next/image';
 import StatisticCard from '../components/card/card'
 import Analytics from '../components/analytics/analytics'
+import GameTable from '../components/gametable/gametable'
+import CustomSelect from '../components/dropdown/dropdown'
 export default function HomePage() {
+  
+  const handleSelectChange = (selectedOption) => {
+    console.log(`Option selected:`, selectedOption);
+  };
+  
   return (
     <Layout>
       <section className='heading'>
@@ -20,7 +28,7 @@ export default function HomePage() {
       </div>
       </section>
       <section className='cardcontainer'>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div className='cards'>
       <StatisticCard
         iconPath="increase" 
         mainText="89,935"
@@ -52,8 +60,27 @@ export default function HomePage() {
       </div>
       
       </section>
-      <section>
+      <section className='graphs'>
+        <div className='headingsect'>
+      <h1>   Game Analytics</h1>
+      <div className='filter'>
+      <CustomSelect onChange={handleSelectChange} />
+      </div>
+      </div>
+      <div className='graph'> 
       <Analytics/>
+      </div>
+      </section>
+
+      <section className='gametable'>
+      <div className='headingsect'>
+      <h1>   Game Analytics</h1>
+      <div className='filter'>
+      <CustomSelect onChange={handleSelectChange} />
+      </div>
+      </div>
+        <GameTable/>
+       
       </section>
     </Layout>
   );

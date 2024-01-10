@@ -10,7 +10,7 @@
     color: #000;
     
 }
-.textcontent p{
+.textcontet p{
     color: #7C8DB5;
     font-weight: 400;
     font-size: 16px;
@@ -34,3 +34,106 @@
     display: inline-flex;
     padding: 10px;
 }
+.cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gametable{
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.graphs{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.h1{
+    font-family: 'Jost',sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    padding-left: 20px;
+}
+.headingsect{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.filter{
+    padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .heading {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .headicons {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: flex-start;
+    }
+  
+    .graphs, .gametable {
+        margin-top: 10px;
+        width: 90%;
+      }
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .headingsect {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .filter {
+      padding-top: 10px;
+      width: 100%; /* Full width */
+    }
+  }
+  
+  /* Responsive styles for mobile screens */
+  @media (max-width: 590px) {
+    .heading {
+      padding: 10px; /* Add some padding on smaller screens */
+    }
+  
+    .textcontent h1,
+    .headicons h2,
+    .h1 {
+      font-size: 24px; /* Smaller font size for h1 on small screens */
+    }
+  
+    .textcontent p,
+    .headicons h2 {
+      font-size: 14px; /* Smaller font size for text on small screens */
+    }
+  
+    .cards {
+      display: block; /* Stack cards vertically on small screens */
+      padding: 10px;
+    }
+  
+    .graphs, .gametable {
+      margin-top: 10px;
+      width: 90%;
+    }
+  
+    .headingsect {
+      padding: 10px;
+    }
+  }
+  
+  /* Add any additional responsive adjustments as needed */
+  

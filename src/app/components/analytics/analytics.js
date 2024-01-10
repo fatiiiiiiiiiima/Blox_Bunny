@@ -51,10 +51,6 @@ const AnalyticsChart = () => {
       legend: {
         position: 'top',
       },
-      title: {
-        display: true,
-        text: 'Games Analytics',
-      },
       tooltip: {
         mode: 'index',
         intersect: false,
@@ -88,3 +84,44 @@ const AnalyticsChart = () => {
 };
 
 export default AnalyticsChart;
+/*
+import { useEffect, useState } from 'react';
+import { Line } from 'react-chartjs-2';
+// ... other imports remain the same
+
+const AnalyticsChart = () => {
+  const [chartData, setChartData] = useState({});
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        // Example API call
+        const response = await fetch('your-api-url');
+        const data = await response.json();
+
+        // Transform data to fit Chart.js format if necessary
+        const transformedData = {
+          labels: data.labels,
+          datasets: [
+            // ... map your datasets
+          ],
+        };
+
+        setChartData(transformedData);
+      } catch (error) {
+        console.error('Fetching data failed', error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  const options = {
+    // ... options remain the same
+  };
+
+  return <Line data={chartData} options={options} />;
+};
+
+export default AnalyticsChart;
+*/
