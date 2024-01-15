@@ -1,0 +1,146 @@
+/* Card.module.css */
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    align-items: start;
+  }
+  .headingsect{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .title{
+    font-family: 'Jost',sans-serif;
+    font-weight: 600;
+    font-size: 16.71px;
+    justify-content: left;
+  }
+  .cardlogo {
+    border-radius: 8px;
+    margin-right: 10px;
+  }
+   .textcontent{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+  } 
+  .content {
+    padding: 8px 16px;
+  }
+  
+ 
+  
+  .subTitle {
+    font-size: 14px;
+    color: #666;
+    margin: 4px 0;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+  }
+  .gapset1{
+    padding-left: 65px;
+  }
+  .gapset2{
+    margin-left: 55px;
+  }
+  .gapset3{
+    margin-left: 45px;
+  }
+  .gapset4{
+    margin-left: 30px;
+  }
+  .stars {
+    /* Add styles for stars */
+    color: #ffd700; /* Gold color */
+    margin-right: 8px;
+  }
+  
+  .ratingCount {
+    font-family: 'Jost',sans-serif;
+    font-weight: 400;
+    font-size: 12.53px;
+    color: #66778F;
+  }
+  
+  .info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 8px;
+    gap: 2rem;
+  }
+  
+  .info div {
+    text-align: start;
+    flex-basis: 33%;
+  }
+  
+  .info strong {
+    display: block;
+    padding-top: 10px;
+    color: #66778F;
+    font-weight: 500;
+    font-size: 12.53px;
+    text-align: start;
+    font-family: 'Jost',sans-serif;
+  }
+  
+  .info span {
+    padding-top: 10px;
+    display: block;
+    color: #191F2A;
+    text-align: start;
+    font-family: 'Jost',sans-serif;
+    font-weight: 600;
+    font-size: 12.53px;
+  }
+  @media (max-width: 1024px) {
+
+    .info strong{
+      font-size: small;
+    }
+    .info span {
+      font-size: small;
+    }
+
+    .gapset2,.gapset3,.gapset4{
+      margin-left: 0;
+    }
+
+    .gapset1{
+      margin-right: 0px;
+    }
+    .gapset4{
+      margin-right: 50px;
+    }
+  }
+  @media (max-width: 590px) {
+    .headingsect {
+        justify-content: flex-start;
+    }
+
+    .cardlogo {
+        width: 50px; 
+        height: 50px; 
+        flex-shrink: 0;
+}
+
+.textcontent {
+  flex-grow: 1; /* Allows text content to take up remaining space */
+}
+
+.title, .subTitle {
+  text-align: left; /* Aligns title and subtitle to the left */
+}
+  }
+
+
