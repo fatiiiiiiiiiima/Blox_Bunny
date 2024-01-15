@@ -1,0 +1,30 @@
+.dateRangePicker {
+    font-family: "Jost", sans-serif; 
+    font-size: 10.15px;
+    font-weight: 500;
+    color: #293050;  
+    margin-bottom: 20px;
+  }
+  
+  .inputContainer {
+    display: inline-flex; /* Change this to inline-flex */
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    padding: 10px; /* Added padding here */
+  }
+  
+  .input {
+    border: none;
+    padding: 2px; /* Reduced padding to fit the container */
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  .dash {
+    margin: 0 10px;
+  }
+  
