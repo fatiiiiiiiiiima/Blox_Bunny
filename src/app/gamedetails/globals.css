@@ -1,0 +1,87 @@
+.heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.headingdisplay h1{
+    font-family: 'Jost',sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #000;
+    
+}
+
+.headingdisplay p{
+    padding-top: 10px;
+    margin-left: 10px;
+    color: #5F6D7E;
+    font-family: 'Jost',sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+.textcontet{
+    color: #7C8DB5;
+    font-family: 'Jost',sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+.headingdisplay span{
+    color:#437EF7;
+    font-family: 'Jost',sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+.textcontet p{
+    color: #7C8DB5;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'Jost',sans-serif;
+}
+.headicons h2{
+    font-family: 'Jost',sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+}
+.headicons{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.headingdisplay{
+    display: flex;
+    align-items: center;
+}
+
+.graphs{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.h1{
+    font-family: 'Jost',sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    padding-left: 20px;
+}
+.headingsect{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.headingsect h1{
+    font-family: 'Jost',sans-serif;
+}
+.filter{
+    padding-top: 20px;
+}
+
+.graph{
+    margin-bottom: 20px;
+}
