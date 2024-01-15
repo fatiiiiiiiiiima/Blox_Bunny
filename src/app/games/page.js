@@ -92,6 +92,7 @@ const toggleMenu = () => {
       <Image src="/downarrow.png" alt="profile" width={10} height={8} />
       </div>
       </section>
+      
 <div className='gamesview'>
       <div className='screen'>
 <div className='display'>
@@ -154,16 +155,15 @@ const toggleMenu = () => {
   {games.data.map((game, index) => (
     <Gamecard
       key={index}
-    //  logoUrl={game.url}
-    //  title={game.Title}
-    //  company={game.Genre}
-      rating={game.Likes} // Replace with actual rating calculation
+      logoUrl={game.url}
+      title={game.Title}
+      dislikes={game.DisLikes}
+      rating={game.Likes} 
       rank={game.Rank}
-    //  genre={game.Genre}
+      genre={game.Genre}
       ccu={game.CCU}
       revenue={`${game.MaxRevenue}`-`${game.MinRevenue}`}
       favorites={game.Favorites}
-      // Add other props as needed
     />
     
   ))}

@@ -2,19 +2,20 @@
 import Image from 'next/image';
 import './globals.css'; 
 
-const GameCard = ({rating,rank,ccu,revenue,favorites}) => {
+const GameCard = ({rating,rank,ccu,revenue,favorites,logoUrl,title,genre,dislikes}) => {
     const roundedRating = Math.floor(rating);
     const roundedCCU = Math.floor(ccu);
     const roundedRevenue = Math.floor(revenue);
     const roundedFavorites = Math.floor(favorites);
+    const roundedDisLikes = Math.floor(dislikes);
     return (
     <div className="card">
         <div className='headingsect'>
       <div className="cardlogo">
-        <Image src="/viewcard.png" alt="Game Logo" width={50} height={50} />
+        <Image src={logoUrl} alt="Game Logo" width={50} height={50} />
       </div>
       <div className='textcontent'>
-        <h2 className="title">BlockBox Black Covering Samurai</h2>
+        <h2 className="title">{title}</h2>
         <p className="subTitle">GARENA INTERNATIONAL II PRIVATE</p>
         </div>
         </div>
@@ -31,7 +32,7 @@ const GameCard = ({rating,rank,ccu,revenue,favorites}) => {
           <div> 
             <div className='gapset1'>
             <strong>Genres</strong>
-            <span>entertainment</span>
+            <span>{genre}</span>
             </div>
           </div>
           <div className='gapset4'>
@@ -50,7 +51,7 @@ const GameCard = ({rating,rank,ccu,revenue,favorites}) => {
           </div>
           <div className='gapset2'>
             <strong>Dislikes</strong>
-            <span>{roundedFavorites}</span>
+            <span>{roundedDisLikes}</span>
           </div>
         </div>
       </div>
