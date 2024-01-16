@@ -7,14 +7,16 @@ import './globals.css'; // assuming you are using CSS modules
 
 const Sidebar = () => {
     const router = useRouter();
-    const [activePath, setActivePath] = useState('');
+    const [activePath, setActivePath] = useState('/dashboard');
     // const isActive = (path) => {
     //     console.log("Current path:", router.pathname, "Checking for:", path);
     //     return router.pathname === path;
     // };
    // const [activePath, setActivePath] = useState(router.pathname);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State to control sidebar visibility
-
+    const handleactivepage = (activepage) => {
+        setActivePath(activepage);
+    };
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen); // Toggle the state
     };
@@ -22,9 +24,10 @@ const Sidebar = () => {
         // Check if the router is ready
         if (router.isReady) {
             setActivePath(router.pathname);
-
+            // handleactivepage(router.pathname);
             const handleRouteChange = (url) => {
                 setActivePath(url);
+                
             };
 
             router.events.on('routeChangeComplete', handleRouteChange);
@@ -53,7 +56,7 @@ const Sidebar = () => {
             <ul className='sideList'>
                 <li>
                     <Link legacyBehavior href="/dashboard">
-                        <a className={`sideItem ${activePath === '/dashboard' ? 'active' : ''}`}>
+                        <a onClick={()=> handleactivepage('/dashboard')} className={`sideItem ${activePath === '/dashboard' ? 'active' : ''}`} >
                             <Image  src={activePath === '/dashboard' ? "/activedashboardicon.png" : "/dashboardicon.png"} alt="Dashboard" width={24} height={24} />
                             <span className='default'>Dashboard</span>
                         </a>
@@ -61,16 +64,16 @@ const Sidebar = () => {
                 </li>
                 <li >
                     <Link legacyBehavior href="/games">
-                        <a className={`sideItem ${activePath === '/games' ? 'active' : ''}`}>
-                            <Image src={activePath === '/dashboard'? "/activedashboardicon.png" : "/gameicon.png"} alt="Games" width={24} height={24} />
+                        <a onClick={()=> handleactivepage('/games')} className={`sideItem ${activePath === '/games' ? 'active' : ''}`}  >
+                            <Image src={activePath === '/games'? "/activegameicon.png" : "/gameicon.png"} alt="Games" width={24} height={24} />
                             <span>Games</span>
                         </a>
                     </Link>
                 </li>
                 <li >
                     <Link legacyBehavior href="/settings">
-                        <a className={`sideItem ${activePath === '/settings' ? 'active' : ''}`}>
-                            <Image src={activePath === '/dashboard' ? "/activedashboardicon.png" : "/baricon.png"} alt="Settings" width={24} height={24} />
+                        <a onClick={()=> handleactivepage('/settings')} className={`sideItem ${activePath === '/settings' ? 'active' : ''}`} >
+                            <Image src={activePath === '/settings' ? "/activedashboardicon.png" : "/baricon.png"} alt="Settings" width={24} height={24} />
                             <span>Settings</span>
                         </a>
                     </Link>

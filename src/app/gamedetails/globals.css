@@ -85,3 +85,30 @@
 .graph{
     margin-bottom: 20px;
 }
+
+.filter-container {
+    display: flex;
+    border: 1px solid #c4c4c4;
+    border-radius: 6px;
+    overflow: hidden; /* Ensures the child buttons conform to the container's rounded corners */
+  }
+  
+  .filter-option {
+    padding: 8px 16px;
+    border: none;
+    border-right: 1px solid #E8E8E8;
+    background-color: #fff; /* Default background color */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    font-size: 14px; /* Sets the font size */
+    outline: none; /* Removes the outline to avoid default focus styles */
+  }
+  
+  .filter-option:hover {
+    background-color: #f2f2f2; /* Light grey background on hover for non-selected buttons */
+  }
+  .filter-option.selected {
+    background-color: #437EF7;
+    color: white;
+    /* Other styles for selected state */
+  }
+  

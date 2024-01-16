@@ -1,10 +1,11 @@
 "use client"
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import './globals.css'
 import Gamecard from '../components/gamecard/gamecard';
 import Image from 'next/image';
 import Analytics from '../components/analytics/analytics'
 import RankTable from '../components/ranktable/ranktable'
+import DateRange from '../components/datarange/datarange';
 import CustomSelect from '../components/dropdown/dropdown'
 import Layout from '../components/layout/layout';
 export default function gamedetail(){
@@ -12,6 +13,15 @@ export default function gamedetail(){
     const handleSelectChange = (selectedOption) => {
         console.log(`Option selected:`, selectedOption);
       };
+
+      const [activeFilter, setActiveFilter] = useState('Visits');
+
+  const handleFilterClick = (filterName) => {
+    setActiveFilter
+(filterName);
+};
+    
+    
     return(
         <Layout>
               <section className='heading'>
@@ -52,6 +62,7 @@ export default function gamedetail(){
       <h1>   Game Rank</h1>
       <div className='filter'>
       <CustomSelect onChange={handleSelectChange} />
+      
       </div>
       </div>
       <div className='graph'> 
@@ -62,8 +73,22 @@ export default function gamedetail(){
       <section className='graphs'>
         <div className='headingsect'>
       <h1>   Game Analytics</h1>
+      <div className="filter-container">
+      {['Visits', 'Users', 'Revenue', 'Favorites'].map((filterName) => (
+     <button
+     key={filterName}
+    className={`filter-option ${activeFilter ===
+
+  filterName ? 'selected' : ''}`}
+  onClick={() => handleFilterClick(filterName)}
+        >
+     {filterName}
+     </button>
+     ))}
+        </div>
+
       <div className='filter'>
-      <CustomSelect onChange={handleSelectChange} />
+      <DateRange onChange={handleSelectChange} />
       </div>
       </div>
       <div className='graph'> 
