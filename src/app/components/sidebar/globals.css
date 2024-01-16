@@ -50,16 +50,17 @@
 
 .sideList li a:hover,
 .sideList li.active a {
-  background-color: #88a5de; 
-  color: #437EF7; 
+  background-color: #ccc; 
+   
 }
-.sideList li.active a {
+.sideItem.active span {
   font-weight: bold;
+  color: #437EF7;
 }
 
-.sideList li.active img {
+/* .sideItem.active img {
   filter: hue-rotate(180deg) brightness(0.5) saturate(1.5); 
-}
+} */
 
 .burger-icon {
   display: none;
