@@ -1,0 +1,69 @@
+.table-container {
+    font-family: Arial, sans-serif;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  td{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16.38px;
+  }
+  
+  /* tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+   */
+  .percentage-change {
+    color: #34C759; /* Adjust the color based on the value being positive or negative */
+    font-weight: 400;
+    font-size: 13.38px;
+}
+  
+  .game-info {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+  }
+  
+  .game-info span {
+    margin-left: 8px;
+    font-family: 'Jost',sans-serif;
+    font-weight: 500;
+    font-size: 16.38px;
+  }
+  
+  .menu-dots {
+    cursor: pointer;
+    margin-top: 30px;
+  }
+
+  .rawcontent{
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .table-container td.grey-text {
+    color: #9C9EA1;
+}
+
+
+
+  .heading{
+    color: #BCC1CA;
+    font-family: 'Jost',sans-serif;
+    font-size: 10.53px;
+    font-weight: 500;
+  }
+  /* Add more CSS for responsive layout, colors, fonts, etc., to match your design */
+  
