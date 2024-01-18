@@ -1,5 +1,5 @@
 .table-container {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
     overflow-x: auto;
   }
   
@@ -14,7 +14,7 @@
   }
   
   td{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Jost',sans-serif;
     font-weight: 500;
     font-size: 16.38px;
   }
@@ -65,5 +65,22 @@
     font-size: 10.53px;
     font-weight: 500;
   }
+
+  .tbody{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .thead{
+    display: flex;
+  }
   /* Add more CSS for responsive layout, colors, fonts, etc., to match your design */
+  .positive {
+    color: #34C759; /* Green color for positive values */
+  }
+  
+  .negative {
+    color: #FF3B30; /* Red color for negative values */
+  }
   

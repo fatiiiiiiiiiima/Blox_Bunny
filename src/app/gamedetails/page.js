@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect,useState } from 'react';
+import { useRouter } from 'next/navigation';
 import './globals.css'
 import Gamecard from '../components/gamecard/gamecard';
 import Image from 'next/image';
@@ -8,11 +9,45 @@ import RankTable from '../components/ranktable/ranktable'
 import DateRange from '../components/datarange/datarange';
 import CustomSelect from '../components/dropdown/dropdown'
 import Layout from '../components/layout/layout';
-export default function gamedetail(){
 
+export default function gamedetail(){
+  const router = useRouter();
+  const [gamesid, setgamesid] = useState([]);
+
+useEffect(() => {
+  async function fetchData(gameId) {
+      try {
+          const url = `https://us-central1-bloxbunny.cloudfunctions.net/bloxbunny/get-game-data?game_id=${encodeURIComponent(gameId)}`;
+          const response = await fetch(url);
+          if (!response.ok) throw new Error('Data could not be fetched');
+          const data = await response.json();
+          setGameData(data);
+      } catch (error) {
+          console.error("Fetching error: ", error.message);
+      }
+  }
+
+  if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const gameId = params.get('id');
+      if (gameId) {
+          setgamesid(gameId);
+          console.log("Fetching data for gameId:", gameId);
+          fetchData(gameId);
+      } else {
+          console.error("No gameId found in URL");
+      }
+  }
+}, []);
+
+    const [gameData, setGameData] = useState([]);
+    console.log('checking id',gamesid)
+    
+  
     const handleSelectChange = (selectedOption) => {
         console.log(`Option selected:`, selectedOption);
       };
+    // console.log('checking game id',gameId)
 
       const [activeFilter, setActiveFilter] = useState('Visits');
 
@@ -66,7 +101,7 @@ export default function gamedetail(){
       </div>
       </div>
       <div className='graph'> 
-      <RankTable/>
+      <RankTable  gamedata = {gameData}/>
       </div>
       </section>
 

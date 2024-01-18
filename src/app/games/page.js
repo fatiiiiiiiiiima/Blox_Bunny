@@ -1,6 +1,7 @@
 "use client"
 import Layout from '../components/layout/layout';
 import React from 'react';
+import Link from 'next/link';
 import DateRange from '../components/datarange/datarange';
 import RangeSlider from '../components/rangeslider/rangeslider'
 import Gamecard from '../components/gamecard/gamecard';
@@ -72,8 +73,7 @@ const toggleMenu = () => {
   setIsOpen(!isOpen);
   console.log('checking state', isOpen)
 };
-// Add this inside the useEffect hook to listen for window resize and hide filters on large screens
-
+ 
   return (
     <Layout>
        <div className="filter-toggle" onClick={toggleMenu}>
@@ -152,21 +152,26 @@ const toggleMenu = () => {
       </div> 
       <div>
       <section className='carddisplay'>
-  {games.data.map((game, index) => (
-    <Gamecard
-      key={index}
-      logoUrl={game.url}
-      title={game.Title}
-      dislikes={game.DisLikes}
-      rating={game.Likes} 
-      rank={game.Rank}
-      genre={game.Genre}
-      ccu={game.CCU}
-      revenue={`${game.MaxRevenue}`-`${game.MinRevenue}`}
-      favorites={game.Favorites}
-    />
-    
-  ))}
+      {games.data.map((game, index) => (
+  <Link legacyBehavior href={`/gamedetails?id=${game.Id}`} key={game.Id}>
+            <a> {/* This makes the entire Gamecard clickable and navigable */}
+            <Gamecard 
+            logoUrl={game.url}
+            title={game.Title}
+            dislikes={game.DisLikes}
+            rating={game.Likes}
+            rank={game.Rank}
+            genre={game.Genre}
+            ccu={game.CCU}
+            revenue={`${game.MaxRevenue}`-`${game.MinRevenue}`}
+            favorites={game.Favorites}
+            // Pass the ID to the Gamecard for use in onClick handler if needed
+            id={game.Id}
+            />
+            </a>
+
+  </Link>
+))}
 </section>
 </div>
 </div>
