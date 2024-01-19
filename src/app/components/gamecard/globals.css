@@ -46,18 +46,7 @@
     display: flex;
     align-items: center;
   }
-  /* .gapset1{
-    padding-left: 65px;
-  }
-  .gapset2{
-    margin-left: 55px;
-  }
-  .gapset3{
-    margin-left: 45px;
-  }
-  .gapset4{
-    margin-left: 30px;
-  } */
+ 
   .stars {
     /* Add styles for stars */
     color: #ffd700; /* Gold color */
