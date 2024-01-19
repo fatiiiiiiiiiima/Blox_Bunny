@@ -1,27 +1,82 @@
 "use client"
 import React, { useEffect,useState } from 'react';
+import { useRouter } from 'next/navigation';
 import './globals.css'
-import Gamecard from '../components/gamecard/gamecard';
+import Gamecard from '../components/gamedetailcard/gamedetailcard';
 import Image from 'next/image';
 import Analytics from '../components/analytics/analytics'
 import RankTable from '../components/ranktable/ranktable'
 import DateRange from '../components/datarange/datarange';
 import CustomSelect from '../components/dropdown/dropdown'
 import Layout from '../components/layout/layout';
-export default function gamedetail(){
 
+export default function gamedetail(){
+  const router = useRouter();
+  const [gamesid, setgamesid] = useState([]);
+  const [dateRange, setDateRange] = useState({ startDate: '', endDate: '' });
+  
+  const [gameData, setGameData] = useState([]);
+
+  const handleDateChange = (newStartDate, newEndDate) => {
+    setDateRange({ startDate: newStartDate, endDate: newEndDate });
+    // Additional logic to handle date change...
+};
+const [activeFilter, setActiveFilter] = useState('Visits');
+
+const handleFilterClick = (filterName) => {
+  setActiveFilter
+(filterName);
+};
+
+const filteredData = gameData.Data?.filter(item => {
+  const itemDate = new Date(item?.Date);
+  const start = new Date(dateRange.startDate);
+  const end = new Date(dateRange.endDate);
+  return (!dateRange.startDate || itemDate >= start) && (!dateRange.endDate || itemDate <= end);
+});
+
+console.log('Filtered Data:', filteredData);
+
+
+// In your component, filter the data before passing it to the Analytics component
+
+
+useEffect(() => {
+  async function fetchData(gameId) {
+      try {
+          const url = `https://us-central1-bloxbunny.cloudfunctions.net/bloxbunny/get-game-data?game_id=${encodeURIComponent(gameId)}`;
+          const response = await fetch(url);
+          if (!response.ok) throw new Error('Data could not be fetched');
+          const data = await response.json();
+          setGameData(data);
+          console.log('game data retrieved successsfully', gameData);
+      } catch (error) {
+          console.error("Fetching error: ", error.message);
+      }
+  }
+
+  if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const gameId = params.get('id');
+      if (gameId) {
+          setgamesid(gameId);
+          console.log("Fetching data for gameId:", gameId);
+          fetchData(gameId);
+      } else {
+          console.error("No gameId found in URL");
+      }
+  }
+}, []);
+
+    console.log('checking id',gamesid)
+    
+  
     const handleSelectChange = (selectedOption) => {
         console.log(`Option selected:`, selectedOption);
       };
+    // console.log('checking game id',gameId)
 
-      const [activeFilter, setActiveFilter] = useState('Visits');
-
-  const handleFilterClick = (filterName) => {
-    setActiveFilter
-(filterName);
-};
-    
-    
+       
     return(
         <Layout>
               <section className='heading'>
@@ -41,18 +96,18 @@ export default function gamedetail(){
       </div>
       </section>
 
-      <section>
+      <section className='gamecard'>
       <Gamecard
-   //   key={index}
-    //  logoUrl={game.url}
-    //  title={game.Title}
-    //  company={game.Genre}
-      rating='4456'
-      rank='5'
-    //  genre={game.Genre}
-      ccu='556845'
-      revenue='55558474'
-      favorites='4582'
+    //  key={index}
+      logoUrl={gameData.ImageURL}
+      title={gameData.Title}
+      rank={gameData.ranks?.last_1_days.rank}
+      genre={gameData.Genre}
+      subtitle={gameData.CreatorName}
+      ccu={gameData.ranks?.last_1_days.CCU}
+      maxrevenue={gameData.ranks?.last_1_days.MaxRevenue}
+      minrevenue={gameData.ranks?.last_1_days.MinRevenue}
+      favorites={gameData.ranks?.last_1_days.Favorites}
       // Add other props as needed
     />
       </section>
@@ -66,12 +121,12 @@ export default function gamedetail(){
       </div>
       </div>
       <div className='graph'> 
-      <RankTable/>
+      <RankTable  gamedata = {gameData}/>
       </div>
       </section>
 
       <section className='graphs'>
-        <div className='headingsect'>
+        <div className='headingfilt'>
       <h1>   Game Analytics</h1>
       <div className="filter-container">
       {['Visits', 'Users', 'Revenue', 'Favorites'].map((filterName) => (
@@ -88,11 +143,14 @@ export default function gamedetail(){
         </div>
 
       <div className='filter'>
-      <DateRange onChange={handleSelectChange} />
+      <DateRange onDateChange={handleDateChange} />
+
       </div>
       </div>
       <div className='graph'> 
-      <Analytics/>
+      <Analytics gamedata={{ ...gameData, Data: filteredData }} activeFilter={activeFilter}/>
+
+
       </div>
       </section>
         </Layout>

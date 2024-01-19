@@ -3,7 +3,7 @@ import Layout from '../components/layout/layout';
 import './globals.css'
 import Image from 'next/image';
 import StatisticCard from '../components/card/card'
-import Analytics from '../components/analytics/analytics'
+import Analytics from '../components/graphanalytics/graphanalytics'
 import GameTable from '../components/gametable/gametable'
 import CustomSelect from '../components/dropdown/dropdown'
 export default function HomePage() {

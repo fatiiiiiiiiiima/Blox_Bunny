@@ -78,6 +78,16 @@
 .headingsect h1{
     font-family: 'Jost',sans-serif;
 }
+
+.headingfilt{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.headingfilt h1{
+    font-family: 'Jost',sans-serif;
+}
 .filter{
     padding-top: 20px;
 }
@@ -85,30 +95,102 @@
 .graph{
     margin-bottom: 20px;
 }
-
 .filter-container {
+    margin-top: 15px;
+    font-family: 'Jost',sans-serif;
     display: flex;
+    /* flex-wrap: wrap; */
     border: 1px solid #c4c4c4;
     border-radius: 6px;
+    padding: 10px;
+    height: fit-content;
     overflow: hidden; /* Ensures the child buttons conform to the container's rounded corners */
   }
   
   .filter-option {
-    padding: 8px 16px;
+    padding: 6px 12px; /* Reduced padding */
     border: none;
     border-right: 1px solid #E8E8E8;
     background-color: #fff; /* Default background color */
     cursor: pointer; /* Changes cursor to pointer on hover */
-    font-size: 14px; /* Sets the font size */
+    font-size: 12px; /* Reduced font size */
     outline: none; /* Removes the outline to avoid default focus styles */
   }
   
   .filter-option:hover {
     background-color: #f2f2f2; /* Light grey background on hover for non-selected buttons */
   }
+  
   .filter-option.selected {
     background-color: #437EF7;
     color: white;
     /* Other styles for selected state */
   }
+  
+  
+  .gamecard{
+    width: 97.5%;
+  }  
+  
+  
+
+  /* Existing CSS styles... */
+
+/* Media Query for Tablet and Smaller Screens (e.g., max-width: 768px) */
+@media (max-width: 1024px) {
+    .headingdisplay h1 {
+      font-size: 24px; /* Adjust font size */
+    }
+    .heading{
+        padding-top: 50px;
+    }
+    .headicons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: flex-start;
+      }
+    .headingdisplay p, .headingdisplay span, .textcontent p, .headicons h2 {
+      font-size: 12px; /* Adjust font sizes */
+    }
+  
+    .headingsect, .headingfilt {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start; /* Align to the start */
+    }
+  
+    .filter-option {
+      padding: 4px 8px; /* Smaller padding */
+      font-size: 10px; /* Smaller font size */
+    }
+  
+    .gamecard {
+      width: 80%; /* Full width */
+    }
+    .graphs{
+        width: 90%;
+    }
+    /* Additional styles for tablet and smaller screens... */
+  }
+  
+  /* Media Query for Mobile Devices (e.g., max-width: 480px) */
+  @media (max-width: 590px) {
+    .heading {
+        padding-top: 50px;
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start; /* Align to the start */
+    }
+  
+    .filter-container {
+      flex-wrap: wrap; /* Wrap filter options */
+    }
+  
+    .graph {
+      margin: 10px 0; /* Adjust margins */
+    }
+  
+    /* Additional styles for mobile devices... */
+  }
+  
+  /* You can add more media queries for other specific screen sizes if needed */
   

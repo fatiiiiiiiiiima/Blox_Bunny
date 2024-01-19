@@ -4,6 +4,7 @@
     font-weight: 500;
     color: #293050;  
     margin-bottom: 20px;
+    
   }
   
   .inputContainer {
@@ -22,6 +23,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    cursor: pointer;
   }
   
   .dash {
