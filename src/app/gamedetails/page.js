@@ -2,7 +2,7 @@
 import React, { useEffect,useState } from 'react';
 import { useRouter } from 'next/navigation';
 import './globals.css'
-import Gamecard from '../components/gamecard/gamecard';
+import Gamecard from '../components/gamedetailcard/gamedetailcard';
 import Image from 'next/image';
 import Analytics from '../components/analytics/analytics'
 import RankTable from '../components/ranktable/ranktable'
@@ -96,18 +96,18 @@ useEffect(() => {
       </div>
       </section>
 
-      <section>
+      <section className='gamecard'>
       <Gamecard
-   //   key={index}
-    //  logoUrl={game.url}
-    //  title={game.Title}
-    //  company={game.Genre}
-      rating='4456'
-      rank='5'
-    //  genre={game.Genre}
-      ccu='556845'
-      revenue='55558474'
-      favorites='4582'
+    //  key={index}
+      logoUrl={gameData.ImageURL}
+      title={gameData.Title}
+      rank={gameData.ranks?.last_1_days.rank}
+      genre={gameData.Genre}
+      subtitle={gameData.CreatorName}
+      ccu={gameData.ranks?.last_1_days.CCU}
+      maxrevenue={gameData.ranks?.last_1_days.MaxRevenue}
+      minrevenue={gameData.ranks?.last_1_days.MinRevenue}
+      favorites={gameData.ranks?.last_1_days.Favorites}
       // Add other props as needed
     />
       </section>
@@ -126,7 +126,7 @@ useEffect(() => {
       </section>
 
       <section className='graphs'>
-        <div className='headingsect'>
+        <div className='headingfilt'>
       <h1>   Game Analytics</h1>
       <div className="filter-container">
       {['Visits', 'Users', 'Revenue', 'Favorites'].map((filterName) => (

@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -27,7 +27,24 @@ const Analytics = ({ gamedata, activeFilter }) => {
   
   const labels = gamedata.Data?.map(item => new Date(item.Date).toLocaleDateString());
   console.log('Received gamedata:', gamedata);
-  
+  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener('resize', handleResize);
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener('resize', handleResize);
+      }
+    };
+  }, []);
+
   let dataset = [];
   switch (activeFilter) {
     case 'Visits':
@@ -62,6 +79,7 @@ const Analytics = ({ gamedata, activeFilter }) => {
   };
   const options = {
     responsive: true,
+    maintainAspectRatio: true, 
     plugins: {
       legend: {
         position: 'top',
@@ -116,7 +134,7 @@ const Analytics = ({ gamedata, activeFilter }) => {
     },
   };
 
-  return <Line data={data} options={options} />;
+  return <Line key={windowWidth} data={data} options={options} />;
 };
 
 export default Analytics;
