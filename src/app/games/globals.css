@@ -139,7 +139,12 @@
     z-index: 10;
     cursor: pointer;
   }
-
+  .gamecard-link {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Optional: Ensures the link color is the same as the surrounding text */
+    /* Add other styles as needed */
+  }
+  
 
   @media (max-width: 1024px) {
 

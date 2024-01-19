@@ -1,50 +1,65 @@
 "use client"
+import React from 'react';
 import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend, Filler } from 'chart.js';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+} from 'chart.js';
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
-  BarElement,
   Title,
   Tooltip,
   Legend,
   Filler
 );
+const Analytics = ({ gamedata, activeFilter }) => {
+  
+  const labels = gamedata.Data?.map(item => new Date(item.Date).toLocaleDateString());
+  console.log('Received gamedata:', gamedata);
+  
+  let dataset = [];
+  switch (activeFilter) {
+    case 'Visits':
+      dataset = gamedata.Data?.map(item => item.Visits);
+      break;
+    case 'Revenue':
+      dataset = gamedata.Data?.map(item => item.MaxRevenue + item.MinRevenue);
+      break;
+    case 'Users':
+      dataset = gamedata.Data?.map(item => item.CCU);
+      break;
+    case 'Favorites':
+      dataset = gamedata.Data?.map(item => item.Favorites);
+      break;
+    default:
+      dataset = gamedata.Data?.map(item => item.Visits);;
+  }
 
-const AnalyticsChart = () => {
+  
   const data = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+    labels: labels,
     datasets: [
       {
-        type: 'line',
-        label: 'Dataset 1',
-        borderColor: '#347AE2',
-        borderWidth: 2,
+        label: activeFilter,
+        data: dataset,
         fill: false,
-        data: [65, 59, 80, 81, 56, 55, 40],
-      },
-      {
-        type: 'line',
-        label: 'Dataset 2',
-        borderColor: '#FF9500',
-        borderWidth: 2,
-        fill: false,
-        data: [40, 60, 55, 75, 50, 70, 30],
-      },
-      {
-        type: 'bar',
-        label: 'Dataset 3',
-        backgroundColor: '#E6EDFF',
-        data: [30, 20, 50, 40, 60, 30, 80],
-        borderColor: 'white',
-        borderWidth: 2,
+        backgroundColor: '#347AE2',
+        borderColor: '#347AE2',  // Line color
+        borderWidth: 2,  // Adjust the line width as needed
       },
     ],
   };
-
   const options = {
     responsive: true,
     plugins: {
@@ -52,76 +67,56 @@ const AnalyticsChart = () => {
         position: 'top',
       },
       tooltip: {
-        mode: 'index',
-        intersect: false,
+        usePointStyle: true,
+        backgroundColor: '#ffffff', // Setting tooltip background to white
+        titleColor: '#000',         // Setting tooltip title color to black
+        bodyColor: '#000',          // Setting tooltip body text color to black
+        borderColor: '#e0e0e0',     // Optional: Tooltip border color
+        borderWidth: 1,             // Optional: Tooltip border width
+        // Customize the tooltip further if needed
+        callbacks: {
+          label: function(context) {
+            let label = context.dataset.label || '';
+
+            if (label) {
+              label += ': ';
+            }
+            if (context.parsed.y !== null) {
+              label += new Intl.NumberFormat().format(context.parsed.y);
+            }
+            return label;
+          }
+        }
       },
-    },
-    interaction: {
-      mode: 'nearest',
-      axis: 'x',
-      intersect: false
     },
     scales: {
       x: {
         display: true,
         title: {
-          display: true
-        }
+          display: true,
+        },
+        grid: {
+          drawOnChartArea: false, // Disable vertical lines
+        },
       },
       y: {
         display: true,
         title: {
           display: true,
-          text: 'Value'
+          text: 'Value',
         },
         suggestedMin: 0,
-        suggestedMax: 100
-      }
-    }
+        suggestedMax: 100,
+      },
+    },
+    interaction: {
+      mode: 'nearest',
+      axis: 'x',
+      intersect: false,
+    },
   };
 
   return <Line data={data} options={options} />;
 };
 
-export default AnalyticsChart;
-/*
-import { useEffect, useState } from 'react';
-import { Line } from 'react-chartjs-2';
-// ... other imports remain the same
-
-const AnalyticsChart = () => {
-  const [chartData, setChartData] = useState({});
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        // Example API call
-        const response = await fetch('your-api-url');
-        const data = await response.json();
-
-        // Transform data to fit Chart.js format if necessary
-        const transformedData = {
-          labels: data.labels,
-          datasets: [
-            // ... map your datasets
-          ],
-        };
-
-        setChartData(transformedData);
-      } catch (error) {
-        console.error('Fetching data failed', error);
-      }
-    }
-
-    fetchData();
-  }, []);
-
-  const options = {
-    // ... options remain the same
-  };
-
-  return <Line data={chartData} options={options} />;
-};
-
-export default AnalyticsChart;
-*/
+export default Analytics;

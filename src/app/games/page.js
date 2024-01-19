@@ -154,7 +154,7 @@ const toggleMenu = () => {
       <section className='carddisplay'>
       {games.data.map((game, index) => (
   <Link legacyBehavior href={`/gamedetails?id=${game.Id}`} key={game.Id}>
-            <a> {/* This makes the entire Gamecard clickable and navigable */}
+            <a className="gamecard-link"> {/* This makes the entire Gamecard clickable and navigable */}
             <Gamecard 
             logoUrl={game.url}
             title={game.Title}

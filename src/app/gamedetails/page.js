@@ -13,6 +13,33 @@ import Layout from '../components/layout/layout';
 export default function gamedetail(){
   const router = useRouter();
   const [gamesid, setgamesid] = useState([]);
+  const [dateRange, setDateRange] = useState({ startDate: '', endDate: '' });
+  
+  const [gameData, setGameData] = useState([]);
+
+  const handleDateChange = (newStartDate, newEndDate) => {
+    setDateRange({ startDate: newStartDate, endDate: newEndDate });
+    // Additional logic to handle date change...
+};
+const [activeFilter, setActiveFilter] = useState('Visits');
+
+const handleFilterClick = (filterName) => {
+  setActiveFilter
+(filterName);
+};
+
+const filteredData = gameData.Data?.filter(item => {
+  const itemDate = new Date(item?.Date);
+  const start = new Date(dateRange.startDate);
+  const end = new Date(dateRange.endDate);
+  return (!dateRange.startDate || itemDate >= start) && (!dateRange.endDate || itemDate <= end);
+});
+
+console.log('Filtered Data:', filteredData);
+
+
+// In your component, filter the data before passing it to the Analytics component
+
 
 useEffect(() => {
   async function fetchData(gameId) {
@@ -22,6 +49,7 @@ useEffect(() => {
           if (!response.ok) throw new Error('Data could not be fetched');
           const data = await response.json();
           setGameData(data);
+          console.log('game data retrieved successsfully', gameData);
       } catch (error) {
           console.error("Fetching error: ", error.message);
       }
@@ -40,7 +68,6 @@ useEffect(() => {
   }
 }, []);
 
-    const [gameData, setGameData] = useState([]);
     console.log('checking id',gamesid)
     
   
@@ -49,14 +76,7 @@ useEffect(() => {
       };
     // console.log('checking game id',gameId)
 
-      const [activeFilter, setActiveFilter] = useState('Visits');
-
-  const handleFilterClick = (filterName) => {
-    setActiveFilter
-(filterName);
-};
-    
-    
+       
     return(
         <Layout>
               <section className='heading'>
@@ -123,11 +143,14 @@ useEffect(() => {
         </div>
 
       <div className='filter'>
-      <DateRange onChange={handleSelectChange} />
+      <DateRange onDateChange={handleDateChange} />
+
       </div>
       </div>
       <div className='graph'> 
-      <Analytics/>
+      <Analytics gamedata={{ ...gameData, Data: filteredData }} activeFilter={activeFilter}/>
+
+
       </div>
       </section>
         </Layout>

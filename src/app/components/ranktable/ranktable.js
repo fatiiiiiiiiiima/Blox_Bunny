@@ -34,23 +34,23 @@ function formatNumbers(x) {
   }
 }
 const formatRankData = (data) => {
-  const totalRevenue = data.MaxRevenue + data.MinRevenue;
+  const totalRevenue = data?.MaxRevenue + data?.MinRevenue;
 
   const isPositive = {
-    Visits_delta: data.Visits_delta >= 0,
-    CCU_delta: data.CCU_delta >= 0,
-    Favorites_delta: data.Favorites_delta >= 0,
+    Visits_delta: data?.Visits_delta >= 0,
+    CCU_delta: data?.CCU_delta >= 0,
+    Favorites_delta: data?.Favorites_delta >= 0,
   };
 
   return {
-    CCU: formatNumbers(data.CCU),
-    Favorites: formatNumbers(data.Favorites),
+    CCU: formatNumbers(data?.CCU),
+    Favorites: formatNumbers(data?.Favorites),
     Revenue: formatNumbers(totalRevenue),
-    rank: data.rank,
-    Visits: formatNumbers(data.Visits),
-    Visits_delta: data.Visits_delta.toFixed(1),
-    CCU_delta: data.CCU_delta.toFixed(1),
-    Favorites_delta: data.Favorites_delta.toFixed(1),
+    rank: data?.rank,
+    Visits: formatNumbers(data?.Visits),
+    Visits_delta: data?.Visits_delta.toFixed(1),
+    CCU_delta: data?.CCU_delta.toFixed(1),
+    Favorites_delta: data?.Favorites_delta.toFixed(1),
     isPositive,
   };
 };
