@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from './firebase'; // Adjust the path as per your project structure
+import { auth, provider } from './firebase'; // Adjust the path as per your project structure
 
 // Sign Up Function
 export const signUp = async (email, password) => {
@@ -20,3 +20,12 @@ export const signIn = async (email, password) => {
     throw error;
   }
 };
+
+// export const signInWithGoogle = async () => {
+//     try {
+//       const result = await signInWithPopup(auth, provider);
+//       return result.user;
+//     } catch (error) {
+//       throw error;
+//     }
+//   };
