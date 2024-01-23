@@ -4,19 +4,34 @@ import Navbar from '../components/navbar/navbar'
 import Image from 'next/image';
 import FAQItem from '../components/faq/faq';
 import FOOTER from '../components/bloxfooter/bloxfooter';
-import { signUp } from '../utils/authservice';
+import { signUp } from '../utils/firebase';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation'
 import './globals.css'
-
+import { signInWithGoogle } from '../utils/firebase';
 export default function Accpage(){
 
     const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const user = await signInWithGoogle();
+      console.log('User signed in with Google:', user);
+      router.push('/');
+    } catch (error) {
+      setError(error.message);
+      console.error('Google sign-in failed:', error.message);
+    }
+  };
+
   const handleSignUp = async (event) => {
     event.preventDefault(); // Prevent default form submission
     try {
       const user = await signUp(email, password);
       console.log('User created:', user);
+      router.push('/');
       // Redirect or perform additional tasks
     } catch (error) {
       console.error('Sign up failed:', error.message);
@@ -60,7 +75,7 @@ export default function Accpage(){
                     <input type="password" id="rpass" name="rpass" placeholder="Repeat password" required />
                     <button type='submit'>Create Account</button>
                 <div className='googlesign'>
-                <button >
+                <button onClick={handleGoogleSignIn}>
                     <Image src='/googleicon.png' alt='Google Icon' className='google-icon' width={48} height={48}></Image>
                     Sign in with Google
                     </button>

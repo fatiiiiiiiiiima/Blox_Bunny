@@ -4,7 +4,7 @@ import Navbar from '../components/navbar/navbar'
 import Image from 'next/image';
 import FAQItem from '../components/faq/faq';
 import FOOTER from '../components/bloxfooter/bloxfooter';
-import { signIn } from '../utils/authservice';
+import { signIn } from '../utils/firebase';
 import './globals.css'
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
