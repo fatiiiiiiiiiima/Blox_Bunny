@@ -14,7 +14,7 @@ export default function HomePage() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [checkedGenres, setCheckedGenres] = useState({});
 
-  const genres = ['FPS', 'Adventure', 'Action', 'Sports', 'Mystery']; // Add more genres as needed
+  const genres = ['All Genres', 'Comedy', 'Sports', 'Town and City', 'RPG', 'Fighting', 'FPS', 'Adventure', 'Military', 'Horror', 'Building', 'Sci-Fi', 'Western', 'Naval']; 
 
   const handleSliderChange = (values) => {
     console.log('Slider values:', values);
