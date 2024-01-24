@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { useEffect } from 'react';
 import './globals.css';
-import { isYesterday, isThisWeek, isThisMonth, startOfYear, isBefore, endOfDay } from 'date-fns';
 
 
 const GamesAnalyticsTable = ({gamedata}) => {
