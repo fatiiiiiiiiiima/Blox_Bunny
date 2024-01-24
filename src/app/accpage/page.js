@@ -1,29 +1,86 @@
+"use client"
 import React from 'react';
 import Navbar from '../components/navbar/navbar'
 import Image from 'next/image';
 import FAQItem from '../components/faq/faq';
 import FOOTER from '../components/bloxfooter/bloxfooter';
+import { signUp } from '../utils/firebase';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation'
 import './globals.css'
-
+import { signInWithGoogle } from '../utils/firebase';
 export default function Accpage(){
+
+    const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const router = useRouter();
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const user = await signInWithGoogle();
+      console.log('User signed in with Google:', user);
+      router.push('/');
+    } catch (error) {
+      setError(error.message);
+      console.error('Google sign-in failed:', error.message);
+    }
+  };
+
+  const handleSignUp = async (event) => {
+    event.preventDefault(); // Prevent default form submission
+    try {
+      const user = await signUp(email, password);
+      console.log('User created:', user);
+      router.push('/');
+      // Redirect or perform additional tasks
+    } catch (error) {
+      console.error('Sign up failed:', error.message);
+    }
+  };
+
+      const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+    };
+
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
+    };
+
     return(
         <div>
             <Navbar/>
             <section className='mainbody'>
                 <h1>Create a free account</h1>
 
-                <div className="accform">
-                <input type="email" id="email" name="email" placeholder="Email" required />
-                <input type="text" id="pass" name="pass" placeholder="Password" required />
-                <input type="text" id="rpass" name="rpass" placeholder="Repeat password" required />
-                <button type='submit'>Create Account</button>
+                {/* <div className="accform"> */}
+                <form className="accform" onSubmit={handleSignUp}>
+    <input 
+      type="email" 
+      id="accemail" 
+      name="accemail" 
+      placeholder="Email" 
+      required 
+      value={email} 
+      onChange={handleEmailChange} 
+    />
+    <input 
+      type="password" 
+      id="pass" 
+      name="pass" 
+      placeholder="Password" 
+      required 
+      value={password} 
+      onChange={handlePasswordChange} 
+    />
+                    <input type="password" id="rpass" name="rpass" placeholder="Repeat password" required />
+                    <button type='submit'>Create Account</button>
                 <div className='googlesign'>
-                <button >
+                <button onClick={handleGoogleSignIn}>
                     <Image src='/googleicon.png' alt='Google Icon' className='google-icon' width={48} height={48}></Image>
                     Sign in with Google
                     </button>
                     </div>
-            </div>
+            </form>
             </section>
 
             <section className='access'>
