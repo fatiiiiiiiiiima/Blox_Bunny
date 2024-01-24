@@ -26,9 +26,9 @@ const BloxFooter = () => {
           <span>About</span>
           <p>We are passionate about empowering developers reach success.</p>
           <div className='linkicons'>
-          <Image src="/icon1.png" alt="Icon 1" width={40} height={40}/>
-          <Image src="/icon2.png" alt="Icon 2" width={40} height={40}/>
-          <Image src="/icon3.png" alt="Icon 3" width={40} height={40}/>
+          <Image src="/icon1.png" alt="Icon 1" width={40} height={40} loading="lazy"/>
+          <Image src="/icon2.png" alt="Icon 2" width={40} height={40} loading="lazy"/>
+          <Image src="/icon3.png" alt="Icon 3" width={40} height={40} loading="lazy"/>
           </div>
         </div>
       </div>

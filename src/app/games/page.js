@@ -1,6 +1,7 @@
 "use client"
 import Layout from '../components/layout/layout';
 import React from 'react';
+import LazyLoad from 'react-lazyload';
 import Link from 'next/link';
 import DateRange from '../components/datarange/datarange';
 import RangeSlider from '../components/rangeslider/rangeslider'
@@ -188,6 +189,7 @@ const toggleMenu = () => {
       {games.data.map((game, index) => (
   <Link legacyBehavior href={`/gamedetails?id=${game.Id}`} key={game.Id}>
             <a className="gamecard-link"> {/* This makes the entire Gamecard clickable and navigable */}
+            <LazyLoad height={200} offset={100} once>
             <Gamecard 
             logoUrl={game.url}
             title={game.Title}
@@ -201,6 +203,7 @@ const toggleMenu = () => {
             // Pass the ID to the Gamecard for use in onClick handler if needed
             id={game.Id}
             />
+          </LazyLoad>
             </a>
 
   </Link>

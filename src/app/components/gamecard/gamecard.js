@@ -12,7 +12,7 @@ const GameCard = ({rating,rank,ccu,revenue,favorites,logoUrl,title,genre,dislike
     <div className="card">
         <div className='headingsect'>
       <div className="cardlogo">
-        <Image src={logoUrl} alt="Game Logo" width={50} height={50} />
+        <Image src={logoUrl} alt="Game Logo" width={50} height={50} loading="lazy" />
       </div>
       <div className='textcontent'>
         <h2 className="title">{title}</h2>
