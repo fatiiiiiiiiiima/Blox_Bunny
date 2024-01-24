@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import './globals.css';
 
 
+
 const GamesAnalyticsTable = ({gamedata}) => {
 console.log(gamedata);
   useEffect(() => {

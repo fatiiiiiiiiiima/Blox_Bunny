@@ -12,6 +12,7 @@ import Layout from '../components/layout/layout';
 
 export default function gamedetail(){
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
   const [gamesid, setgamesid] = useState([]);
   const [dateRange, setDateRange] = useState({ startDate: '', endDate: '' });
   
@@ -52,6 +53,8 @@ useEffect(() => {
           console.log('game data retrieved successsfully', gameData);
       } catch (error) {
           console.error("Fetching error: ", error.message);
+      } finally {
+        setLoading(false);
       }
   }
 
@@ -75,7 +78,8 @@ useEffect(() => {
         console.log(`Option selected:`, selectedOption);
       };
     // console.log('checking game id',gameId)
-
+    if (loading) return <p>Loading...</p>;
+    
        
     return(
         <Layout>
