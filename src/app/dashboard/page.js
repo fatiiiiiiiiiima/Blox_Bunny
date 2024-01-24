@@ -3,8 +3,9 @@ import Layout from '../components/layout/layout';
 import './globals.css'
 import Image from 'next/image';
 import StatisticCard from '../components/card/card'
-import Analytics from '../components/graphanalytics/graphanalytics'
-import GameTable from '../components/gametable/gametable'
+import React, { Suspense } from 'react';
+const LazyAnalytics = React.lazy(() => import('../components/graphanalytics/graphanalytics'));
+const LazyGameTable = React.lazy(() => import('../components/gametable/gametable'));
 import CustomSelect from '../components/dropdown/dropdown'
 export default function HomePage() {
   
@@ -20,11 +21,11 @@ export default function HomePage() {
       <p>Here is the information about all Roblox Games</p>
       </div>
       <div className='headicons'>
-      <Image src="/search.png" alt="Search" width={20} height={20} />
-      <Image src="/bell.png" alt="Bell" width={20} height={20} />
-      <Image src="/profile.png" alt="profile" width={20} height={20} />
+      <Image src="/search.png" alt="Search" width={20} height={20} loading="lazy" />
+      <Image src="/bell.png" alt="Bell" width={20} height={20} loading="lazy" />
+      <Image src="/profile.png" alt="profile" width={20} height={20} loading="lazy"/>
       <h2>Marci Fumons</h2>
-      <Image src="/downarrow.png" alt="profile" width={10} height={8} />
+      <Image src="/downarrow.png" alt="profile" width={10} height={8} loading="lazy"/>
       </div>
       </section>
       <section className='cardcontainer'>
@@ -68,7 +69,10 @@ export default function HomePage() {
       </div>
       </div>
       <div className='graph'> 
-      <Analytics/>
+      <Suspense fallback={<div>Loading...</div>}>
+  <LazyAnalytics />
+  
+</Suspense>
       </div>
       </section>
 
@@ -79,7 +83,10 @@ export default function HomePage() {
       <CustomSelect onChange={handleSelectChange} />
       </div>
       </div>
-        <GameTable/>
+      <Suspense fallback={<div>Loading...</div>}>
+  
+  <LazyGameTable />
+</Suspense>
        
       </section>
     </Layout>

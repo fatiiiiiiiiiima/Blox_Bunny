@@ -66,7 +66,7 @@ export default function signin(){
             <div className='googlesign'>
                         <button onClick={handleGoogleSignIn}>
                             <span className='google-icon'>
-                                <Image src='/googleicon.png' alt='Google Icon' width={35} height={35} />
+                                <Image src='/googleicon.png' alt='Google Icon' width={35} height={35} loading="lazy" />
                             </span>
                             Sign in with Google
                         </button>

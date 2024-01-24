@@ -10,13 +10,13 @@ const StatisticCard = ({ iconPath, mainText, label,trendText,cornerIconPath }) =
       <div className='mainText'>{mainText}</div>
       <div className='label'>{label}</div>
       <div className='trend'>
-        <Image src={`/${iconPath}.png`} alt={label} width={10} height={10} />
+        <Image src={`/${iconPath}.png`} alt={label} width={10} height={10} loading="lazy"/>
         <span>{trendText}</span>
       </div>
       </div>
       <div className='rightsection'>
       <div className='cornerIcon'>
-          <Image src={`/${cornerIconPath}.png`} alt="Corner Icon" width={14} height={14} />
+          <Image src={`/${cornerIconPath}.png`} alt="Corner Icon" width={14} height={14} loading="lazy"/>
         </div>
       </div>
     </div>
