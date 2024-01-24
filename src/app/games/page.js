@@ -11,7 +11,7 @@ import './globals.css'
 import { useState,useEffect } from 'react';
 
 export default function HomePage() {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   const [checkedGenres, setCheckedGenres] = useState({});
 
   const genres = ['All Genres', 'Comedy', 'Sports', 'Town and City', 'RPG', 'Fighting', 'FPS', 'Adventure', 'Military', 'Horror', 'Building', 'Sci-Fi', 'Western', 'Naval']; 
@@ -127,24 +127,6 @@ const toggleMenu = () => {
         </div>
       )}
     </div>
-        </div>
-
-        <div className='revenue'>
-          <h1>Revenue</h1>
-        <RangeSlider
-         MIN={50}
-         MAX={500}
-         STEP={1}
-      />
-        </div>
-
-        <div className='ccu'>
-          <h1>CCUs</h1>
-        <CCUSlider
-         MIN={50}
-         MAX={500}
-         STEP={1}
-      />
         </div>
         
       </section>
