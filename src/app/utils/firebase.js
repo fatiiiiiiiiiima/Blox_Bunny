@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, createUserWithEmailAndPassword,signInWithEmailAndPassword,signInWithPopup } from 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider, createUserWithEmailAndPassword,signInWithEmailAndPassword,signInWithPopup, onAuthStateChanged} from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDmPWsElXjydkvwJmvlb6EEGNfyPXKJNOs",
@@ -14,7 +14,15 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-
+export {
+  auth,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  getAuth,
+  onAuthStateChanged
+};
 export const signUp = async (email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);

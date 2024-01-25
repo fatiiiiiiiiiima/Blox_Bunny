@@ -6,7 +6,8 @@ import StatisticCard from '../components/card/card'
 import Analytics from '../components/graphanalytics/graphanalytics'
 import GameTable from '../components/gametable/gametable'
 import CustomSelect from '../components/dropdown/dropdown'
-export default function HomePage() {
+import withAuth from '../utils/withAuth';
+const Dashboard = () =>{
   
   const handleSelectChange = (selectedOption) => {
     console.log(`Option selected:`, selectedOption);
@@ -85,3 +86,4 @@ export default function HomePage() {
     </Layout>
   );
 }
+export default withAuth(Dashboard);
