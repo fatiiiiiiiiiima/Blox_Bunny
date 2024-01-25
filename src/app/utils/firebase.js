@@ -3,15 +3,15 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, createUserWithEmailAndPassword,signInWithEmailAndPassword,signInWithPopup } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAQMEZiDZEsUefwa2tecvxRW6Yo0Rm9Wmg",
-  authDomain: "bloxbunny-4c1e7.firebaseapp.com",
-  projectId: "bloxbunny-4c1e7",
-  storageBucket: "bloxbunny-4c1e7.appspot.com",
-  messagingSenderId: "236581985115",
-  appId: "1:236581985115:web:0346f6c572d41bce16187e",
-  measurementId: "G-929TNT7SCX"
+  apiKey: "AIzaSyDmPWsElXjydkvwJmvlb6EEGNfyPXKJNOs",
+  authDomain: "bloxbunny.firebaseapp.com",
+  databaseURL: "https://bloxbunny-default-rtdb.firebaseio.com",
+  projectId: "bloxbunny",
+  storageBucket: "bloxbunny.appspot.com",
+  messagingSenderId: "634741711378",
+  appId: "1:634741711378:web:9c16600b8d9b95da0beecb",
+  measurementId: "G-ECQRFJQYD3"
 };
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
