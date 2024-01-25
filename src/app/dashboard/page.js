@@ -7,7 +7,8 @@ import React, { Suspense } from 'react';
 const LazyAnalytics = React.lazy(() => import('../components/graphanalytics/graphanalytics'));
 const LazyGameTable = React.lazy(() => import('../components/gametable/gametable'));
 import CustomSelect from '../components/dropdown/dropdown'
-export default function HomePage() {
+import withAuth from '../utils/withAuth';
+const Dashboard = () =>{
   
   const handleSelectChange = (selectedOption) => {
     console.log(`Option selected:`, selectedOption);
@@ -92,3 +93,4 @@ export default function HomePage() {
     </Layout>
   );
 }
+export default withAuth(Dashboard);
