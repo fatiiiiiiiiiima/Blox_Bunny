@@ -1,10 +1,11 @@
 "use client"
-import React from 'react';
+import React, {Suspense} from 'react';
 import Navbar from '../components/navbar/navbar'
 import Image from 'next/image';
 import FOOTER from '../components/bloxfooter/bloxfooter';
 import LineChart from '../components/linechart/linechart';
 import './globals.css'
+const LazyLineChart = React.lazy(() => import('../components/linechart/linechart'));
 
 export default function Reviewpage(){
 
@@ -21,7 +22,7 @@ export default function Reviewpage(){
                 <section className='blogs'>
                 <div className='blogs-grid'>
                 <div className='blogscol'>
-                  <Image src='/review1.png' alt='blog1' width={348} height={300}></Image>
+                  <Image src='/review1.png' alt='blog1' width={348} height={300} loading="lazy"></Image>
                   <h1>Roblox usage</h1>
                   <h3>Get an overview iver how &quot;Visits&quot; develop on the platform</h3>
                   <p>How ebgaging is the platform? Are the post-Covid user platforms here to stay? Take a look at our calculated metric-</p>
@@ -31,7 +32,7 @@ export default function Reviewpage(){
                   </div>
                 </div>
                 <div className='blogscol'>
-                  <Image src='/review2.png' alt='blog1' width={348} height={300}></Image>
+                  <Image src='/review2.png' alt='blog1' width={348} height={300} loading="lazy"></Image>
                   <h1>Stock Prize</h1>
                   <h3>Correlate stock price with our data</h3>
                   <p>Bloxbunny is the go to place for all Roblox investors. On our platform, you will be able to see if there are any correlations between usage and the stock price.</p>
@@ -40,7 +41,7 @@ export default function Reviewpage(){
                   </div>
                 </div>
                 <div className='blogscol'>
-                  <Image src='/review3.png' alt='blog1' width={348} height={300}></Image>
+                  <Image src='/review3.png' alt='blog1' width={348} height={300} loading="lazy"></Image>
                   <h1>Daily revenue</h1>
                   <h3>Using our properietary algorithm, we can estimate platform revenue</h3>
                   <p>The estimated daily revenue is not 100% accurate but using our algorithm, we have created a way to scientifically approximate daily revenue.</p>
@@ -58,13 +59,17 @@ export default function Reviewpage(){
             <section className='users'>
               <h1>CONCURRENT USERS</h1>
             
-              <LineChart data={chartData} />
+              <Suspense fallback={<div>Loading Chart...</div>}>
+  <LazyLineChart data={chartData} />
+</Suspense>
            
               <h1>
                 NEW FAVORITES
               </h1>
              
-              <LineChart data={chartData} />
+              <Suspense fallback={<div>Loading Chart...</div>}>
+  <LazyLineChart data={chartData} />
+</Suspense>
            </section> 
             <section>
             

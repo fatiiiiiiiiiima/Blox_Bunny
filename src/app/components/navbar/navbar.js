@@ -7,24 +7,7 @@ import './globals.css'
 const Navbar = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = React.useState(false);
-  const navigatetoblog = () => {
-    router.push('/blogpage')
-  }
-  const navigatetoreview = () => {
-    router.push('/reviewpage')
-  }
-  const navigatetopricing = () => {
-    router.push('/accpage#payplan')
-  }
-  const navigatetocontact = () => {
-    router.push('/accpage#contact us')
-  }
-  const navigatetosignup = () => {
-    router.push('/accpage')
-  }
-  const navigatetosign = () => {
-    router.push('/signin')
-  }
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
 };
@@ -33,7 +16,7 @@ const Navbar = () => {
       <div className="logo">
         <Link legacyBehavior href="/">
           <a>
-        <Image src="/navbarlogo.png" alt="BloxBunny Logo" width={169.34} height={60.8} />
+        <Image src="/navbarlogo.png" alt="BloxBunny Logo" width={169.34} height={60.8} loading="lazy" />
         </a>
         </Link>
       </div>
@@ -52,13 +35,13 @@ const Navbar = () => {
           <li><Link legacyBehavior href="/accpage#contact us"><a>CONTACT US</a></Link></li>
           
         
-        <Image src='/twittericon.png' alt="Twitter Logo" width={28} height={28} />
+        <Image src='/twittericon.png' alt="Twitter Logo" width={28} height={28} loading="lazy" />
         <div className='ButtonContainer'>
           <Link legacyBehavior href="/signin">
           <a><button className='login'>LOGIN</button></a>
           </Link>
           <Link legacyBehavior href="/accpage">
-          <a><button className='getstarted' onClick={navigatetosignup}>GET STARTED</button></a>
+          <a><button className='getstarted' >GET STARTED</button></a>
           </Link>
         </div>
         </ul>

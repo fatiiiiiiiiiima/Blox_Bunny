@@ -6,16 +6,7 @@ import './globals.css'
 
 export default function Home(){
 
-    const features = [
-        './detcomptrack.png',
-        './gamerevest.png',
-        './sportopp.png'
-    ];
-    const payplan = [
-        './free.png',
-        './indie.png',
-        './pro.png'
-    ];
+    
     return(
         <div>
             <section className='mainimage'>
@@ -31,17 +22,17 @@ export default function Home(){
                 <h1>Features</h1>
                 <div className="feature-grid">
                     <div className='feature-column'>
-                        <Image src='./feature2.png' alt='feature' width={348} height={195.91}></Image>
+                        <Image src='./feature2.png' alt='feature' width={348} height={195.91} loading="lazy"></Image>
                         <h1>DETAILED COMPETITOR TRACKING</h1>
                         <p>See how many players and how much money your competitors make</p>
                     </div>
                     <div className='feature-column'>
-                        <Image src='./feature2.png' alt='feature' width={348} height={195.91}></Image>
+                        <Image src='./feature2.png' alt='feature' width={348} height={195.91} loading="lazy"></Image>
                         <h1>GAMES REVENUE ESTIMATES</h1>
                         <p>Did you ever wonder how much Roblox developers earn?</p>
                     </div>
                     <div className='feature-column'>
-                        <Image src='./feature3.png' alt='feature3' width={348} height={195.91}></Image>
+                        <Image src='./feature3.png' alt='feature3' width={348} height={195.91} loading="lazy"></Image>
                         <h1>SPOT OPPORTUNITIES IN THE MARKET</h1>
                         <p>Analyze the market before starting to work on your next project</p>
                     </div>

@@ -1,11 +1,11 @@
 "use client"
-import React, { useEffect,useState } from 'react';
+import React, { useEffect,useState, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
 import './globals.css'
 import Gamecard from '../components/gamedetailcard/gamedetailcard';
 import Image from 'next/image';
-import Analytics from '../components/analytics/analytics'
-import RankTable from '../components/ranktable/ranktable'
+const LazyAnalytics = React.lazy(() => import('../components/analytics/analytics'));
+const LazyRankTable = React.lazy(() => import('../components/ranktable/ranktable'));
 import DateRange from '../components/datarange/datarange';
 import CustomSelect from '../components/dropdown/dropdown'
 import Layout from '../components/layout/layout';
@@ -92,11 +92,11 @@ useEffect(() => {
         <p>List of all the games</p>
         </div>
         <div className='headicons'>
-      <Image src="/search.png" alt="Search" width={20} height={20} />
-      <Image src="/bell.png" alt="Bell" width={20} height={20} />
-      <Image src="/profile.png" alt="profile" width={20} height={20} />
+      <Image src="/search.png" alt="Search" width={20} height={20} loading="lazy" />
+      <Image src="/bell.png" alt="Bell" width={20} height={20} loading="lazy"/>
+      <Image src="/profile.png" alt="profile" width={20} height={20} loading="lazy"/>
       <h2>Marci Fumons</h2>
-      <Image src="/downarrow.png" alt="profile" width={10} height={8} />
+      <Image src="/downarrow.png" alt="profile" width={10} height={8} loading="lazy"/>
       </div>
       </section>
 
@@ -125,7 +125,11 @@ useEffect(() => {
       </div>
       </div>
       <div className='graph'> 
-      <RankTable  gamedata = {gameData}/>
+      <Suspense fallback={<div>Loading...</div>}>
+
+  <LazyRankTable gamedata={gameData} />
+</Suspense>
+      
       </div>
       </section>
 
@@ -152,8 +156,11 @@ useEffect(() => {
       </div>
       </div>
       <div className='graph'> 
-      <Analytics gamedata={{ ...gameData, Data: filteredData }} activeFilter={activeFilter}/>
+      {/* <Analytics gamedata={{ ...gameData, Data: filteredData }} activeFilter={activeFilter}/> */}
+      <Suspense fallback={<div>Loading...</div>}>
+  <LazyAnalytics gamedata={{...gameData,Data:filteredData}} activeFilter={activeFilter} />
 
+</Suspense>
 
       </div>
       </section>

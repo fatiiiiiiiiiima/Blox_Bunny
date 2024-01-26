@@ -2,11 +2,10 @@
 import React from 'react';
 import Navbar from '../components/navbar/navbar'
 import Image from 'next/image';
-import FAQItem from '../components/faq/faq';
 import FOOTER from '../components/bloxfooter/bloxfooter';
 import { signIn } from '../utils/firebase';
 import './globals.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation'
 import { signInWithGoogle } from '../utils/firebase';
 export default function signin(){
@@ -14,7 +13,18 @@ export default function signin(){
   const [password, setPassword] = useState('');
   const router = useRouter();
   const [error, setError] = useState('');
+  const [popupMessage, setPopupMessage] = useState('');
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const message = params.get('message');
+    if (message) {
+      setPopupMessage(message);
+      setTimeout(() => {
+        setPopupMessage('');
+      }, 1000); // Change the duration as needed (in milliseconds)
+    }
+  }, []);
   const handleGoogleSignIn = async () => {
     try {
       const user = await signInWithGoogle();
@@ -39,8 +49,10 @@ export default function signin(){
 
     return(
         <div>
+            
             <Navbar/>
             <section className='mainbody'>
+            {popupMessage && <div className="popup">{popupMessage}</div>}
                 <h1>Login</h1>
                 <form className='accform' onSubmit={handleSignIn}>
       <input 
@@ -66,7 +78,7 @@ export default function signin(){
             <div className='googlesign'>
                         <button onClick={handleGoogleSignIn}>
                             <span className='google-icon'>
-                                <Image src='/googleicon.png' alt='Google Icon' width={35} height={35} />
+                                <Image src='/googleicon.png' alt='Google Icon' width={35} height={35} loading="lazy" />
                             </span>
                             Sign in with Google
                         </button>
