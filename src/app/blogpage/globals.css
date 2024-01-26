@@ -79,97 +79,13 @@
     padding-left: 20px;
 }
 
-.designbutton1{
+.designbutton{
     padding-left: 20px;
     margin-bottom: 15px;
     margin-top: 127px;
 
 }
-.designbutton2{
-    padding-left: 20px;
-    margin-bottom: 15px;
-}
-.designbutton3{
-    padding-left: 20px; 
-    margin-bottom: 15px;
-    margin-top: 75px;
-}
-.designbutton4{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    margin-top: 90px;
-  
-}
-.designbutton5{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    margin-top: 147px;
-}
-.designbutton6{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    /* margin-top: 127px; */
-}
-.designbutton7{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    /* margin-top: 127px; */
-}
-.designbutton8{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    margin-top: 167px;
-}
-.designbutton9{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    margin-top: 90px;
-}
-.designbutton10{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    margin-top: 43px;
-}
-.designbutton11{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    /* margin-top: 127px; */
-}
-.designbutton12{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    margin-top: 125px;
-}
-.designbutton13{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    margin-top: 18px;
-}
-.designbutton14{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    margin-top: 69px;
-}
-.designbutton15{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    /* margin-top: 127px; */
-}
-.designbutton16{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    margin-top: 75px;
-}
-.designbutton17{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    /* margin-top: 127px; */
-}
-.designbutton18{
-    padding-left: 20px;
-    margin-bottom: 15px;
-    margin-top: 50px;
-}
+
 .blogscol button{
     background-color: #6592E6;
     color: white;
@@ -193,15 +109,7 @@
     .blogscol {
         width: auto; 
     }
-    .designbutton4{
-        margin-top: 125px;
-    }
-    .designbutton10{
-        margin-top: 145px;
-    }
-    .designbutton15{
-        margin-top: 47px;
-    }
+  
 }
 
 @media screen and (max-width:590px) {
@@ -257,11 +165,7 @@
         margin-top: 5px;
     }
 
-    .designbutton1,.designbutton2,.designbutton3,.designbutton4,.designbutton5,.designbutton6,.designbutton7,.designbutton8,.designbutton9,.designbutton10,.designbutton11,.designbutton12,.designbutton13,.designbutton14,.designbutton15,.designbutton16,.designbutton17,.designbutton18{
-        margin-top: 10px;
-        padding-left: 20px;
-        margin-bottom: 15px;
-    }
+   
    
 }
 
