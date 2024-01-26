@@ -21,7 +21,7 @@ export {
   signInWithEmailAndPassword,
   signInWithPopup,
   getAuth,
-  onAuthStateChanged
+  onAuthStateChanged,
 };
 export const signUp = async (email, password) => {
   try {
