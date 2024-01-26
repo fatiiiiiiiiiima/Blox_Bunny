@@ -83,6 +83,7 @@
    .logo{
     margin-left: 50px;
     margin-top: 10px;
+    cursor: pointer;
    }
 
    .burger-menu {
