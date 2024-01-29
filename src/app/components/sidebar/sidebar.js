@@ -8,11 +8,7 @@ import './globals.css'; // assuming you are using CSS modules
 const Sidebar = () => {
     const router = useRouter();
     const [activePath, setActivePath] = useState('/dashboard');
-    // const isActive = (path) => {
-    //     console.log("Current path:", router.pathname, "Checking for:", path);
-    //     return router.pathname === path;
-    // };
-   // const [activePath, setActivePath] = useState(router.pathname);
+   
     const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State to control sidebar visibility
     const handleactivepage = (activepage) => {
         setActivePath(activepage);

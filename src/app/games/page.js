@@ -9,6 +9,8 @@ import Gamecard from '../components/gamecard/gamecard';
 import Image from 'next/image';
 import CCUSlider from '../components/ccuslider/ccuslider';
 import './globals.css'
+import Lottie from 'react-lottie';
+import animationData from '../../../public/animation/loadinganimation.json'
 import { useState,useEffect } from 'react';
 const debounce = (func, delay) => {
   let timeout;
@@ -35,7 +37,14 @@ export default function HomePage() {
     setDateRange({ startDate: newStartDate, endDate: newEndDate });
   };
 
-
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
 
 // Function to filter games by date range
 const filterByDate = (game) => {
@@ -113,7 +122,9 @@ useEffect(() => {
 }, [dateRange, checkedGenres]);
 
 
-  if (loading) return <p>Loading...</p>;
+if (loading) return <div className="loading-container">
+<Lottie options={defaultOptions} height={400} width={400} />
+</div>
   if (error) return <p>Error: {error}</p>;
 
   console.log('checking data',games);

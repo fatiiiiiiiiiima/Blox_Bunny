@@ -145,7 +145,13 @@
     /* Add other styles as needed */
   }
   
-
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+  
   @media (max-width: 1024px) {
 
     .heading{

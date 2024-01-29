@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import './globals.css'
 import Gamecard from '../components/gamedetailcard/gamedetailcard';
 import Image from 'next/image';
+import Lottie from 'react-lottie';
+import animationData from '../../../public/animation/loadinganimation.json'
 const LazyAnalytics = React.lazy(() => import('../components/analytics/analytics'));
 const LazyRankTable = React.lazy(() => import('../components/ranktable/ranktable'));
 import DateRange from '../components/datarange/datarange';
@@ -28,7 +30,14 @@ const handleFilterClick = (filterName) => {
   setActiveFilter
 (filterName);
 };
-
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice'
+  }
+};
 const filteredData = gameData.Data?.filter(item => {
   const itemDate = new Date(item?.Date);
   const start = new Date(dateRange.startDate);
@@ -78,7 +87,9 @@ useEffect(() => {
         console.log(`Option selected:`, selectedOption);
       };
     // console.log('checking game id',gameId)
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <div className="loading-container">
+    <Lottie options={defaultOptions} height={400} width={400} />
+    </div>
     
        
     return(

@@ -4,18 +4,44 @@ import './globals.css'
 import Image from 'next/image';
 import StatisticCard from '../components/card/card'
 import React, { Suspense } from 'react';
+import Lottie from 'react-lottie';
+import loadingAnimation from '../../../public/animation/loadinganimation.json'; 
 const LazyAnalytics = React.lazy(() => import('../components/graphanalytics/graphanalytics'));
 const LazyGameTable = React.lazy(() => import('../components/gametable/gametable'));
 import CustomSelect from '../components/dropdown/dropdown'
 import withAuth from '../utils/withAuth';
+import { useState,useEffect } from 'react';
 const Dashboard = () =>{
   
   const handleSelectChange = (selectedOption) => {
     console.log(`Option selected:`, selectedOption);
   };
-  
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a loading process, for example, fetching data
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // Adjust the delay as needed
+
+    return () => clearTimeout(timer);
+  }, []);
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: loadingAnimation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
   return (
     <Layout>
+        {isLoading ? (
+        <div className="lottie-container">
+          <Lottie options={defaultOptions} height={400} width={400} />
+        </div>
+      ) : (
+        <div>
       <section className='heading'>
         <div className='textcontent'>
       <h1>Dashboard</h1>
@@ -70,10 +96,9 @@ const Dashboard = () =>{
       </div>
       </div>
       <div className='graph'> 
-      <Suspense fallback={<div>Loading...</div>}>
-  <LazyAnalytics />
-  
-</Suspense>
+      <Suspense fallback={<div className="lottie-container"><Lottie options={defaultOptions} height={400} width={400} /></div>}>
+            <LazyAnalytics />
+          </Suspense>
       </div>
       </section>
 
@@ -90,6 +115,8 @@ const Dashboard = () =>{
 </Suspense>
        
       </section>
+      </div>
+      )}
     </Layout>
   );
 }
