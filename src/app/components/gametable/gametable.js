@@ -26,11 +26,11 @@ const GamesAnalyticsTable = () => {
                 <span>Dead Cells</span>
               </div>
             </td>
-            <td><p className='heading'>DAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
-            <td ><p className='heading'>NEW PLAYERS</p>16,680 <span className="percentage-change">+3.5%</span></td>
-            <td><p className='heading'>ARPDAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
-            <td ><p className='heading'>AVG. PRICE</p>22.30$</td>
-            <td><p className='heading'>STORES</p>8</td>
+            <td className='content'><p >DAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td className='content'><p >NEW PLAYERS</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td className='content'><p >ARPDAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td className='content'><p >AVG. PRICE</p>22.30$</td>
+            <td className='content'><p >STORES</p>8</td>
             <td>
             <div className='menu-dots' >
             <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
@@ -43,11 +43,11 @@ const GamesAnalyticsTable = () => {
                 <span>Dino RPG</span>
               </div>
             </td>
-            <td ><p className='heading'>DAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
-            <td ><p className='heading'>NEW PLAYERS</p>16,680 <span className="percentage-change">+3.5%</span></td>
-            <td ><p className='heading'>ARPDAU</p>0 </td>
-            <td ><p className='heading'>AVG. PRICE</p>Free</td>
-            <td ><p className='heading'>STORES</p>0</td>
+            <td className='content'><p >DAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td className='content'><p >NEW PLAYERS</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td className='content'><p >ARPDAU</p>0 </td>
+            <td className='content'><p >AVG. PRICE</p>Free</td>
+            <td className='content'><p >STORES</p>0</td>
             <td>
             <div className='menu-dots' >
             <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
@@ -60,11 +60,11 @@ const GamesAnalyticsTable = () => {
                 <span>Teacher Story</span>
               </div>
             </td>
-            <td ><p className='heading'>DAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
-            <td ><p className='heading'>NEW PLAYERS</p>16,680 <span className="percentage-change">+3.5%</span></td>
-            <td ><p className='heading'>ARPDAU</p>0 </td>
-            <td ><p className='heading'>AVG. PRICE</p>Free</td>
-            <td ><p className='heading'>STORES</p>0</td>
+            <td className='content'><p >DAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td className='content'><p >NEW PLAYERS</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td className='content'><p >ARPDAU</p>0 </td>
+            <td className='content'><p >AVG. PRICE</p>Free</td>
+            <td className='content'><p >STORES</p>0</td>
             <td>
             <div className='menu-dots' >
             <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
@@ -77,11 +77,11 @@ const GamesAnalyticsTable = () => {
                 <span>Teacher Story</span>
               </div>
             </td>
-            <td ><p className='heading'>DAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
-            <td ><p className='heading'>NEW PLAYERS</p>16,680 <span className="percentage-change">+3.5%</span></td>
-            <td ><p className='heading'>ARPDAU</p>0 </td>
-            <td ><p className='heading'>AVG. PRICE</p>Free</td>
-            <td ><p className='heading'>STORES</p>0</td>
+            <td className='content'><p >DAU</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td className='content'><p >NEW PLAYERS</p>16,680 <span className="percentage-change">+3.5%</span></td>
+            <td className='content'><p >ARPDAU</p>0 </td>
+            <td className='content'><p >AVG. PRICE</p>Free</td>
+            <td className='content'><p >STORES</p>0</td>
             <td>
                 <div className='menu-dots' >
             <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />

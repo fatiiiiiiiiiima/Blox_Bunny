@@ -47,13 +47,7 @@ const Dashboard = () =>{
       <h1>Dashboard</h1>
       <p>Here is the information about all Roblox Games</p>
       </div>
-      <div className='headicons'>
-      <Image src="/search.png" alt="Search" width={20} height={20} loading="lazy" />
-      <Image src="/bell.png" alt="Bell" width={20} height={20} loading="lazy" />
-      <Image src="/profile.png" alt="profile" width={20} height={20} loading="lazy"/>
-      <h2>Marci Fumons</h2>
-      <Image src="/downarrow.png" alt="profile" width={10} height={8} loading="lazy"/>
-      </div>
+    
       </section>
       <section className='cardcontainer'>
       <div className='cards'>

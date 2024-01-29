@@ -1,5 +1,5 @@
 .table-container {
-    font-family: Arial, sans-serif;
+    font-family: 'Jost', sans-serif;
     overflow-x: auto;
   }
   
@@ -38,7 +38,7 @@
   .game-info span {
     margin-left: 8px;
     font-family: 'Jost',sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16.38px;
   }
   
@@ -47,23 +47,25 @@
     margin-top: 30px;
   }
 
-  .rawcontent{
-    display: flex;
-    flex-direction: column;
-    
+  .content{
+    font-family: 'Jost',sans-serif;
+    font-weight: 500;
+    font-size: 15.79px; 
   }
 
   .table-container td.grey-text {
     color: #9C9EA1;
 }
 
-
-
-  .heading{
+  .content p{
     color: #BCC1CA;
     font-family: 'Jost',sans-serif;
     font-size: 10.53px;
     font-weight: 500;
+  }
+
+  .content span{
+    font-family: 'Jost',sans-serif;
   }
   /* Add more CSS for responsive layout, colors, fonts, etc., to match your design */
   

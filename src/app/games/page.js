@@ -111,7 +111,7 @@ const fetchData = async () => {
     setError(e.message);
   } finally {
     setLoading(false);
-  }
+  } 
 };
 
   
