@@ -67,5 +67,46 @@
   .content span{
     font-family: 'Jost',sans-serif;
   }
-  /* Add more CSS for responsive layout, colors, fonts, etc., to match your design */
   
+  /* Define styles for small screens and mobile devices */
+@media screen and (max-width: 768px) {
+  .table-container {
+    overflow-x: auto; /* Enable horizontal scrolling on small screens */
+  }
+
+  table {
+    width: 100%;
+  }
+
+  td, th {
+    padding: 5px; /* Reduce padding for small screens */
+    font-size: 12px; /* Adjust font size for small screens */
+    white-space: nowrap; /* Prevent line breaks within table cells */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; 
+  }
+
+  .game-info {
+    padding-top: 10px; /* Reduce padding between game info and text for small screens */
+  }
+
+  .game-info span {
+    font-size: 14px; /* Adjust font size for game name */
+  }
+
+  .content {
+    font-size: 12px; /* Adjust font size for content */
+  }
+
+  .content p {
+    font-size: 10px; /* Adjust font size for paragraph text */
+  }
+
+  .content span {
+    font-size: 10px; /* Adjust font size for span text */
+  }
+
+  .menu-dots {
+    margin-top: 10px; /* Reduce margin for menu dots */
+  }
+}

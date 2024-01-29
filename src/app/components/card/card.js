@@ -16,7 +16,7 @@ const StatisticCard = ({ iconPath, mainText, label,trendText,cornerIconPath }) =
       </div>
       <div className='rightsection'>
       <div className='cornerIcon'>
-          <Image src={`/${cornerIconPath}.png`} alt="Corner Icon" width={14} height={14} loading="lazy"/>
+          <Image src={`/${cornerIconPath}.png`} alt="Corner Icon" width={20} height={20} loading="lazy"/>
         </div>
       </div>
     </div>

@@ -51,6 +51,7 @@ const Dashboard = () =>{
       </section>
       <section className='cardcontainer'>
       <div className='cards'>
+      <div className="cardgroup">
       <StatisticCard
         iconPath="increase" 
         mainText="89,935"
@@ -65,6 +66,8 @@ const Dashboard = () =>{
         trendText="3.1  +0.49% this week"
         cornerIconPath="card2"
       />
+      </div>
+      <div className="cardgroup1">
       <StatisticCard
         iconPath="decrease" 
         mainText="46,827"
@@ -80,7 +83,7 @@ const Dashboard = () =>{
         cornerIconPath="card4"
       />
       </div>
-      
+      </div>
       </section>
       <section className='graphs'>
         <div className='headingsect'>
