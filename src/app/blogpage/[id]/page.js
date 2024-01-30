@@ -63,7 +63,7 @@ const renderOptions = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       return (
-        <div className="relative h-[18rem] 2xl:h-[28rem] md:h-[24rem] w-full self-center">
+        <div className="relative h-[18rem] 2xl:h-[28rem] md:h-[24rem] w-full self-center mb-5">
           <Image
             src={node.data.target.fields.file.url}
             height={node.data.target.fields.file.details.height}
@@ -158,7 +158,7 @@ const Blogs = async ({ params }) => {
         <Navbar />
       </div>
 
-      <div className="flex flex-col mb-8 gap-4">
+      <div className="flex flex-col gap-4 mb-8">
         <div className="flex flex-col gap-12 w-full justify-center mt-20 md:p-8 p-2">
           <div className="flex gap-3">
             <div className="relative h-14 w-14">
@@ -185,7 +185,7 @@ const Blogs = async ({ params }) => {
           </p>
         </div>
 
-        <div className="md:p-8 p-2 flex flex-col gap-6 w-full text-[#232323] whitespace-pre-wrap">
+        <div className="md:px-8 px-2 flex flex-col gap-6 w-full text-[#232323] whitespace-pre-wrap">
           {documentToReactComponents(blog.content, renderOptions)}
         </div>
       </div>
