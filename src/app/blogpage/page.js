@@ -1,6 +1,6 @@
 // pages/blog.js
 import Navbar from "../components/navbar/navbar";
-import FOOTER from "../components/bloxfooter/bloxfooter";
+import BloxFooter from "../components/bloxfooter/bloxfooter";
 import Image from "next/image";
 import "./globals.css";
 import { getBlogs } from "../../hooks/useGetBlogs";
@@ -44,7 +44,7 @@ const Blog = async () => {
       </section>
 
       <section>
-        <FOOTER />
+        <BloxFooter />
       </section>
     </div>
   );
