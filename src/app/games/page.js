@@ -23,7 +23,7 @@ const debounce = (func, delay) => {
 export default function HomePage() {
   const [isExpanded, setIsExpanded] = useState(true);
   const [checkedGenres, setCheckedGenres] = useState({ 'All Genres': true });
-  const [games, setGames] = useState({ data: [], page: 1, page_size: 20, total: 0 });
+  const [games, setGames] = useState({ data: [], page: 1, page_size: 10, total: 0 });
  
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -119,7 +119,7 @@ const debouncedFetchData = debounce(fetchData, 500);
 
 useEffect(() => {
   debouncedFetchData(); 
-}, [dateRange, checkedGenres]);
+}, [dateRange, checkedGenres, games.page, games.page_size]);
 
 
 if (loading) return <div className="loading-container">

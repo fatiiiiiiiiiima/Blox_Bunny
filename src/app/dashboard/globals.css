@@ -143,8 +143,8 @@
     .cardcontainer {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start; 
+      justify-content: center;
+      align-items: center; 
       border: none;
       border-radius: none;
       box-shadow: none;
@@ -173,6 +173,8 @@
   
     .graphs, .gametable {
       margin-top: 10px;
+      display: flex;
+      justify-content: center;
       width: 50%; /* Ensure these sections take full width */
       padding: 10px; /* Adjust padding to ensure content doesn't touch the edges */
     }
