@@ -147,13 +147,7 @@ const toggleMenu = () => {
         <h1>Games</h1>
         <p>List of all the games</p>
         </div>
-        <div className='headicons'>
-      <Image src="/search.png" alt="Search" width={20} height={20} />
-      <Image src="/bell.png" alt="Bell" width={20} height={20} />
-      <Image src="/profile.png" alt="profile" width={20} height={20} />
-      <h2>Marci Fumons</h2>
-      <Image src="/downarrow.png" alt="profile" width={10} height={8} />
-      </div>
+        
       </section>
       
 <div className='gamesview'>
@@ -257,23 +251,7 @@ const toggleMenu = () => {
     </div>
         </div>
 
-        <div className='revenuedisp'>
-          <h1>Revenue</h1>
-        <RangeSlider
-         MIN={50}
-         MAX={500}
-         STEP={1}
-      />
-        </div>
-
-        <div className='ccudisp'>
-          <h1>CCUs</h1>
-        <CCUSlider
-         MIN={50}
-         MAX={500}
-         STEP={1}
-      />
-        </div>
+       
         </section>
         </div>
       </Layout>  

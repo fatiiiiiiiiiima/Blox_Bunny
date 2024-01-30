@@ -1,3 +1,7 @@
+* {
+  font-family: 'Jost',sans-serif;
+}
+
 .heading{
     display: flex;
     justify-content: space-between;
@@ -16,17 +20,7 @@
     font-size: 16px;
     font-family: 'Jost',sans-serif;
 }
-.headicons h2{
-    font-family: 'Jost',sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #000;
-}
-.headicons{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
+
   .filterheading {
     display: flex;
     align-items: center; 
@@ -36,7 +30,7 @@
   }
   
   .filterheading h1 {
-    font-family: 'Jost';
+    font-family: 'Jost',sans-serif;
     font-weight: 700;
     font-size: 16.13px;
     margin: 0; 
@@ -53,7 +47,7 @@
     border-bottom: 1px solid #0000001A;
   }
   .daterange h1{
-    font-family: 'Jost';
+    font-family: 'Jost',sans-serif;
     font-weight: 700;
     font-size: 16.13px;
   }
@@ -62,6 +56,7 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    font-family: 'Jost',sans-serif;
 
   }
   .genreFilter{
@@ -71,40 +66,20 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    font-family: 'Jost',sans-serif;
   }
   
   .genre {
     display: flex;
     align-items: center;
     margin-bottom: 10px; 
+    font-family: 'Jost',sans-serif;
   }
   
   .genre input[type="checkbox"] {
     margin-right: 10px; 
   }
-  .revenue{
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #0000001A;
-  }
-
-  .revenue h1{
-    font-family: 'Jost',sans-serif;
-    font-weight: 700;
-    font-size: 16.13px;
-    
-  }
-
-  .ccu{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .ccu h1{
-    font-family: 'Jost',sans-serif;
-    font-weight: 700;
-    font-size: 16.13px;
-  }
+ 
 
   .display{
     /* display: flex; */
@@ -125,6 +100,7 @@
     grid-gap: 20px; /* This is the space between your cards */
     padding-left: 20px;
     text-decoration: none; 
+    width: 97%;
   }
   .screen{
     /* display: flex; */
