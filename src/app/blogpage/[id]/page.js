@@ -7,6 +7,25 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 import Link from "next/link";
 
+const getOrdinalDay = (day) => {
+  if (typeof day !== "number" || day < 1 || day > 31) {
+    return "Invalid day"; // Guard clause for invalid input
+  }
+
+  const j = day % 10,
+    k = day % 100;
+  if (j == 1 && k != 11) {
+    return day + "st";
+  }
+  if (j == 2 && k != 12) {
+    return day + "nd";
+  }
+  if (j == 3 && k != 13) {
+    return day + "rd";
+  }
+  return day + "th";
+};
+
 function formatDate(inputDate) {
   const months = [
     "January",
@@ -25,10 +44,10 @@ function formatDate(inputDate) {
 
   const date = new Date(inputDate);
   const month = months[date.getMonth()];
-  const day = date.getDate();
+  const day = getOrdinalDay(date.getDate());
   const year = date.getFullYear();
 
-  const formattedDate = `${month} ${day}, ${year}`;
+  const formattedDate = `${day} ${month} ${year}`;
   return formattedDate;
 }
 
@@ -153,10 +172,10 @@ const Blogs = async ({ params }) => {
             </div>
 
             <div className="flex flex-col">
-              <p className="text-[#592EA9] font-bold text-2xl w-full text-left tracking-[-0.04806rem]">
+              <p className="text-[#592EA9] font-bold text-2xl w-full text-left">
                 {blog.subtitle}
               </p>
-              <p className="text-[#6D6E76] font-normal text-xl w-full text-left tracking-[-0.04806rem]">
+              <p className="text-[#6D6E76] font-normal text-xl w-full text-left">
                 Posted On {formatDate(blog.dateAdded)}
               </p>
             </div>
