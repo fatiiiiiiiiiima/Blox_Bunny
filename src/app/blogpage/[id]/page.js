@@ -44,14 +44,14 @@ const renderOptions = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       return (
-        <div className="relative h-[18rem] 2xl:h-[28rem] md:h-[24rem] w-[80%] md:w-[70%] 2xl:w-[80%] self-center">
+        <div className="relative h-[18rem] 2xl:h-[28rem] md:h-[24rem] w-full self-center">
           <Image
             src={node.data.target.fields.file.url}
             height={node.data.target.fields.file.details.height}
             width={node.data.target.fields.file.details.width}
             fill
             alt="Content Image"
-            className="rounded-[2.53281rem]"
+            className="object-contain"
           />
         </div>
       );
@@ -120,6 +120,7 @@ const renderOptions = {
 
 export const generateStaticParams = async () => {
   const blogs = await getBlogs();
+
   return blogs.map((blog) => ({
     id: blog.id,
   }));
@@ -128,46 +129,41 @@ export const generateStaticParams = async () => {
 const Blogs = async ({ params }) => {
   const blogId = params.id;
   const blog = await getBlogById(blogId);
+  const blogs = await getBlogs();
+  const relatedBlogs = blogs.filter(
+    (otherBlog) => otherBlog.slug === blog.slug && otherBlog.id !== blog.id
+  );
   return (
     <div className="relative">
       <div className="absolute z-50 w-full">
         <Navbar />
       </div>
 
-      <div className="flex flex-col gap-8 mb-8">
-        <div className="relative w-[100%] flex items-center md:h-full h-[20rem]">
-          <Image
-            src={blog.thumbnail.fields.file.url}
-            alt={`Background Image`}
-            height={700}
-            width={700}
-            priority
-            className={`w-[100%] h-[28rem] 2xl:h-[35rem] object-cover object-center hidden md:block `}
-            style={{
-              filter: "brightness(25%)",
-            }}
-          />
+      <div className="flex flex-col mb-8 gap-4">
+        <div className="flex flex-col gap-12 w-full justify-center mt-20 md:p-8 p-2">
+          <div className="flex gap-3">
+            <div className="relative h-14 w-14">
+              <Image
+                src={blog.thumbnail.fields.file.url}
+                alt="avatar"
+                fill
+                priority
+                className="rounded-full"
+              />
+            </div>
 
-          <Image
-            src={blog.thumbnail.fields.file.url}
-            alt={`Background Image`}
-            priority
-            fill
-            className={`w-[100%] h-auto object-cover md:hidden block`}
-            style={{
-              filter: "brightness(25%)",
-            }}
-          />
-
-          <div className="absolute flex flex-col gap-2 md:gap-6 w-full justify-center mt-10 md:p-8 p-2">
-            <p className="text-[#F5F5F5] font-medium text-5xl md:text-6xl 2xl:text-7xl text-left tracking-[-0.08781rem]">
-              {blog.title}
-            </p>
-            <p className="text-[#4479D9] font-normal text-sm md:text-lg 2xl:text-2xl w-full text-left tracking-[-0.04806rem]">
-              Posted By {blog.subtitle} - Posted On {formatDate(blog.dateAdded)}{" "}
-              - Last Updated On {formatDate(blog.dateUpdated)}
-            </p>
+            <div className="flex flex-col">
+              <p className="text-[#592EA9] font-bold text-2xl w-full text-left tracking-[-0.04806rem]">
+                {blog.subtitle}
+              </p>
+              <p className="text-[#6D6E76] font-normal text-xl w-full text-left tracking-[-0.04806rem]">
+                Posted On {formatDate(blog.dateAdded)}
+              </p>
+            </div>
           </div>
+          <p className="text-[#232323] font-bold text-5xl md:text-6xl 2xl:text-7xl text-left tracking-[-0.08781rem]">
+            {blog.title}
+          </p>
         </div>
 
         <div className="md:p-8 p-2 flex flex-col gap-6 w-full text-[#232323] whitespace-pre-wrap">
