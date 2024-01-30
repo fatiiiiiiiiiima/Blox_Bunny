@@ -1,3 +1,9 @@
+a {
+    text-decoration: none;
+color: #232323;
+font-family: 'Jost',sans-serif;
+}
+
 .mainbody{
     display: flex;
     flex-direction: column;
@@ -9,7 +15,7 @@
 .mainbody h1{
     font-size: 48px;
     font-weight: 700;
-    font-family: 'Jost',sans-serif;
+    font-family: 'Jost',sans-serif; 
     margin-bottom: 0.5rem;
 }
 
@@ -43,6 +49,7 @@
     background-color: #FAFAFA;
     height: fit-content;
     width: 348px;
+    
     
 }
 
