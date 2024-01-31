@@ -158,7 +158,7 @@ const Blogs = async ({ params }) => {
         <Navbar />
       </div>
 
-      <div className="flex flex-col gap-4 mb-8">
+      <div className="flex flex-col gap-4 mb-20">
         <div className="flex flex-col gap-12 w-full justify-center mt-20 md:p-8 p-2">
           <div className="flex gap-3">
             <div className="relative h-14 w-14">
@@ -183,6 +183,16 @@ const Blogs = async ({ params }) => {
           <p className="text-[#232323] font-bold text-5xl md:text-6xl 2xl:text-7xl text-left tracking-[-0.08781rem]">
             {blog.title}
           </p>
+          <div className="relative h-[18rem] 2xl:h-[28rem] md:h-[24rem] w-full self-center mb-5">
+            <Image
+              src={blog.thumbnail.fields.file.url}
+              height={blog.thumbnail.fields.file.details.height}
+              width={blog.thumbnail.fields.file.details.width}
+              fill
+              alt="Content Image"
+              className="object-contain"
+            />
+          </div>
         </div>
 
         <div className="md:px-8 px-2 flex flex-col gap-6 w-full text-[#232323] whitespace-pre-wrap">
