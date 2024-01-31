@@ -19,10 +19,7 @@
     font-size: 16.38px;
   }
   
-  /* tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-   */
+ 
   .percentage-change {
     color: #34C759; /* Adjust the color based on the value being positive or negative */
     font-weight: 400;

@@ -1,6 +1,7 @@
 .table-container {
     /* font-family: Arial, sans-serif; */
     overflow-x: auto;
+    font-family: 'Jost', sans-serif;
   }
   
   table {
@@ -47,11 +48,7 @@
     margin-top: 30px;
   }
 
-  .rawcontent{
-    display: flex;
-    flex-direction: column;
-    
-  }
+  
 
   .table-container td.grey-text {
     color: #9C9EA1;
@@ -124,7 +121,13 @@
     margin-top: 5px; /* Add space above the span */
   }
 
-
+  td, th {
+    padding: 5px; /* Reduce padding for small screens */
+    font-size: 12px; /* Adjust font size for small screens */
+    white-space: nowrap; /* Prevent line breaks within table cells */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; 
+  }
   /* Adjust other styles as necessary */
 }
 

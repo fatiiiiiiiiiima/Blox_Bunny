@@ -52,7 +52,7 @@ const GameCard = ({subtitle,rank,ccu,maxrevenue,minrevenue,favorites,logoUrl,tit
             <strong>CCUs</strong>
             <span>{roundedCCU}</span>
           </div>
-        
+      
         
           <div className='infocol'>
             <strong>Revenue</strong>
