@@ -19,6 +19,7 @@
     "react-dom": "^18",
     "react-infinite-scroll-component": "^6.1.0",
     "react-lazyload": "^3.2.0",
+    "react-lottie": "^1.2.4",
     "react-range": "^1.8.14",
     "react-select": "^5.8.0"
   },

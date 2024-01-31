@@ -65,11 +65,11 @@
   
   .info {
     display: flex;
-  flex-wrap: wrap; /*Allows children to wrap onto multiple lines*/
-  justify-content: space-between; /* Spreads out the children evenly */
+  /* flex-wrap: wrap;  */
+  justify-content: space-between; 
   width: 100%;
   margin-top: 8px;
-  /* gap: 4rem; */
+  
   }
   .info-grid{
     display: grid;
@@ -80,7 +80,7 @@
   }
   .info div {
     text-align: start;
-    /* flex-basis:  calc(33% - 1rem);; */
+    
   }
   
   .info strong {
