@@ -177,22 +177,22 @@
   @media (max-width: 590px) {
     .heading {
         padding-top: 50px;
-      flex-direction: column; /* Stack elements vertically */
-      align-items: flex-start; /* Align to the start */
+      flex-direction: column; 
+      align-items: flex-start; 
     }
   
     .filter-container {
-      flex-wrap: wrap; /* Wrap filter options */
+      flex-wrap: wrap; 
     }
   
     .gamecard{
-      width: 60%;
+      width: 93%;
     }
     .graphs {
       margin: 10px 0; 
       display: flex;
       justify-content: center;
-      width: 67%; 
+      width: 90%; 
       /* padding: 10px; */
     }
   

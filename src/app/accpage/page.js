@@ -74,12 +74,12 @@ export default function Accpage(){
     />
                     <input type="password" id="rpass" name="rpass" placeholder="Repeat password" required />
                     <button type='submit'>Create Account</button>
-                <div className='googlesign'>
-                <button onClick={handleGoogleSignIn}>
-                    <Image src='/googleicon.png' alt='Google Icon' className='google-icon' width={48} height={48}></Image>
+                {/* <div className='googlesign'> */}
+                <button className="google-sign-in-btn" onClick={handleGoogleSignIn}>
+                    <Image src='/googleicon.png' alt="Google Logo" class="google-logo" width={40} height={40}></Image>
                     Sign in with Google
                     </button>
-                    </div>
+                    {/* </div> */}
             </form>
             </section>
 
@@ -88,8 +88,8 @@ export default function Accpage(){
                 <p>Support us on Patreon to get access to more of our goodues. Make sure to use the same email address as the one you have created your BloxBunny account with.</p>
             </section>
 
-            <section id="payplan" className='payplan'>
-                 <div className="pay-grid">
+            
+                 <section id="payplan" className="pay-grid">
                     <div className='pay-column'>
                         <h1>Free</h1>
                         <h2>$0</h2>
@@ -117,8 +117,7 @@ export default function Accpage(){
                         </div>
                         <button>Get Pro</button>
                     </div>
-                </div>
-            </section>
+                        </section>
 
             <section className='access'>
                 <h1>Which plan should I choose?</h1>

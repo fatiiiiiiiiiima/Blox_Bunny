@@ -4,9 +4,7 @@ import Image from 'next/image';
 import FOOTER from './components/bloxfooter/bloxfooter';
 import './globals.css'
 
-export default function Home(){
-
-    
+export default function Home(){ 
     return(
         <div>
             <section className='mainimage'>
@@ -39,8 +37,8 @@ export default function Home(){
                 </div> 
             </section>
 
-            <section className='payplan'>
-                 <div className="pay-grid">
+            {/* <section className='payplan'> */}
+                 <section className="pay-grid">
                     <div className='pay-column'>
                         <h1>Free</h1>
                         <h2>$0</h2>
@@ -49,6 +47,7 @@ export default function Home(){
                         <p>Access to market overview </p> <p>CCU and New Favorites data</p><p> Top games on Roblox</p>
                         </div>
                         <button>Get started</button>
+                        
                     </div>
                     <div className='pay-column'>
                         <h1>Indie</h1>
@@ -68,8 +67,9 @@ export default function Home(){
                         </div>
                         <button>Get started</button>
                     </div>
-                </div>
-            </section>
+                </section>
+                {/* </section> */}
+
 
             <section className='view'>
             <h1>View in Action</h1>

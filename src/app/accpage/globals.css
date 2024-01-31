@@ -1,3 +1,7 @@
+*{
+    font-family: 'Jost', sans-serif;
+}
+
 .mainbody{
     display: flex;
     flex-direction: column;
@@ -25,6 +29,7 @@
     padding: 10px;
     width: 364px;
     height:20px;
+    font-family: 'Jost', sans-serif;
     border: 0.5px solid #ccc; 
     border-radius: 4px;
     box-shadow: 1px 1px 2px rgba(0, 0, 1, 0.179);
@@ -52,25 +57,38 @@
     border: 1px solid #6592E6;
 }
 
-.googlesign button {
-    background-color: #4285F4; /* Google Blue */
-    color: white;
-    border: none;
-    border-radius: 1px;
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+ /* .googlesign {
+   /* display: flex; 
     width: 240px;
     height: 50px;
-}
-
+} */
+/*
 .googlesign button .google-icon {
-    margin-right: 10px; /* Adjust as needed */
-}
+    margin-right: 10px; 
+} */
 
+.google-sign-in-btn {
+    background-color: #4285F4; 
+    color: white; 
+    border: none; 
+    /* padding: 10px 20px;  */
+    border-radius: 5px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: start;
+    cursor: pointer; 
+    font-size: 16px; 
+    font-weight: bold; 
+    width: 50%;
+    text-align: center; 
+    width: 240px;
+  }
+  
+  .google-logo {
+    margin-left: 0; 
+    margin-right: 10px; 
+  }
+  
 .access{
     padding-top: 100px;
     display: flex;
@@ -97,36 +115,31 @@
     text-align: center;
     color: #232323;
 }
-.payplan{
-    background-color: #FAFAFA;
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 150px;
-    
-}
-.pay-grid{
-    margin-top: 80px;
+
+.pay-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    justify-content: center;
+    background-color: #FAFAFA;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1rem;
+    justify-content: center; 
     align-items: start;
+    margin: auto; 
+    padding: 0 1rem;
+    font-family: 'Jost', sans-serif;
 }
-.pay-column{
+
+.pay-column {
     background-color: #FFFFFF;
-    width: 348px;
-    height: 536.5px;
+    
+    max-width: 348px; 
+    width: 100%; 
+    margin: 30px auto; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: center; 
     overflow: hidden;
     border-radius: 4px;
+    
 }
 .pay-column h1{
     color: #232323;
@@ -185,10 +198,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Jost', sans-serif;
 }
 .paytext p{
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    font-family: 'Jost', sans-serif;
 }
 
 .plan{
@@ -200,6 +215,7 @@
     max-width: 950px;
     margin-right: auto;
     margin-left: auto;
+    font-family: 'Jost', sans-serif;
 }
 
 .plan h1{
@@ -290,12 +306,14 @@
     border: 0.5px solid #ccc; 
     border-radius: 4px;
     box-shadow: 1px 1px 2px rgba(0, 0, 1, 0.179);
+    font-family: 'Jost', sans-serif;
   }
 
   .form-rows input[type="url"]{
     width: 1140px; 
     padding: 10px;
     height: 38px;
+    font-family: 'Jost', sans-serif;
     border: 0.5px solid #ccc; 
     border-radius: 4px;
     box-shadow: 1px 1px 2px rgba(0, 0, 1, 0.179);
@@ -317,6 +335,7 @@
     height: 69px;
     margin-bottom: 20px;
     resize: vertical;
+    font-family: 'Jost', sans-serif;
     border: 0.5px solid #ccc; 
     border-radius: 4px;
     box-shadow: 1px 1px 2px rgba(0, 0, 1, 0.179);
@@ -374,15 +393,10 @@
     }
 
     .pay-grid {
-        grid-template-columns: repeat(1, 1fr); 
+        grid-template-columns: repeat(2, 1fr); 
     }
 
-    .pay-column {
-        width: auto; 
-        height: auto; 
-        margin-bottom: 20px; 
-    }
-
+  
     .plan h1, .plan p, .pro h1, .pro p {
         text-align: center; 
     }
@@ -390,6 +404,7 @@
 
 @media only screen and (max-width: 590px) {
     .mainbody h1 {
+        padding-top: 10px;
         font-size: 24px; 
     }
 
@@ -397,19 +412,31 @@
         font-size: 17px; 
     }
 
-    .form-container {
-        width: 90%; 
-        padding: 10px;
-    }
 
-    .form-container input[type="text"],
-    .form-container input[type="email"],
-    .form-container input[type="url"],
-    .form-container button {
-        /* padding: 12px;  */
-        width: 450px;
+    .accform input[type="password"],
+    .accform input[type="email"],
+    .accform input[type="text"],
+    .accform input[type="url"]
+    .accform button {
+        width: 80%; 
+    }
+    .pay-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+        }
+    
+    .form-container input[type = "email"],
+    .form-container input[type="text"]{
+        width: 130%;
     }
     textarea{
         width: 90%;
+    }
+    .access{
+        display: flex;
+        justify-content: center;
+    }
+    .access h1{
+        text-align: center;
     }
 }

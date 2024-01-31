@@ -174,11 +174,15 @@
     .graphs, .gametable {
       margin-top: 10px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       width: 50%; /* Ensure these sections take full width */
       padding: 10px; /* Adjust padding to ensure content doesn't touch the edges */
     }
   
+    .graph{
+      width: 100%;
+    }
     .headingsect {
       padding: 10px; /* Adjust padding for smaller screens */
     }
