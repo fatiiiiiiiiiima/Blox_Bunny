@@ -159,7 +159,7 @@ const Blogs = async ({ params }) => {
       </div>
 
       <div className="flex flex-col gap-4 mb-20">
-        <div className="flex flex-col gap-12 w-full justify-center mt-20 md:p-8 p-2">
+        <div className="flex flex-col gap-8 w-full justify-center mt-24 md:p-8 p-2">
           <div className="flex gap-3">
             <div className="relative h-14 w-14">
               <Image
