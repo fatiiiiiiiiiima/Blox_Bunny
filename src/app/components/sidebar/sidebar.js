@@ -40,10 +40,9 @@ const Sidebar = () => {
         </Link>
       </div>
       <button onClick={toggleSidebar} className="burger-icon">
-        <div></div>
-        <div></div>
-        <div></div>
-      </button>
+  <Image src="/menu.png" alt="Menu" width={50} height={50} />
+</button>
+
 
       <nav className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <ul className='sideList'>
