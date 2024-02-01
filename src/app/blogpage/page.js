@@ -1,60 +1,53 @@
 // pages/blog.js
-"use client"
-import { useState, useEffect } from 'react';
-import { createClient } from 'contentful';
-import Navbar from '../components/navbar/navbar';
-import FOOTER from '../components/bloxfooter/bloxfooter';
-import Image from 'next/image';
-import './globals.css';
+import Navbar from "../components/navbar/navbar";
+import BloxFooter from "../components/bloxfooter/bloxfooter";
+import Image from "next/image";
+import "./globals.css";
+import { getBlogs } from "../../hooks/useGetBlogs";
+import Link from "next/link";
 
-export default function Blog() {
-  const [posts, setPosts] = useState([]);
+const Blog = async () => {
+  const posts = await getBlogs(); // Fetching all blogs
 
-  useEffect(() => {
-    const client = createClient({
-      space: '60668njlknik',
-      accessToken: 'x2XImbRKWAxmoNKjd4bjHoGkrfSKv6lRkqVuaFasiuE',
-    });
-
-    const fetchPosts = async () => {
-      try {
-        const entries = await client.getEntries({ content_type: 'gameBlogs' });
-        setPosts(entries.items);
-      } catch (error) {
-        console.error('Error fetching blog posts:', error);
-      }
-    };
-
-    fetchPosts();
-  }, []);
-console.log(posts)
+  console.log("posts:", posts);
   return (
     <div>
       <Navbar />
-      <section className='mainbody'>
+      <section className="mainbody">
         <h1>Our Blog</h1>
         <p>Read the recent blog posts about BloxBunny</p>
       </section>
 
-      <section className='blogs'>
-        <div className='blogs-grid'>
+      <section className="blogs">
+        <div className="blogs-grid">
           {posts.map((post) => (
-            <div className='blogscol' key={post.sys.id}>
-              <Image src={`https:${post.fields.thumbnail.fields.file.url}`} alt={post.fields.title} width={348} height={300} />
-              <h1>{post.fields.title}</h1>
-              <h3>by <span>{post.fields.subtitle}</span></h3>
-              <p>{post.fields.description}</p>
-              <div className='designbutton'>
-                <button>Read More &gt;</button>
+            <Link href={`/blogpage/${post.id}`} key={post.id}>
+              <div className="blogscol">
+                <Image
+                  src={`https:${post.thumbnail.fields.file.url}`}
+                  alt={post.title}
+                  width={348}
+                  height={300}
+                />
+                <h1>{post.title}</h1>
+                <h3>
+                  by <span>{post.subtitle}</span>
+                </h3>
+                <p>{post.description}</p>
+                <div className="designbutton">
+                  <button>Read More &gt;</button>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
 
       <section>
-        <FOOTER />
+        <BloxFooter />
       </section>
     </div>
   );
-}
+};
+
+export default Blog;
