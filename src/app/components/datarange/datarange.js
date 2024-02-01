@@ -23,6 +23,7 @@ const DateRangePicker = ({ onDateChange }) => {
     <div className="dateRangePicker">
       <div className="inputContainer">
         <div className="inputs">
+        <label htmlFor="start-date" className="dateLabel">Start</label>
           <input
             type="date"
             id="start-date"
@@ -31,6 +32,7 @@ const DateRangePicker = ({ onDateChange }) => {
             className="input"
           />
           <span className="dash">—</span>
+          <label htmlFor="end-date" className="dateLabel">End</label>
           <input
             type="date"
             id="end-date"

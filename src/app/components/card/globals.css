@@ -1,84 +1,98 @@
 .card {
-    border-right: 1px solid #EAEAEA; 
-    padding: 20px;
-    background-color: #ffffff; 
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
+  border-right: 1px solid #EAEAEA; 
+  padding: 20px; /* Increase padding to make the card larger */
+  background-color: #ffffff; 
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Vertically center the elements within the card */
+  margin: 10px; /* Adjust the margin to control spacing between cards */
+  flex-basis: calc(100% - 20px);/* Adjust card width to fit two in a row, accounting for margin */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+
+.mainText, .label, .trend span {
+  font-family: 'Jost', sans-serif;
+}
+
+.mainText {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.label {
+  font-size: 16px; 
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.trend {
+  display: flex;
+  align-items: center;
+}
+
+.trend span {
+  margin-left: 5px;
+  font-size: 14px; 
+  color: #7C8DB5;
+}
+
+.rightsection .cornerIcon {
+  border-radius: 10px;
+  border: 1px solid #EAEAEA;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px; 
+  margin-left: 70px;
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    padding: 15px; 
   }
-  
+
   .mainText {
-    font-size: 28px;
-    font-family: 'Jost',sans-serif; 
-    font-weight: 600;
-    margin-bottom: 5px;
+    font-size: 24px;
   }
-  
+
   .label {
-    font-size: 16px; 
-    font-family: 'Jost',sans-serif; 
-    font-weight: 400;
-    margin-bottom: 10px;
-  }
-  
-  .trend {
-    display: flex;
-    align-items: center;
-  }
-  
-  .trend span {
-    margin-left: 5px;
     font-size: 14px; 
-    font-family: 'Jost',sans-serif; 
-    font-weight: 400;
-    color: #7C8DB5;
   }
-  .rightsection .cornerIcon{
-    border-radius: 10px;
-    border: 1px solid #EAEAEA;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: inline-flex;
-    padding: 10px;
-  }
-  @media screen and (max-width: 1024px) {
-    .card {
-     
-      padding: 15px; 
-    }
-  
-    .mainText {
-      font-size: 24px;    }
-  
-    .label {
-      font-size: 14px; 
-    }
-  
-    .trend span {
-      font-size: 12px; 
-    }
-  
-    .rightsection .cornerIcon {
-   
-      padding: 5px; 
-    }
-  }
-  
-  @media screen and (max-width: 590px) {
-    .card {
 
-      padding: 10px;
-    }
-  
-    .mainText {
-      font-size: 20px; 
-    }
-  
-    .label, .trend span {
-      font-size: 12px; 
-    }
-  
-
-    .rightsection .cornerIcon {
-      padding: 5px; 
-    }
+  .trend span {
+    font-size: 12px; 
   }
+
+  .rightsection .cornerIcon {
+    padding: 5px; 
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .card {
+    flex-basis: calc(50% - 20px); 
+    /* width: min-content; */
+    padding: 5px;
+    margin: 2px; 
+    text-align: left;
+  }
+
+  .mainText {
+    font-size: 15px; 
+  }
+
+  .label, .trend span {
+    font-size: 10px; 
+  }
+
+  .rightsection .cornerIcon {
+    width: 5px; /* Reduce icon size */
+    height: 5px; /* Reduce icon size */
+    padding: 2px; /* Reduce padding around icon */
+  }
+
+}

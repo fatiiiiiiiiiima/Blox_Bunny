@@ -8,11 +8,12 @@
     flex-direction: column;
     padding: 16px;
     align-items: start;
+    min-height: 250px;
   }
   .headingsect{
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
   }
 
   .title{
@@ -20,6 +21,7 @@
     font-weight: 600;
     font-size: 16.71px;
     justify-content: left;
+    flex-wrap: wrap;
   }
   .cardlogo {
     border-radius: 8px;
@@ -32,6 +34,8 @@
   } 
   .content {
     padding: 8px 16px;
+    /* overflow-y: auto; */
+    overflow: hidden;
   }
   
  

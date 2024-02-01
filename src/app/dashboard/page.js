@@ -4,33 +4,54 @@ import './globals.css'
 import Image from 'next/image';
 import StatisticCard from '../components/card/card'
 import React, { Suspense } from 'react';
+import Lottie from 'react-lottie';
+import loadingAnimation from '../../../public/animation/loadinganimation.json'; 
 const LazyAnalytics = React.lazy(() => import('../components/graphanalytics/graphanalytics'));
 const LazyGameTable = React.lazy(() => import('../components/gametable/gametable'));
 import CustomSelect from '../components/dropdown/dropdown'
 import withAuth from '../utils/withAuth';
+import { useState,useEffect } from 'react';
 const Dashboard = () =>{
   
   const handleSelectChange = (selectedOption) => {
     console.log(`Option selected:`, selectedOption);
   };
-  
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a loading process, for example, fetching data
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // Adjust the delay as needed
+
+    return () => clearTimeout(timer);
+  }, []);
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: loadingAnimation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
   return (
     <Layout>
+        {isLoading ? (
+        <div className="lottie-container">
+          <Lottie options={defaultOptions} height={400} width={400} />
+        </div>
+      ) : (
+        <div>
       <section className='heading'>
         <div className='textcontent'>
       <h1>Dashboard</h1>
       <p>Here is the information about all Roblox Games</p>
       </div>
-      <div className='headicons'>
-      <Image src="/search.png" alt="Search" width={20} height={20} loading="lazy" />
-      <Image src="/bell.png" alt="Bell" width={20} height={20} loading="lazy" />
-      <Image src="/profile.png" alt="profile" width={20} height={20} loading="lazy"/>
-      <h2>Marci Fumons</h2>
-      <Image src="/downarrow.png" alt="profile" width={10} height={8} loading="lazy"/>
-      </div>
+    
       </section>
       <section className='cardcontainer'>
       <div className='cards'>
+      <div className="cardgroup">
       <StatisticCard
         iconPath="increase" 
         mainText="89,935"
@@ -45,6 +66,8 @@ const Dashboard = () =>{
         trendText="3.1  +0.49% this week"
         cornerIconPath="card2"
       />
+      </div>
+      <div className="cardgroup1">
       <StatisticCard
         iconPath="decrease" 
         mainText="46,827"
@@ -60,7 +83,7 @@ const Dashboard = () =>{
         cornerIconPath="card4"
       />
       </div>
-      
+      </div>
       </section>
       <section className='graphs'>
         <div className='headingsect'>
@@ -70,10 +93,9 @@ const Dashboard = () =>{
       </div>
       </div>
       <div className='graph'> 
-      <Suspense fallback={<div>Loading...</div>}>
-  <LazyAnalytics />
-  
-</Suspense>
+      <Suspense fallback={<div className="lottie-container"><Lottie options={defaultOptions} height={400} width={400} /></div>}>
+            <LazyAnalytics />
+          </Suspense>
       </div>
       </section>
 
@@ -90,6 +112,8 @@ const Dashboard = () =>{
 </Suspense>
        
       </section>
+      </div>
+      )}
     </Layout>
   );
 }

@@ -10,6 +10,7 @@ font-family: 'Jost',sans-serif;
     justify-content: center;
     align-items: center;
     padding-top: 60px;
+   
 }
 
 .mainbody h1{
@@ -17,12 +18,14 @@ font-family: 'Jost',sans-serif;
     font-weight: 700;
     font-family: 'Jost',sans-serif; 
     margin-bottom: 0.5rem;
-}
+    padding-top: 1rem;
+ }
 
 .mainbody p {
     font-size: 35.2px;
     font-weight: 400;
     font-family: 'Jost',sans-serif;
+    padding-bottom: 2rem;
 }
 
 .blogs{
