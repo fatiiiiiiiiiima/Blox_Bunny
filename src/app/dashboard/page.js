@@ -117,4 +117,4 @@ const Dashboard = () =>{
     </Layout>
   );
 }
-export default withAuth(Dashboard);
+export default Dashboard;
