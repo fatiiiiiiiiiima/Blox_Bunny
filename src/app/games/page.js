@@ -23,8 +23,9 @@ const debounce = (func, delay) => {
 export default function HomePage() {
   const [isExpanded, setIsExpanded] = useState(true);
   const [checkedGenres, setCheckedGenres] = useState({ 'All Genres': true });
-  const [games, setGames] = useState({ data: [], page: 1, page_size: 10, total: 0 });
- 
+  const [games, setGames] = useState({ data: [],total: 0 });
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 20;
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -37,6 +38,10 @@ export default function HomePage() {
     setDateRange({ startDate: newStartDate, endDate: newEndDate });
   };
 
+  useEffect(() => {
+    debouncedFetchData(); 
+  }, [dateRange, checkedGenres, currentPage]);
+  
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -80,46 +85,42 @@ const handleCheckboxChange = (genre) => {
 const fetchData = async () => {
   try {
     const queryParams = new URLSearchParams();
-    
-    // Function to format date to M/D/YYYY
-   
-
     // Add date filters if they are set
     if (dateRange.startDate) queryParams.append('start_date', dateRange.startDate);
     if (dateRange.endDate) queryParams.append('end_date', dateRange.endDate);
-     console.log('check dtes', dateRange.startDate)
-    
-    if (!checkedGenres['All Genres']) {
-      const selectedGenres = Object.keys(checkedGenres).filter(genre => checkedGenres[genre]);
-      queryParams.append('genres', selectedGenres.join(','));
-    }
+
+    const requestBody = {
+      page: currentPage,
+      page_size: pageSize,
+      // Add other parameters here (genres, etc.)
+    };
 
     const response = await fetch(`https://us-central1-bloxbunny.cloudfunctions.net/bloxbunny/get-games-dashboard?${queryParams}`, {
-      method: 'GET',
-      // headers: {
-      //   'Content-Type': 'application/json',
-      // }
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
     });
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const responseData = await response.json();
-    setGames(responseData);
+    const data = await response.json();
+    setGames(data);
   } catch (e) {
     setError(e.message);
   } finally {
     setLoading(false);
-  } 
+  }
 };
+
 
   
 const debouncedFetchData = debounce(fetchData, 500);
 
-useEffect(() => {
-  debouncedFetchData(); 
-}, [dateRange, checkedGenres, games.page, games.page_size]);
+
 
 
 if (loading) return <div className="loading-container">
@@ -136,14 +137,31 @@ const toggleMenu = () => {
   setIsOpen(!isOpen);
   console.log('checking state', isOpen)
 };
- 
+
+const handleNext = async () => {
+  setLoading(true); // Set loading to true before fetching new data
+  setCurrentPage((prevPage) => prevPage + 1);
+  console.log(currentPage);
+  await fetchData(); // Fetch new data
+  setLoading(false); // Set loading back to false after fetching new data
+};
+
+const handlePrevious = async () => {
+  setLoading(true); // Set loading to true before fetching new data
+  setCurrentPage((prevPage) => (prevPage > 1 ? prevPage - 1 : 1));
+  await fetchData(); // Fetch new data
+  setLoading(false); // Set loading back to false after fetching new data
+};
+
+
+
   return (
     <Layout>
        <div className="filter-toggle" onClick={toggleMenu}>
     <Image src="/filter.png" alt="filter" width={20} height={20} />
     </div>
       <section className='heading'>
-      <div className='textcontent'>
+      <div className='textcontents'>
         <h1>Games</h1>
         <p>List of all the games</p>
         </div>
@@ -214,6 +232,15 @@ const toggleMenu = () => {
   </Link>
 ))}
 </section>
+{/* disabled={currentPage <= 1} */}
+{/* disabled={currentPage * pageSize >= games.total} */}
+<div className="pagination">
+        <button onClick={handlePrevious} >Previous</button>
+        <span>Page {currentPage}</span>
+        <button onClick={handleNext} >Next</button>
+      </div> 
+    
+
 </div>
 </div>
 {isOpen && <div className="overlay" onClick={toggleMenu}></div>}
