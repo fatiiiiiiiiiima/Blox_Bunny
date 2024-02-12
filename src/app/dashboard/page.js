@@ -19,10 +19,10 @@ const Dashboard = () =>{
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a loading process, for example, fetching data
+    
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Adjust the delay as needed
+    }, 3000); 
 
     return () => clearTimeout(timer);
   }, []);
@@ -117,4 +117,4 @@ const Dashboard = () =>{
     </Layout>
   );
 }
-export default Dashboard;
+export default  withAuth(Dashboard);

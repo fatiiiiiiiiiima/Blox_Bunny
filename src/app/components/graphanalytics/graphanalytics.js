@@ -1,7 +1,7 @@
 "use client"
 import { Line } from 'react-chartjs-2';
 import React, { useEffect,useState } from 'react';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend, Filler } from 'chart.js';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, BarController,Title, Tooltip, Legend, Filler } from 'chart.js/auto';
 
 ChartJS.register(
   CategoryScale,
@@ -9,6 +9,7 @@ ChartJS.register(
   PointElement,
   LineElement,
   BarElement,
+  BarController,
   Title,
   Tooltip,
   Legend,
