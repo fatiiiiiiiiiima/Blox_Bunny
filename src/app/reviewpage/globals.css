@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 60px;
+    font-family: 'Jost',sans-serif;
 }
 
 .mainbody h1{
@@ -20,6 +21,8 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 100px;
+    padding-top: 50px;
+    font-family: 'Jost', sans-serif;
 }
 
 .blogs-grid{

@@ -14,7 +14,9 @@
   width: 100%;
   display: flex;
   justify-content: center; 
-  margin-bottom: 20px; 
+  align-items: center;
+  margin-bottom: 20px;
+  padding-top: 20px; 
 }
 
 .sideList {
@@ -64,37 +66,20 @@
 
 .burger-icon {
   display: none;
-  background-color: #ffffff;
+  background-color: transparent; /* Make background transparent */
   cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-  padding: 10px;
-  margin-left: 5px;
+  border: none; /* Remove border */
+  padding: 0; /* Adjust padding as needed */
+  align-items: center; 
+  justify-content: center; 
 }
 
-.burger-icon div {
-  width: 30px;
-  height: 3px;
-  background-color: #232323;
-}
+
 
 @media (max-width: 1024px) {
  
 
-  .burger-icon {
-    display: none; /* Initially hidden */
-    position: absolute;
-    left: 210px;
-    top: 10px;
-    z-index: 30;
-    /* Add more styling as needed */
-  }
-  
-  .burger-icon div {
-    width: 30px;
-    height: 3px;
-    background-color: #232323;
-  }
+
   
   /* Logo Container Styling */
   .logoContainer {
@@ -105,17 +90,7 @@
     /* Add more styling as needed */
   }
   
-  /* Sidebar Styling */
-  /* .sidebar {
-    position: fixed;
-    left: -250px; 
-    width: 70%;
-    top: 0;
-    height: 100vh;
-    background-color: #ffffff;
-    transition: left 0.3s ease;
-    z-index: 10;
-  } */
+  
   
   .sidebar.open {
     left: 0; 

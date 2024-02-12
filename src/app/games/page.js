@@ -9,6 +9,8 @@ import Gamecard from '../components/gamecard/gamecard';
 import Image from 'next/image';
 import CCUSlider from '../components/ccuslider/ccuslider';
 import './globals.css'
+import Lottie from 'react-lottie';
+import animationData from '../../../public/animation/loadinganimation.json'
 import { useState,useEffect } from 'react';
 const debounce = (func, delay) => {
   let timeout;
@@ -21,8 +23,9 @@ const debounce = (func, delay) => {
 export default function HomePage() {
   const [isExpanded, setIsExpanded] = useState(true);
   const [checkedGenres, setCheckedGenres] = useState({ 'All Genres': true });
-  const [games, setGames] = useState({ data: [], page: 1, page_size: 20, total: 0 });
- 
+  const [games, setGames] = useState({ data: [],total: 0 });
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 20;
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -35,7 +38,18 @@ export default function HomePage() {
     setDateRange({ startDate: newStartDate, endDate: newEndDate });
   };
 
-
+  useEffect(() => {
+    debouncedFetchData(); 
+  }, [dateRange, checkedGenres, currentPage]);
+  
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
 
 // Function to filter games by date range
 const filterByDate = (game) => {
@@ -71,33 +85,30 @@ const handleCheckboxChange = (genre) => {
 const fetchData = async () => {
   try {
     const queryParams = new URLSearchParams();
-    
-    // Function to format date to M/D/YYYY
-   
-
     // Add date filters if they are set
     if (dateRange.startDate) queryParams.append('start_date', dateRange.startDate);
     if (dateRange.endDate) queryParams.append('end_date', dateRange.endDate);
-     console.log('check dtes', dateRange.startDate)
-    
-    if (!checkedGenres['All Genres']) {
-      const selectedGenres = Object.keys(checkedGenres).filter(genre => checkedGenres[genre]);
-      queryParams.append('genres', selectedGenres.join(','));
-    }
+
+    const requestBody = {
+      page: currentPage,
+      page_size: pageSize,
+      // Add other parameters here (genres, etc.)
+    };
 
     const response = await fetch(`https://us-central1-bloxbunny.cloudfunctions.net/bloxbunny/get-games-dashboard?${queryParams}`, {
-      method: 'GET',
-      // headers: {
-      //   'Content-Type': 'application/json',
-      // }
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
     });
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const responseData = await response.json();
-    setGames(responseData);
+    const data = await response.json();
+    setGames(data);
   } catch (e) {
     setError(e.message);
   } finally {
@@ -105,15 +116,16 @@ const fetchData = async () => {
   }
 };
 
+
   
 const debouncedFetchData = debounce(fetchData, 500);
 
-useEffect(() => {
-  debouncedFetchData(); 
-}, [dateRange, checkedGenres]);
 
 
-  if (loading) return <p>Loading...</p>;
+
+if (loading) return <div className="loading-container">
+<Lottie options={defaultOptions} height={400} width={400} />
+</div>
   if (error) return <p>Error: {error}</p>;
 
   console.log('checking data',games);
@@ -125,24 +137,35 @@ const toggleMenu = () => {
   setIsOpen(!isOpen);
   console.log('checking state', isOpen)
 };
- 
+
+const handleNext = async () => {
+  setLoading(true); // Set loading to true before fetching new data
+  setCurrentPage((prevPage) => prevPage + 1);
+  console.log(currentPage);
+  await fetchData(); // Fetch new data
+  setLoading(false); // Set loading back to false after fetching new data
+};
+
+const handlePrevious = async () => {
+  setLoading(true); // Set loading to true before fetching new data
+  setCurrentPage((prevPage) => (prevPage > 1 ? prevPage - 1 : 1));
+  await fetchData(); // Fetch new data
+  setLoading(false); // Set loading back to false after fetching new data
+};
+
+
+
   return (
     <Layout>
        <div className="filter-toggle" onClick={toggleMenu}>
     <Image src="/filter.png" alt="filter" width={20} height={20} />
     </div>
       <section className='heading'>
-      <div className='textcontent'>
+      <div className='textcontents'>
         <h1>Games</h1>
         <p>List of all the games</p>
         </div>
-        <div className='headicons'>
-      <Image src="/search.png" alt="Search" width={20} height={20} />
-      <Image src="/bell.png" alt="Bell" width={20} height={20} />
-      <Image src="/profile.png" alt="profile" width={20} height={20} />
-      <h2>Marci Fumons</h2>
-      <Image src="/downarrow.png" alt="profile" width={10} height={8} />
-      </div>
+        
       </section>
       
 <div className='gamesview'>
@@ -209,6 +232,15 @@ const toggleMenu = () => {
   </Link>
 ))}
 </section>
+{/* disabled={currentPage <= 1} */}
+{/* disabled={currentPage * pageSize >= games.total} */}
+<div className="pagination">
+        <button onClick={handlePrevious} >Previous</button>
+        <span>Page {currentPage}</span>
+        <button onClick={handleNext} >Next</button>
+      </div> 
+    
+
 </div>
 </div>
 {isOpen && <div className="overlay" onClick={toggleMenu}></div>}
@@ -246,23 +278,7 @@ const toggleMenu = () => {
     </div>
         </div>
 
-        <div className='revenuedisp'>
-          <h1>Revenue</h1>
-        <RangeSlider
-         MIN={50}
-         MAX={500}
-         STEP={1}
-      />
-        </div>
-
-        <div className='ccudisp'>
-          <h1>CCUs</h1>
-        <CCUSlider
-         MIN={50}
-         MAX={500}
-         STEP={1}
-      />
-        </div>
+       
         </section>
         </div>
       </Layout>  

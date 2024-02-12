@@ -1,22 +1,31 @@
+a {
+    text-decoration: none;
+color: #232323;
+font-family: 'Jost',sans-serif;
+}
+
 .mainbody{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-top: 60px;
+   
 }
 
 .mainbody h1{
     font-size: 48px;
     font-weight: 700;
-    font-family: 'Jost',sans-serif;
+    font-family: 'Jost',sans-serif; 
     margin-bottom: 0.5rem;
-}
+    padding-top: 1rem;
+ }
 
 .mainbody p {
     font-size: 35.2px;
     font-weight: 400;
     font-family: 'Jost',sans-serif;
+    padding-bottom: 2rem;
 }
 
 .blogs{
@@ -43,6 +52,7 @@
     background-color: #FAFAFA;
     height: fit-content;
     width: 348px;
+    
     
 }
 

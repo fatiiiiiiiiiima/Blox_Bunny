@@ -8,11 +8,12 @@
     flex-direction: column;
     padding: 16px;
     align-items: start;
+    min-height: 250px;
   }
   .headingsect{
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: start;
+    /* flex-wrap: wrap; */
   }
 
   .title{
@@ -20,10 +21,14 @@
     font-weight: 600;
     font-size: 16.71px;
     justify-content: left;
+    flex-wrap: wrap;
+    align-items: start;
+    /* white-space: nowrap; */
   }
   .cardlogo {
     border-radius: 8px;
     margin-right: 10px;
+    /* align-items: start; */
   }
    .textcontent{
      display: flex;
@@ -32,6 +37,8 @@
   } 
   .content {
     padding: 8px 16px;
+    /* overflow-y: auto; */
+    overflow: hidden;
   }
   
  
@@ -87,11 +94,14 @@
     padding-top: 10px;
     display: block;
     color: #191F2A;
-    text-align: start;
+    text-align: center;
     font-family: 'Jost',sans-serif;
     font-weight: 600;
     font-size: 12.53px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
   }
+  
   @media (max-width: 1024px) {
 
     .info strong{

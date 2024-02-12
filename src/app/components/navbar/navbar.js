@@ -50,7 +50,6 @@ const Navbar = () => {
       </div>
       <div className={`navlinks ${isOpen ? 'open' : ''}`}>
         <ul className='navList'>
-        {!user && <li><Link legacyBehavior href="/dashboard"><a>DASHBOARD</a></Link></li>}
           <li><Link legacyBehavior href="/reviewpage"><a>ROBLOX OVERVIEW</a></Link></li>
           <li><Link legacyBehavior href="/blogpage"><a>BLOG</a></Link></li>
           <li><Link legacyBehavior href="/accpage#payplan"><a>PRICING</a></Link></li>

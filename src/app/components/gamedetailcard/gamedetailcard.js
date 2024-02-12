@@ -23,7 +23,7 @@ const GameCard = ({subtitle,rank,ccu,maxrevenue,minrevenue,favorites,logoUrl,tit
     return (
     <div className="card">
         <div className='headingcard'>
-      <div className="cardlogo">
+      <div className="cardslogo">
         <Image src={logoUrl} alt="Game Logo" width={94} height={94} />
       </div>
       <div className='textcardcontent'>
@@ -52,7 +52,7 @@ const GameCard = ({subtitle,rank,ccu,maxrevenue,minrevenue,favorites,logoUrl,tit
             <strong>CCUs</strong>
             <span>{roundedCCU}</span>
           </div>
-        
+      
         
           <div className='infocol'>
             <strong>Revenue</strong>

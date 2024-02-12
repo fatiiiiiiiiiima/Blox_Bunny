@@ -1,80 +1,91 @@
-.heading{
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
 }
-.textcontent h1{
-    font-family: 'Jost',sans-serif;
-    font-size: 28px;
-    font-weight: 500;
-    color: #000;
-    
+
+.textcontent h1 {
+  font-family: 'Jost', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #000;
 }
-.textcontet p{
-    color: #7C8DB5;
-    font-weight: 400;
-    font-size: 16px;
-    font-family: 'Jost',sans-serif;
+
+.textcontent p {
+  color: #7C8DB5;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Jost', sans-serif;
+  padding-bottom: 10px;
 }
-.headicons h2{
-    font-family: 'Jost',sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #000;
-}
-.headicons{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-.cardcontainer{
-    border-radius: 10px;
-    border: 1px solid #EAEAEA;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: inline-flex;
-    padding: 10px;
+
+.cardcontainer {
+  border-radius: 10px;
+  border: 1px solid #EAEAEA;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  width: 97%; /* Ensure container takes full width */
 }
 .cards{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
-/* .cards .card {
+.cardgroup {
+  display: flex;
+  justify-content: space-between;
   
-  flex: 0 0 calc(50% - 10px);
-  margin: 5px; 
-} */
-.gametable{
-    border-radius: 10px;
-    margin-top: 20px;
-    border: 1px solid #EAEAEA;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid #EAEAEA;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px; */
 }
-.graphs{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: flex-start; */
-    margin-top: 20px;
-    border-radius: 10px;
-    border: 1px solid #EAEAEA;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.cardgroup1{
+  display: flex;
+  justify-content: left;
 }
-.h1{
-    font-family: 'Jost',sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    padding-left: 20px;
+
+
+
+
+.gametable, .graphs {
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 1px solid #EAEAEA;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 99%; /* Ensure these sections take full width */
 }
-.headingsect{
-    padding-left: 20px;
-    padding-right: 20px;
-    display: flex;
-    justify-content: space-between;
+
+.headingsect h1 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
 }
-.filter{
-    padding-top: 20px;
+
+.headingsect {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.filter {
+  padding-top: 20px;
+}
+
+.lottie-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+}
+
 
 @media (max-width: 1024px) {
     .heading {
@@ -94,13 +105,15 @@
         margin-top: 10px;
         width: 80%;
       }
-    .cards {
+    /* .cards {
       display: grid;
-      /* flex-direction: column; */
+      /* flex-direction: column; 
       align-items: center;
       grid-template-columns: repeat(3, 1fr);
+    } */
+    .cards {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 3fr)); /* Adjust grid layout for responsiveness */
     }
-  
     .headingsect {
       flex-direction: column;
       align-items: flex-start;
@@ -112,39 +125,67 @@
     }
   }
   
-  /* Responsive styles for mobile screens */
+  
   @media (max-width: 590px) {
     .heading {
-      padding: 10px; /* Add some padding on smaller screens */
+      padding: 30px; /* Adjust padding as needed */
     }
   
     .textcontent h1,
-    .headicons h2,
-    .h1 {
-      font-size: 24px; /* Smaller font size for h1 on small screens */
+    .headicons h2 {
+      font-size: 24px; /* Adjust font size for smaller screens */
     }
   
     .textcontent p,
     .headicons h2 {
-      font-size: 14px; /* Smaller font size for text on small screens */
+      font-size: 14px; /* Adjust font size for smaller screens */
     }
   
-    .cards {
-      display: grid;
-      width: 90%;
-      grid-template-columns: repeat(2, 1fr);
+    .cardcontainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+      border: none;
+      border-radius: none;
+      box-shadow: none;
+      width: 50%;
     }
-
+  
+    .cards{
+      display: flex;
+      flex-direction: column;
+    }
+    .cardgroup,.cardgroup1 {
+      flex: 1; /* Each card group takes up equal space */
+      display: flex;
+      flex-direction: row; /* Lay out cards in a row */
+      justify-content: space-around; /* Evenly space cards within each group */
+      border: 1px solid #EAEAEA;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 10px;
+      gap: 10px;
+    }
+  .cardgroup1{
+    margin-top: 20px;
+  }
+    
   
     .graphs, .gametable {
       margin-top: 10px;
-      width: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%; /* Ensure these sections take full width */
+      padding: 10px; /* Adjust padding to ensure content doesn't touch the edges */
     }
   
+    .graph{
+      width: 100%;
+    }
     .headingsect {
-      padding: 10px;
+      padding: 10px; /* Adjust padding for smaller screens */
     }
   }
-  
-  /* Add any additional responsive adjustments as needed */
   

@@ -1,4 +1,5 @@
 import Favicon from '../../public/favicon.ico'
+import "./globals.css"
 
 export const metadata = {
   title: 'Bloxbunny',
