@@ -32,10 +32,6 @@ const GameCard = ({subtitle,rank,ccu,maxrevenue,minrevenue,favorites,logoUrl,tit
         </div>
         </div>
         <div className="content">
-        {/* <div className="rating">
-          <span className="stars">★★★★☆</span>
-          <span className="ratingCount">{roundedRating}</span>
-        </div> */}
         <div className="info">
         <div className="info-grid">
           <div className='infocol'>

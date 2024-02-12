@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, createUserWithEmailAndPassword,signInWithEmailAndPassword,signInWithPopup, onAuthStateChanged} from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, createUserWithEmailAndPassword,signInWithEmailAndPassword,signInWithPopup, onAuthStateChanged, signOut as firebaseSignOut } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDmPWsElXjydkvwJmvlb6EEGNfyPXKJNOs",
@@ -50,5 +50,13 @@ export const signInWithGoogle = async () => {
   } catch (error) {
     console.error('Error during Google sign-in:', error);
     throw error;
+  }
+};
+
+export const signOut = async () => {
+  try {
+      await firebaseSignOut(auth);
+  } catch (error) {
+      throw error;
   }
 };

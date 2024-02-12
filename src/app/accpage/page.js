@@ -74,15 +74,19 @@ export default function Accpage(){
     />
                     <input type="password" id="rpass" name="rpass" placeholder="Repeat password" required />
                     <button type='submit'>Create Account</button>
-                {/* <div className='googlesign'> */}
-                <button className="google-sign-in-btn" onClick={handleGoogleSignIn}>
-                    <Image src='/googleicon.png' alt="Google Logo" class="google-logo" width={40} height={40}></Image>
-                    Sign in with Google
-                    </button>
-                    {/* </div> */}
             </form>
             </section>
 
+            <section className='googlebuttons'>
+            <div className='googlesign'>
+          <button onClick={handleGoogleSignIn}>
+            <span className='google-icon'>
+              <Image src='/googleicon.png' alt='Google Icon' width={35} height={35} loading="lazy" />
+            </span>
+            Sign in with Google
+          </button>
+        </div>
+        </section>
             <section className='access'>
                 <h1>Want more access</h1>
                 <p>Support us on Patreon to get access to more of our goodues. Make sure to use the same email address as the one you have created your BloxBunny account with.</p>
