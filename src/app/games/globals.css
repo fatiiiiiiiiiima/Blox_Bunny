@@ -110,9 +110,11 @@
   .screen{
     /* display: flex; */
     flex-wrap: wrap;
+    width: 25%;
   }
   .gamesview{
     display: flex;
+    
   }
 
   .filter-toggle {
