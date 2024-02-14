@@ -48,6 +48,19 @@ export default function HomePage() {
   }, [currentPage]);
 
   useEffect(() => {
+    setCurrentPage(1); 
+    setGames({ data: [], total: 0, page_size: pageSize }); 
+    debouncedFetchData(); 
+  }, [checkedGenres,dateRange]);
+  
+
+  useEffect(() => {
+    setCurrentPage(1); 
+    setGames({ data: [], total: 0, page_size: pageSize }); 
+    debouncedFetchData(); 
+  }, [dateRange]);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(handleObserver, {
       root: null,
       rootMargin: '20px',
@@ -64,41 +77,50 @@ export default function HomePage() {
   }, [games.data, currentPage]);
 
   const fetchData = async () => {
-    try {
-      setLoading(true);
-      
-
-      const requestBody = {
-        page: currentPage,
-        page_size: pageSize,
-        // Add other parameters here (genres, etc.)
-      };
-
-      const response = await fetch('https://us-central1-bloxbunny.cloudfunctions.net/bloxbunny/get-games-dashboard', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestBody),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      setGames(prevState => ({
-        ...prevState,
-        data: [...prevState.data, ...data.data],
-        total: data.total,
-        page_size: data.page_size,
-      }));
-    } catch (e) {
-      setError(e.message);
-    } finally {
-      setLoading(false);
+  try {
+    setLoading(true);
+    
+    const queryParams = new URLSearchParams();
+    if (dateRange.startDate) queryParams.append('start_date', dateRange.startDate);
+    if (dateRange.endDate) queryParams.append('end_date', dateRange.endDate);
+    if (!checkedGenres['All Genres']) {
+      const selectedGenres = Object.keys(checkedGenres).filter(genre => checkedGenres[genre]);
+      queryParams.append('genres', selectedGenres.join(','));
     }
-  };
+
+    
+    const requestBody = {
+      page: currentPage,
+      page_size: pageSize,
+      ...Object.fromEntries(queryParams),
+    };
+
+    const response = await fetch('https://us-central1-bloxbunny.cloudfunctions.net/bloxbunny/get-games-dashboard', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+    });
+
+      console.log ('check request body', JSON.stringify(requestBody))
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    setGames(prevState => ({
+      ...prevState,
+      data: [...prevState.data, ...data.data],
+      total: data.total,
+      page_size: data.page_size,
+    }));
+  } catch (e) {
+    setError(e.message);
+  } finally {
+    setLoading(false);
+  }
+};
 
   const debouncedFetchData = debounce(fetchData, 500);
 
@@ -110,8 +132,27 @@ export default function HomePage() {
     }
   };
 
+  const handleDateChange = (newStartDate, newEndDate) => {
+    setDateRange({ startDate: newStartDate, endDate: newEndDate });
+  };
   
+  const handleCheckboxChange = (genre) => {
+    if (genre === 'All Genres') {
+      const newGenres = { 'All Genres': !checkedGenres['All Genres'] };
+      if (newGenres['All Genres']) {
+        genres.forEach(g => { if (g !== 'All Genres') newGenres[g] = false; });
+      }
+      setCheckedGenres(newGenres);
+    } else {
+      setCheckedGenres(prevGenres => ({
+        ...prevGenres,
+        'All Genres': false,
+        [genre]: !prevGenres[genre],
+      }));
+    }
+  };
 
+ 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -140,7 +181,7 @@ export default function HomePage() {
               </div>
               <div className="daterange">
                 <h1>Date Range Picker</h1>
-                <DateRange  />
+                <DateRange onDateChange={handleDateChange}  />
               </div>
               <div>
                 <div className="genreFilter">
@@ -155,7 +196,7 @@ export default function HomePage() {
                           <input
                             type="checkbox"
                             checked={!!checkedGenres[genre]}
-                            // onChange={() => handleCheckboxChange(genre)}
+                            onChange={() => handleCheckboxChange(genre)}
                           />
                           <span>{genre}</span>
                         </label>
@@ -172,7 +213,7 @@ export default function HomePage() {
             {games.data.slice(0, currentPage * pageSize).map((game) => (
               <Link legacyBehavior href={`/gamedetails?id=${game.Id}`} key={game.Id}>
                 <a className="gamecard-link">
-                  <LazyLoad height={200} offset={100} once>
+                  {/* <LazyLoad height={200} offset={100} once> */}
                     <Gamecard
                       logoUrl={game.url}
                       title={game.Title}
@@ -185,7 +226,7 @@ export default function HomePage() {
                       favorites={game.Favorites}
                       id={game.Id}
                     />
-                  </LazyLoad>
+                  {/* </LazyLoad> */}
                 </a>
               </Link>
             ))}
@@ -205,7 +246,7 @@ export default function HomePage() {
           </div>
           <div className="daterangedisp">
             <h1>Date Range Picker</h1>
-            <DateRange />
+            <DateRange onDateChange={handleDateChange} />
           </div>
           <div>
             <div className="genreFilterdisp">
@@ -220,7 +261,7 @@ export default function HomePage() {
                       <input
                         type="checkbox"
                         checked={!!checkedGenres[genre]}
-                        // onChange={() => handleCheckboxChange(genre)}
+                        onChange={() => handleCheckboxChange(genre)}
                       />
                       <span>{genre}</span>
                     </label>

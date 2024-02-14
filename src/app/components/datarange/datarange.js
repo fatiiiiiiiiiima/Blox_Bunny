@@ -1,46 +1,57 @@
 "use client"
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css'; // Import the styles
 import './globals.css'; // Assuming you're using CSS modules
+import { FaCalendarAlt } from 'react-icons/fa'; // Assuming you're using react-icons
 
-// DateRangePicker component
 const DateRangePicker = ({ onDateChange }) => {
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [showDatePicker, setShowDatePicker] = useState(false);
 
-  const handleStartDateChange = (e) => {
-    const newStartDate = e.target.value;
+  useEffect(() => {
+    if (startDate && endDate) {
+      onDateChange(formatDate(startDate), formatDate(endDate));
+    }
+  }, [startDate, endDate, onDateChange]);
+
+  const handleDateChange = (dates) => {
+    const [newStartDate, newEndDate] = dates;
     setStartDate(newStartDate);
-    onDateChange(newStartDate, endDate);
+    setEndDate(newEndDate);
   };
 
-  const handleEndDateChange = (e) => {
-    const newEndDate = e.target.value;
-    setEndDate(newEndDate);
-    onDateChange(startDate, newEndDate);
+  const toggleDatePicker = () => {
+    setShowDatePicker((prevShowDatePicker) => !prevShowDatePicker);
+  };
+
+  // Function to format date to 'yyyy-mm-dd' format
+  const formatDate = (date) => {
+    if (!date) return null;
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
   };
 
   return (
     <div className="dateRangePicker">
       <div className="inputContainer">
-        <div className="inputs">
-        <label htmlFor="start-date" className="dateLabel">Start</label>
-          <input
-            type="date"
-            id="start-date"
-            value={startDate}
-            onChange={handleStartDateChange}
-            className="input"
+        <button onClick={toggleDatePicker}>
+          <FaCalendarAlt /> <span>Select Date</span>
+        </button>
+        {showDatePicker && (
+          <DatePicker
+            selected={startDate}
+            onChange={handleDateChange}
+            startDate={startDate}
+            endDate={endDate}
+            selectsRange
+            inline
+            
           />
-          <span className="dash">—</span>
-          <label htmlFor="end-date" className="dateLabel">End</label>
-          <input
-            type="date"
-            id="end-date"
-            value={endDate}
-            onChange={handleEndDateChange}
-            className="input"
-          />
-        </div>
+        )}
       </div>
     </div>
   );
