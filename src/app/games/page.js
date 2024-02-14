@@ -155,6 +155,7 @@ export default function HomePage() {
  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    console.log('checking state', isOpen)
   };
 
   if (loading && games.data.length === 0) return <div className="loading-container"><Lottie options={defaultOptions} height={400} width={400} /></div>;
@@ -237,8 +238,8 @@ export default function HomePage() {
           </section>
         </div>
       </div>
-      {isOpen && <div className="overlay" onClick={toggleMenu}></div>}
-      <div className={`displayside ${isOpen ? 'open' : ''}`}>
+     <div className={`displayside ${isOpen ? 'open' : ''}`}>
+  <button className="close-button" onClick={toggleMenu}>&times;</button>
         <button className="close-button" onClick={toggleMenu}>&times;</button>
         <section className="filters">
           <div className="filterdispheading">
