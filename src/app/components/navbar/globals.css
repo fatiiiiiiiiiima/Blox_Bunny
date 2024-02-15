@@ -104,6 +104,16 @@
     background-color: #232323;
 }
 
+@media screen and (max-width: 1400px) {
+  .navlinks {
+    margin-left: 40px;
+  }
+  .navlinks a, .navlinks img {
+    padding: 0.5rem;
+    font-size: 15px; 
+  }
+}
+
 @media screen and (max-width: 1024px) {
  
   .navlinks {
@@ -115,8 +125,8 @@
   }
 
   .navlinks a, .navlinks img {
-    padding: 0.5rem;
-    font-size: 15px; 
+    padding: 0rem;
+    font-size: 14px; 
   }
 
   .ButtonContainer {
@@ -132,7 +142,7 @@
 
 
 
-@media screen and (max-width: 590px) {
+@media screen and (max-width: 768px) {
   .burger-menu {
       display: flex; 
       position: absolute;
