@@ -91,7 +91,7 @@
     justify-content: flex-start;
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 20px;
     z-index: 1000;
   }
   .burger-icon {
@@ -139,8 +139,8 @@
   .burger-icon {
     display: flex;
     position: absolute;
-    top: 20px;
-    left: 140px;
+    top: 25px;
+    left: 160px;
     z-index: 1000;
   }
 }

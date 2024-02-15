@@ -2,25 +2,25 @@
   font-family: 'Jost',sans-serif;
 }
 
-.heading{
+.gameheading{
     display: flex;
     justify-content: space-between;
     align-items: start;
 }
-.textcontents h1{
+.gametextcontents h1{
     font-family: 'Jost',sans-serif;
     font-size: 28px;
     font-weight: 500;
     color: #000;
     
 }
-.textcontets p{
+.gametextcontets p{
     color: #7C8DB5;
     font-weight: 400;
     font-size: 16px;
     font-family: 'Jost',sans-serif;
 }
-.textcontents{
+.gametextcontents{
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -54,7 +54,7 @@
     font-family: 'Jost',sans-serif;
     font-weight: 500;
     font-size: 16.13px;
-    padding-top: 10px;
+    
   }
   .header {
     display: flex;
@@ -225,8 +225,8 @@
 
   
 
-  .heading{
-    padding-top: 50px;
+  .gameheading{
+    padding-top: 60px;
   }
   .carddisplay{
     grid-template-columns: 1fr;
