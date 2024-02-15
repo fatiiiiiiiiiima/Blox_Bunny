@@ -85,7 +85,7 @@
 }
 
 /* Media Queries for Responsive Layout */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .logoContainer{
     display: flex;
     justify-content: flex-start;
@@ -97,8 +97,8 @@
   .burger-icon {
     display: flex;
     position: absolute;
-    margin-top: 15px;
-    margin-left: 140px;
+    top: 20px;
+    left: 150px;
     z-index: 1000;
   }
 
@@ -139,8 +139,8 @@
   .burger-icon {
     display: flex;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 140px;
     z-index: 1000;
   }
 }

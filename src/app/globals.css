@@ -310,7 +310,8 @@ body {
 
 .form-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
     margin-bottom: 30px;
   }
@@ -323,7 +324,7 @@ body {
   .form-row input[type="email"] {
     width: 304.16px; 
     padding: 10px;
-    height:20px;
+    height:30px;
     border: 1px solid #ccc; 
     border-radius: 2px;
   }
