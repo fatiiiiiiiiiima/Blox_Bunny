@@ -310,7 +310,8 @@ body {
 
 .form-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
     margin-bottom: 30px;
   }
