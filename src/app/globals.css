@@ -25,7 +25,7 @@ body {
     align-items: flex-end;
     justify-content: center;
     margin-right: 200px;
-    margin-top: 150px;
+    margin-top: 200px;
     height: 392.67px;
 }
 .mainheadings h1{
@@ -60,6 +60,7 @@ body {
     font-family: 'Jost', sans-serif;
     text-align: center; 
     margin-bottom: 20px;
+    float: right;
 }
 @font-face {
     font-family: 'Jost';
@@ -81,7 +82,7 @@ body {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 150px;
+    padding-bottom: 50px;
 }
 
 .feature h1{
@@ -110,7 +111,7 @@ body {
     overflow: hidden;
     border-radius: 4px;
     background-color: #FAFAFA;
-    height: 536.78px;
+    height: 450px;
     width: 348px;
     display: flex;
     flex-direction: column;
@@ -181,10 +182,9 @@ body {
 
 .pay-column {
     background-color: #FFFFFF;
-    
     max-width: 348px; 
     width: 100%; 
-    margin: 30px auto; 
+    margin: 15px auto; 
     display: flex;
     flex-direction: column;
     align-items: center; 
@@ -310,7 +310,8 @@ body {
 
 .form-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
     margin-bottom: 30px;
   }
@@ -323,7 +324,7 @@ body {
   .form-row input[type="email"] {
     width: 304.16px; 
     padding: 10px;
-    height:20px;
+    height: 50px;
     border: 1px solid #ccc; 
     border-radius: 2px;
   }
@@ -393,7 +394,7 @@ body {
   
   @media screen and (max-width: 768px) {
     .feature-grid, .pay-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
     /* .feature-column{
         width: 90%;
@@ -465,9 +466,14 @@ body {
             font-family: 'Jost',sans-serif;
             color: #232323;
         }
+
+        .form-row{
+            width: 100%;
+        }
         
         .form-row button{
             width: 90%;
+            max-width: 90%;
         }
   }
   
@@ -500,10 +506,15 @@ body {
 .form-row {
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .form-row input[type="text"],
 .form-row input[type="email"] {
+    width: 90%;
+}
+
+.form-row button {
     width: 90%;
 }
 

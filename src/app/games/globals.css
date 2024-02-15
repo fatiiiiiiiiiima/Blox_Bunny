@@ -52,8 +52,9 @@
   }
   .daterange h1{
     font-family: 'Jost',sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 16.13px;
+    padding-top: 10px;
   }
   .header {
     display: flex;
@@ -62,6 +63,11 @@
     cursor: pointer;
     font-family: 'Jost',sans-serif;
 
+  }
+  .header h3{
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 16.13px;
   }
   .genreFilter{
     border-bottom: 1px solid #0000001A;
@@ -110,9 +116,11 @@
   .screen{
     /* display: flex; */
     flex-wrap: wrap;
+    width: 25%;
   }
   .gamesview{
     display: flex;
+    
   }
 
   .filter-toggle {
@@ -132,86 +140,49 @@
     align-items: center;
     height: 100vh; 
   }
-  .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .pagination button {
-    background-color: #333;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  .pagination button:hover{
-    background-color: gray;
-  }
-  .pagination span {
-    font-size: 16px;
-    margin: 0 10px;
-  }
-  
-  @media (max-width: 1024px) {
 
-    .heading{
-        padding-top: 30px;
-    }
+  .displayside {
+    display: none; /* Initially hide the displayside container */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%; /* Adjust the width as needed */
+    height: 100vh;
+    background: white;
+    z-index: 999; /* Ensure it's above other content */
+    transition: right 0.3s ease;
+    overflow-y: auto;
+  }
 
-    .headicons{
-        padding-top: 20px;
-    }
-    .filter-toggle {
-      display: none;
-    }
-  
-  
-  
-    .screen {
-      flex-direction: column;
-    }
-  
-    .gamesview {
-      order: 2;
-    }
-    .carddisplay{
-
-      grid-template-columns: repeat(1, minmax(250px, 1fr)); /* This will create a responsive number of columns based on the card size */
-       
-    }
+  .displayside.open {
+    right: 0; /* Slide open the displayside container */
   }
   
-  /* ... existing styles ... */
-  
-  /* For very small screens, like mobile devices */
-  @media (max-width: 590px) {
+  @media (max-width:1024px) {
+    .gamesview{
+      justify-content: center;
+    }
     .filters {
       width: 100%; /* Filters take full width */
     }
-
+  
    
-      .filter-toggle {
-        padding-top: 40px;
-        display: flex;
-        background: transparent;
-      
-      }
-
+    .filter-toggle {
+      display: flex; /* Display the filter toggle icon */
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1000; /* Ensure it's above other content */
+      cursor: pointer;
+    }
+  
       .display{
         display: none;
       }
     
       .displayside {
         display: flex; /* or block, depending on your layout */
-    padding-top:40px ;
+    padding-top:110px ;
     position: fixed;
     top: 0;
     right: -100%; /* Start hidden to the left */
@@ -220,7 +191,7 @@
     background: white;
     z-index: 100; /* Ensure it's above other content */
     transition: right 0.3s ease; /* Smooth transition for sliding effect */
-overflow-y: auto; 
+  overflow-y: auto; 
     }
     
   
@@ -235,25 +206,43 @@ overflow-y: auto;
     }
     .close-button {
       position: absolute; /* Position it within .displayside */
-      top: 10px; /* Adjust as needed */
+      /* top: 10px; Adjust as needed */
       right: 10px; /* Adjust as needed */
       background: transparent;
       border: none;
       font-size: 30px; /* Adjust as needed */
       cursor: pointer;
     }
-
+  
   
     .displayside.open {
     right: 0; 
     }
-    .carddisplay{
+    
+  }
+  /* CSS for small screens and mobile screens */
+@media (max-width: 590px) {
 
-        grid-template-columns: repeat(1, minmax(250px, 1fr)); /* This will create a responsive number of columns based on the card size */
-         
-      }
+  
 
-    .heading{
-      padding-top: 40px;
-    }
-  }  
+  .heading{
+    padding-top: 50px;
+  }
+  .carddisplay{
+    grid-template-columns: 1fr;
+    /* padding-left: 0; */
+    width: 80%;
+    margin-left: 30px;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+  }
+
+  .filter-toggle {
+  z-index: 1000;
+}
+
+  
+ 
+
+}

@@ -12,7 +12,8 @@
   }
   .headingsect{
     display: flex;
-    align-items: start;
+    align-items: flex-start;
+    width: 90%;
     /* flex-wrap: wrap; */
   }
 
@@ -23,6 +24,7 @@
     justify-content: left;
     flex-wrap: wrap;
     align-items: start;
+    text-align: left;
     /* white-space: nowrap; */
   }
   .cardlogo {
@@ -101,7 +103,11 @@
     flex-wrap: nowrap;
     white-space: nowrap;
   }
-  
+  @media (max-width:1300px){
+    .info{
+      gap: 1rem;
+    }
+  }
   @media (max-width: 1024px) {
 
     .info strong{
@@ -111,22 +117,14 @@
       font-size: small;
     }
 
-    /* .gapset2,.gapset3,.gapset4{
-      margin-left: 0;
-    }
-
-    .gapset1{
-      margin-right: 0px;
-    }
-    .gapset4{
-      margin-right: 50px;
-    } */
   }
   @media (max-width: 900px) {
     .headingsect {
 
       display: flex;
       justify-content: left;
+      align-items: center;
+      width: 100%;
     }
 
     .textcontent{
@@ -145,6 +143,27 @@
 .title, .subTitle {
   text-align: left; /* Aligns title and subtitle to the left */
 }
+
+
   }
 
+  @media (max-width:550px) {
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      align-items: start;
+      max-width: 350px; /* Set a maximum width for the card */
+      width: 100%; /* Ensure the card takes up the full width of its container */
+      margin: 0 auto; /* Center the card horizontally */
+      margin-bottom: 20px; /* Add some bottom margin for spacing */
+    }
+    
+    .info{
+      gap: 3.5rem;
+    }
+  }
 
