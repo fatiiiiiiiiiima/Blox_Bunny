@@ -52,8 +52,9 @@
   }
   .daterange h1{
     font-family: 'Jost',sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 16.13px;
+    padding-top: 10px;
   }
   .header {
     display: flex;
@@ -62,6 +63,11 @@
     cursor: pointer;
     font-family: 'Jost',sans-serif;
 
+  }
+  .header h3{
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 16.13px;
   }
   .genreFilter{
     border-bottom: 1px solid #0000001A;
@@ -152,68 +158,72 @@
     right: 0; /* Slide open the displayside container */
   }
   
+  @media (max-width:1024px) {
+    .gamesview{
+      justify-content: center;
+    }
+    .filters {
+      width: 100%; /* Filters take full width */
+    }
+  
+   
+    .filter-toggle {
+      display: flex; /* Display the filter toggle icon */
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1000; /* Ensure it's above other content */
+      cursor: pointer;
+    }
+  
+      .display{
+        display: none;
+      }
+    
+      .displayside {
+        display: flex; /* or block, depending on your layout */
+    padding-top:110px ;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start hidden to the left */
+    width: 100%; /* Adjust width as needed */
+    height: 100vh; /* Full viewport height */
+    background: white;
+    z-index: 100; /* Ensure it's above other content */
+    transition: right 0.3s ease; /* Smooth transition for sliding effect */
+  overflow-y: auto; 
+    }
+    
+  
+    .filterdispheading {
+      text-align: center; /* Center-align the heading */
+      /* Other styling as needed */
+    }
+  
+    .daterangedisp,.genreFilterdisp, .revenuedisp,.ccudisp{
+      padding: 20px;
+      border-bottom: 1px solid #0000001A;
+    }
+    .close-button {
+      position: absolute; /* Position it within .displayside */
+      /* top: 10px; Adjust as needed */
+      right: 10px; /* Adjust as needed */
+      background: transparent;
+      border: none;
+      font-size: 30px; /* Adjust as needed */
+      cursor: pointer;
+    }
+  
+  
+    .displayside.open {
+    right: 0; 
+    }
+    
+  }
   /* CSS for small screens and mobile screens */
 @media (max-width: 590px) {
 
-  .gamesview{
-    justify-content: center;
-  }
-  .filters {
-    width: 100%; /* Filters take full width */
-  }
-
- 
-  .filter-toggle {
-    display: flex; /* Display the filter toggle icon */
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000; /* Ensure it's above other content */
-    cursor: pointer;
-  }
-
-    .display{
-      display: none;
-    }
   
-    .displayside {
-      display: flex; /* or block, depending on your layout */
-  padding-top:110px ;
-  position: fixed;
-  top: 0;
-  right: -100%; /* Start hidden to the left */
-  width: 100%; /* Adjust width as needed */
-  height: 100vh; /* Full viewport height */
-  background: white;
-  z-index: 100; /* Ensure it's above other content */
-  transition: right 0.3s ease; /* Smooth transition for sliding effect */
-overflow-y: auto; 
-  }
-  
-
-  .filterdispheading {
-    text-align: center; /* Center-align the heading */
-    /* Other styling as needed */
-  }
-
-  .daterangedisp,.genreFilterdisp, .revenuedisp,.ccudisp{
-    padding: 20px;
-    border-bottom: 1px solid #0000001A;
-  }
-  .close-button {
-    position: absolute; /* Position it within .displayside */
-    /* top: 10px; Adjust as needed */
-    right: 10px; /* Adjust as needed */
-    background: transparent;
-    border: none;
-    font-size: 30px; /* Adjust as needed */
-    cursor: pointer;
-  }
-
-
-  .displayside.open {
-  right: 0; 
-  }
 
   .heading{
     padding-top: 50px;

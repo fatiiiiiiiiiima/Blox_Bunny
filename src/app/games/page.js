@@ -50,8 +50,11 @@ export default function HomePage() {
   useEffect(() => {
     setCurrentPage(1); 
     setGames({ data: [], total: 0, page_size: pageSize }); 
-    debouncedFetchData(); 
-  }, [checkedGenres,dateRange]);
+    // Only call fetchData if the selected genre is not "All Genres"
+    if (!checkedGenres['All Genres']) {
+      debouncedFetchData(); 
+    }
+  }, [checkedGenres, dateRange]);
   
 
   useEffect(() => {
@@ -137,11 +140,13 @@ export default function HomePage() {
   };
   
   const handleCheckboxChange = (genre) => {
+    if (genre === 'All Genres' && checkedGenres['All Genres']) {
+      // If the selected genre is already "All Genres", no need to update state
+      return;
+    }
     if (genre === 'All Genres') {
-      const newGenres = { 'All Genres': !checkedGenres['All Genres'] };
-      if (newGenres['All Genres']) {
-        genres.forEach(g => { if (g !== 'All Genres') newGenres[g] = false; });
-      }
+      const newGenres = { 'All Genres': true };
+      genres.forEach(g => { if (g !== 'All Genres') newGenres[g] = false; });
       setCheckedGenres(newGenres);
     } else {
       setCheckedGenres(prevGenres => ({
@@ -151,8 +156,7 @@ export default function HomePage() {
       }));
     }
   };
-
- 
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     console.log('checking state', isOpen)

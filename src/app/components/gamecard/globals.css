@@ -12,7 +12,7 @@
   }
   .headingsect{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 90%;
     /* flex-wrap: wrap; */
   }
@@ -24,6 +24,7 @@
     justify-content: left;
     flex-wrap: wrap;
     align-items: start;
+    text-align: left;
     /* white-space: nowrap; */
   }
   .cardlogo {
@@ -102,7 +103,11 @@
     flex-wrap: nowrap;
     white-space: nowrap;
   }
-  
+  @media (max-width:1300px){
+    .info{
+      gap: 1rem;
+    }
+  }
   @media (max-width: 1024px) {
 
     .info strong{
@@ -138,6 +143,7 @@
 .title, .subTitle {
   text-align: left; /* Aligns title and subtitle to the left */
 }
+
 
   }
 
