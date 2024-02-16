@@ -80,24 +80,24 @@ const Dashboard = () =>{
             </div>
           </div>
         </section>
-        <section className='gamegraphs'>
-          <div className='gameheadingsect'>
+        <section className='dashgraphs'>
+          <div className='dashheadingsect'>
             <h1>Game Analytics</h1>
-            <div className='gamefilter'>
+            <div className='dashfilter'>
               <CustomSelect onChange={handleSelectChange} />
             </div>
           </div>
-          <div className='gamegraph'> 
+          <div className='dashgraph'> 
             <Suspense fallback={<div className="lottie-container"><Lottie options={defaultOptions} height={400} width={400} /></div>}>
               {isDashboardVisible && <LazyAnalytics />}
             </Suspense>
           </div>
         </section>
 
-        <section className='gametable'>
-          <div className='gameheadingsect'>
+        <section className='dashtable'>
+          <div className='dashheadingsect'>
             <h1>Game Analytics</h1>
-            <div className='gamefilter'>
+            <div className='dashfilter'>
               <CustomSelect onChange={handleSelectChange} />
             </div>
           </div>

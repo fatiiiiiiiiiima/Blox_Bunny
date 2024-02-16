@@ -1,4 +1,4 @@
-.table-container {
+.ranktable-container {
     /* font-family: Arial, sans-serif; */
     overflow-x: auto;
     font-family: 'Jost', sans-serif;
@@ -30,33 +30,33 @@
     font-size: 13.38px;
 }
   
-  .game-info {
+  .rankgame-info {
     display: flex;
     align-items: center;
     padding-top: 30px;
   }
   
-  .game-info span {
+  .rankgame-info span {
     margin-left: 8px;
     font-family: 'Jost',sans-serif;
     font-weight: 500;
     font-size: 16.38px;
   }
   
-  .menu-dots {
+  .rankmenu-dots {
     cursor: pointer;
     margin-top: 30px;
   }
 
   
 
-  .table-container td.grey-text {
+  .ranktable-container td.grey-text {
     color: #9C9EA1;
 }
 
 
 
-  .heading{
+  .rankheading{
     color: #BCC1CA;
     font-family: 'Jost',sans-serif;
     font-size: 10.53px;
@@ -83,17 +83,17 @@
 
   /* Existing styles... */
 
-.table-container {
+.ranktable-container {
   overflow-x: auto; /* Ensures the table is scrollable on smaller screens */
 }
 
 /* Adjustments for smaller screens */
 @media (max-width: 1024px) {
-  .game-info {
+  .rankgame-info {
     margin-top: 15px; /* Reduce margin-top for smaller screens */
   }
 
-  .game-info span, td {
+  .rankgame-info span, td {
     font-size: 14px; /* Reduce font size for better readability */
   }
 
@@ -101,7 +101,7 @@
     font-size: 12px; /* Reduce font size */
   }
 
-  .menu-dots img {
+  .rankmenu-dots img {
     padding-top: 60px;
     width: 15px; /* Reduce image width */
     /* height: auto; Maintain aspect ratio */
@@ -111,12 +111,12 @@
 
 /* Further adjustments for mobile devices */
 @media (max-width: 590px) {
-  .game-info {
+  .rankgame-info {
     flex-direction: column; /* Stack elements vertically */
     align-items: flex-start; /* Align items to the start */
   }
 
-  .game-info span {
+  .rankgame-info span {
     margin-left: 0;
     margin-top: 5px; /* Add space above the span */
   }
