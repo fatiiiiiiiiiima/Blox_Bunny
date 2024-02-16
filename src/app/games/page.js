@@ -170,8 +170,8 @@ export default function HomePage() {
       <div className="filter-toggle" onClick={toggleMenu}>
         <Image src="/filter.png" alt="filter" width={20} height={20} />
       </div>
-      <section className="heading">
-        <div className="textcontents">
+      <section className="gameheading">
+        <div className="gametextcontents">
           <h1>Games</h1>
           <p>List of all the games</p>
         </div>

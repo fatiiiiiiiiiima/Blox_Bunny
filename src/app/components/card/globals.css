@@ -1,16 +1,22 @@
-.card {
+.statcard {
   border-right: 1px solid #EAEAEA; 
-  padding: 20px; /* Increase padding to make the card larger */
+  padding: 20px; 
   background-color: #ffffff; 
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Vertically center the elements within the card */
-  margin: 10px; /* Adjust the margin to control spacing between cards */
-  flex-basis: calc(100% - 20px);/* Adjust card width to fit two in a row, accounting for margin */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  align-items: flex-start; 
+  margin: 10px; 
+  box-sizing: border-box; 
+  overflow: hidden;
 }
 
+.leftsection {
+  flex: 0 0 40%;
+}
 
+.rightsection {
+  flex: 0 0 50%; 
+}
 .mainText, .label, .trend span {
   font-family: 'Jost', sans-serif;
 }
@@ -30,27 +36,33 @@
 .trend {
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .trend span {
   margin-left: 5px;
   font-size: 14px; 
   color: #7C8DB5;
+  flex-wrap: nowrap;
 }
 
+.rightsection{
+  padding: 5px;
+  width: fit-content;
+}
 .rightsection .cornerIcon {
+  padding: 10px; /* Adjust padding as needed to create space around the icon */
   border-radius: 10px;
   border: 1px solid #EAEAEA;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px; 
-  margin-left: 70px;
+  margin-left: 10px; /* You can adjust this margin as needed */
 }
 
 @media screen and (max-width: 1024px) {
-  .card {
+  .statcard {
     padding: 15px; 
   }
 
@@ -73,12 +85,13 @@
 }
 
 @media screen and (max-width: 590px) {
-  .card {
-    flex-basis: calc(50% - 20px); 
-    /* width: min-content; */
-    padding: 5px;
-    margin: 2px; 
+  .statcard {
+
+    flex-basis: content; 
+    /* padding: 5px; */
     text-align: left;
+    justify-content: left;
+    padding: 0%;
   }
 
   .mainText {
@@ -89,10 +102,28 @@
     font-size: 10px; 
   }
 
+  
   .rightsection .cornerIcon {
-    width: 5px; /* Reduce icon size */
-    height: 5px; /* Reduce icon size */
-    padding: 2px; /* Reduce padding around icon */
+   
+    width: 25px;
+    height: 25px;
   }
 
+  .setdash{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+  }
+
+  /* .leftsection {
+  
+    flex: 0 0 30%;
+  }
+  
+  .rightsection {
+    
+    flex: 0 0 20%;
+    margin-right: 0;
+  } */
 }

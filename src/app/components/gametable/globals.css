@@ -41,7 +41,7 @@
   
   .menu-dots {
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 15px;
   }
 
   .content{
@@ -105,5 +105,11 @@
 
   .menu-dots {
     margin-top: 10px; /* Reduce margin for menu dots */
+  }
+}
+
+@media screen and (max-width: 590px) {
+  table{
+    width: 100%;
   }
 }
