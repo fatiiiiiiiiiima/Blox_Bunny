@@ -112,7 +112,7 @@ body {
     border-radius: 4px;
     background-color: #FAFAFA;
     height: 450px;
-    width: 348px;
+    width: 325px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -281,7 +281,7 @@ body {
 }
 
 .updateform{
-    background-image: url('/updatebg.png');
+    background-image: url('/updatebg2.png');
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -377,6 +377,7 @@ body {
     }
     
     .form-row {
+        width: 80%;
         flex-direction: column;
         align-items: center;
     }

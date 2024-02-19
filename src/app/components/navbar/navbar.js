@@ -39,7 +39,7 @@ const Navbar = () => {
       <div className="logo">
         <Link legacyBehavior href="/">
           <a>
-            <Image src="/navbarlogo.png" alt="BloxBunny Logo" width={169.34} height={60.8} loading="lazy" />
+            <Image src="/navbarlogo.png" alt="BloxBunny Logo" width={150} height={60.8} loading="lazy" />
           </a>
         </Link>
       </div>
@@ -54,7 +54,7 @@ const Navbar = () => {
           <li><Link legacyBehavior href="/blogpage"><a>BLOG</a></Link></li>
           <li><Link legacyBehavior href="/accpage#payplan"><a>PRICING</a></Link></li>
           <li><Link legacyBehavior href="/accpage#contact us"><a>CONTACT US</a></Link></li>
-          <Image src='/twittericon.png' alt="Twitter Logo" width={28} height={28} loading="lazy" />
+          {/* <Image src='/twittericon.png' alt="Twitter Logo" width={28} height={28} loading="lazy" /> */}
           <div className='ButtonContainer'>
             {user ? ( // Check if user is signed in
               <>

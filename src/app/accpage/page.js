@@ -73,18 +73,29 @@ export default function Accpage(){
       onChange={handlePasswordChange} 
     />
                     <input type="password" id="rpass" name="rpass" placeholder="Repeat password" required />
-                    <button type='submit'>Create Account</button>
+                    <div class="toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+            </label>
+            <div className='toggle-text'>Remember Me</div>
+        </div>
+                    <button type='submit'>Sign Up</button>
             </form>
             </section>
 
             <section className='googlebuttons'>
-            <div className='googlesign'>
+            <div className='googlesignin'>
           <button onClick={handleGoogleSignIn}>
             <span className='google-icon'>
-              <Image src='/googleicon.png' alt='Google Icon' width={35} height={35} loading="lazy" />
+              <Image src='/paymethodgoogle.png' alt='Google Icon' width={35} height={35} loading="lazy" />
             </span>
             Sign in with Google
           </button>
+        </div>
+        <div className='signupbuttons d-flex'>
+          <div>Already have an account?</div>
+          <button className='signup' onClick={()=>router.push('/signin')}>Sign in now</button>
         </div>
         </section>
             <section className='access'>
