@@ -17,6 +17,12 @@ export default function signin() {
   const [error, setError] = useState('');
   const [popupMessage, setPopupMessage] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -89,13 +95,28 @@ export default function signin() {
             placeholder="Email"
             required
           />
+          <div className='password-container'>
           <input
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
+            className='password-input'
             required
           />
+          <Image src='/eye_icon.png' className='password-toggle' alt="password" width={15} height={12} onClick={togglePasswordVisibility}/>
+          </div>
+
+          <div className='d-flex'>
+          <div class="toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+            </label>
+            <div className='toggle-text'>Remember Me</div>
+        </div>
+            <div className='signup'>Forgot Password?</div>
+          </div>
           <button type='submit'>Submit</button>
         </form>
       </section>
@@ -104,16 +125,20 @@ export default function signin() {
         <div className='googlesign'>
           <button onClick={handleGoogleSignIn}>
             <span className='google-icon'>
-              <Image src='/googleicon.png' alt='Google Icon' width={35} height={35} loading="lazy" />
+              <Image src='/paymethodgoogle.png' alt='Google Icon' width={30} height={30} loading="lazy" />
             </span>
             Sign in with Google
           </button>
         </div>
+        <div className='signupbuttons d-flex'>
+          <div>Don't have an account?</div>
+          <button className='signup' onClick={()=>router.push('/accpage')}>Sign up now</button>
+        </div>
         {/* {error && <p>Error: {error}</p>} */}
-        <div className='signupbuttons'>
+        {/* <div className='signupbuttons'>
           <button className='signup'>Sign up</button>
           <button className='pass'>Forgot Password</button>
-        </div>
+        </div> */}
       </section>
       <section>
         <FOOTER />
