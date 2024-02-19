@@ -94,9 +94,9 @@ useEffect(() => {
        
     return(
         <Layout>
-              <section className='heading'>
-      <div className='textcontent'>
-        <div className='headingdisplay'>
+              <section className='detailsheading'>
+      <div className='detailstextcontent'>
+        <div className='detailsheadingdisplay'>
         <h1>Game Details</h1>
         <p> Game &gt; <span>Game Details</span> </p>
         </div>
@@ -105,7 +105,7 @@ useEffect(() => {
         
       </section>
 
-      <section className='gamecard'>
+      <section className='detailsgamecard'>
       <Gamecard
     //  key={index}
       logoUrl={gameData.ImageURL}
@@ -121,15 +121,15 @@ useEffect(() => {
     />
       </section>
 
-      <section className='graphs'>
-        <div className='headingsect'>
+      <section className='detailsgraphs'>
+        <div className='detailsheadingsect'>
       <h1>   Game Rank</h1>
-      <div className='filter'>
+      <div className='detailsfilter'>
       <CustomSelect onChange={handleSelectChange} />
       
       </div>
       </div>
-      <div className='graph'> 
+      <div className='detailsgraph'> 
       <Suspense fallback={<div>Loading...</div>}>
 
   <LazyRankTable gamedata={gameData} />
@@ -138,8 +138,8 @@ useEffect(() => {
       </div>
       </section>
 
-      <section className='graphs'>
-        <div className='headingfilt'>
+      <section className='detailsgraphs'>
+        <div className='detailsheadingfilt'>
       <h1>   Game Analytics</h1>
       <div className="filter-container">
       {['Visits', 'Users', 'Revenue', 'Favorites'].map((filterName) => (
@@ -155,12 +155,12 @@ useEffect(() => {
      ))}
         </div>
 
-      <div className='filter'>
+      <div className='detailsfilter'>
       <DateRange onDateChange={handleDateChange} />
 
       </div>
       </div>
-      <div className='graph'> 
+      <div className='detailsgraph'> 
       {/* <Analytics gamedata={{ ...gameData, Data: filteredData }} activeFilter={activeFilter}/> */}
       <Suspense fallback={<div>Loading...</div>}>
   <LazyAnalytics gamedata={{...gameData,Data:filteredData}} activeFilter={activeFilter} />

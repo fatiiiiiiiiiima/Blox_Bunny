@@ -62,76 +62,76 @@ const thisMonthData = formatRankData(displayData?.last_30_days);
 const thisYearData = formatRankData(displayData?.last_365_days);
 
   return (
-    <div className="table-container">
+    <div className="ranktable-container">
       <table>
   
          <tbody>
           
           <tr>
             <td>
-              <div className="game-info">
+              <div className="rankgame-info">
                
                 <span>Yesterday</span>
               </div>
             </td>
-            <td><p className='heading'>New visits</p>{yesterdayData ? yesterdayData.Visits : 'N/A'}<span className={`percentage-change ${yesterdayData.isPositive.Visits_delta ? 'positive' : 'negative'}`}>{yesterdayData.Visits_delta}%</span></td>
-            <td ><p className='heading'>CC. Users</p>{yesterdayData ? yesterdayData.CCU : 'N/A'} <span className={`percentage-change ${yesterdayData.isPositive.CCU_delta ? 'positive' : 'negative'}`}>{yesterdayData.CCU_delta}%</span></td>
-            <td><p className='heading'>Revenue</p>{yesterdayData ? yesterdayData.Revenue : 'N/A'} </td>
-            <td><p className='heading'>Favouries</p>{yesterdayData ? yesterdayData.Favorites : 'N/A'}<span className={`percentage-change ${yesterdayData.isPositive.Favorites_delta ? 'positive' : 'negative'}`}>{yesterdayData.Favorites_delta}%</span></td>
-            <td><p className='heading'>Rank</p>{yesterdayData ? yesterdayData.rank : 'N/A'}</td>
+            <td><p className='rankheading'>New visits</p>{yesterdayData ? yesterdayData.Visits : 'N/A'}<span className={`percentage-change ${yesterdayData.isPositive.Visits_delta ? 'positive' : 'negative'}`}>{yesterdayData.Visits_delta}%</span></td>
+            <td ><p className='rankheading'>CC. Users</p>{yesterdayData ? yesterdayData.CCU : 'N/A'} <span className={`percentage-change ${yesterdayData.isPositive.CCU_delta ? 'positive' : 'negative'}`}>{yesterdayData.CCU_delta}%</span></td>
+            <td><p className='rankheading'>Revenue</p>{yesterdayData ? yesterdayData.Revenue : 'N/A'} </td>
+            <td><p className='rankheading'>Favouries</p>{yesterdayData ? yesterdayData.Favorites : 'N/A'}<span className={`percentage-change ${yesterdayData.isPositive.Favorites_delta ? 'positive' : 'negative'}`}>{yesterdayData.Favorites_delta}%</span></td>
+            <td><p className='rankheading'>Rank</p>{yesterdayData ? yesterdayData.rank : 'N/A'}</td>
             <td>
-            <div className='menu-dots' >
+            <div className='rankmenu-dots' >
             <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
             </div></td>
           </tr>
           <tr>
             <td>
-              <div className="game-info">
+              <div className="rankgame-info">
                
                 <span>Last 7 Days</span>
               </div>
             </td>
-            <td><p className='heading'>New visits</p>{thisWeekData ? thisWeekData.Visits : 'N/A'} <span className={`percentage-change ${thisWeekData.isPositive.Visits_delta ? 'positive' : 'negative'}`}>{thisWeekData.Visits_delta}%</span></td>
-            <td ><p className='heading'>CC. Users</p>{thisWeekData ? thisWeekData.CCU : 'N/A'} <span className={`percentage-change ${thisWeekData.isPositive.CCU_delta ? 'positive' : 'negative'}`}>{thisWeekData.CCU_delta}%</span></td>
-            <td><p className='heading'>Revenue</p>{thisWeekData ? thisWeekData.Revenue : 'N/A'} </td>
-            <td><p className='heading'>Favouries</p>{thisWeekData ? thisWeekData.Favorites : 'N/A'}<span className={`percentage-change ${thisWeekData.isPositive.Favorites_delta ? 'positive' : 'negative'}`}>{thisWeekData.Favorites_delta}%</span></td>
-            <td ><p className='heading'>Rank</p>{thisWeekData ? thisWeekData.rank : 'N/A'}</td>
+            <td><p className='rankheading'>New visits</p>{thisWeekData ? thisWeekData.Visits : 'N/A'} <span className={`percentage-change ${thisWeekData.isPositive.Visits_delta ? 'positive' : 'negative'}`}>{thisWeekData.Visits_delta}%</span></td>
+            <td ><p className='rankheading'>CC. Users</p>{thisWeekData ? thisWeekData.CCU : 'N/A'} <span className={`percentage-change ${thisWeekData.isPositive.CCU_delta ? 'positive' : 'negative'}`}>{thisWeekData.CCU_delta}%</span></td>
+            <td><p className='rankheading'>Revenue</p>{thisWeekData ? thisWeekData.Revenue : 'N/A'} </td>
+            <td><p className='rankheading'>Favouries</p>{thisWeekData ? thisWeekData.Favorites : 'N/A'}<span className={`percentage-change ${thisWeekData.isPositive.Favorites_delta ? 'positive' : 'negative'}`}>{thisWeekData.Favorites_delta}%</span></td>
+            <td ><p className='rankheading'>Rank</p>{thisWeekData ? thisWeekData.rank : 'N/A'}</td>
             <td> 
-            <div className='menu-dots' >
+            <div className='rankmenu-dots' >
             <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
             </div></td>
           </tr>
           <tr>
             <td>
-              <div className="game-info">
+              <div className="rankgame-info">
               
                 <span>Last 30 Days</span>
               </div>
               </td>
-              <td><p className='heading'>New visits</p>{thisMonthData ? thisMonthData.Visits : 'N/A'} <span className={`percentage-change ${thisMonthData.isPositive.Visits_delta ? 'positive' : 'negative'}`}>{thisMonthData.Visits_delta}%</span></td>  
-            <td ><p className='heading'>CC. Users</p>{thisMonthData ? thisMonthData.CCU : 'N/A'} <span className={`percentage-change ${thisMonthData.isPositive.CCU_delta ? 'positive' : 'negative'}`}>{thisMonthData.CCU_delta}%</span></td>
-            <td><p className='heading'>Revenue</p>{thisMonthData ? thisMonthData.Revenue : 'N/A'} </td>
-            <td><p className='heading'>Favouries</p>{thisMonthData ? thisMonthData.Favorites : 'N/A'}<span className={`percentage-change ${thisMonthData.isPositive.Favorites_delta ? 'positive' : 'negative'}`}>{thisMonthData.Favorites_delta}%</span></td>
-            <td ><p className='heading'>Rank</p>{thisMonthData ? thisMonthData.rank : 'N/A'}</td>
+              <td><p className='rankheading'>New visits</p>{thisMonthData ? thisMonthData.Visits : 'N/A'} <span className={`percentage-change ${thisMonthData.isPositive.Visits_delta ? 'positive' : 'negative'}`}>{thisMonthData.Visits_delta}%</span></td>  
+            <td ><p className='rankheading'>CC. Users</p>{thisMonthData ? thisMonthData.CCU : 'N/A'} <span className={`percentage-change ${thisMonthData.isPositive.CCU_delta ? 'positive' : 'negative'}`}>{thisMonthData.CCU_delta}%</span></td>
+            <td><p className='rankheading'>Revenue</p>{thisMonthData ? thisMonthData.Revenue : 'N/A'} </td>
+            <td><p className='rankheading'>Favouries</p>{thisMonthData ? thisMonthData.Favorites : 'N/A'}<span className={`percentage-change ${thisMonthData.isPositive.Favorites_delta ? 'positive' : 'negative'}`}>{thisMonthData.Favorites_delta}%</span></td>
+            <td ><p className='rankheading'>Rank</p>{thisMonthData ? thisMonthData.rank : 'N/A'}</td>
             <td>
-            <div className='menu-dots' >
+            <div className='rankmenu-dots' >
             <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
             </div></td>
           </tr>
           <tr>
             <td>
-              <div className="game-info">
+              <div className="rankgame-info">
               
                 <span>Last 365 Days</span>
               </div>
               </td>
-              <td><p className='heading'>New visits</p>{thisYearData ? thisYearData.Visits : 'N/A'} <span className={`percentage-change ${thisYearData.isPositive.Visits_delta ? 'positive' : 'negative'}`}>{thisYearData.Visits_delta}%</span></td>
-            <td ><p className='heading'>CC. Users</p>{thisYearData ? thisYearData.CCU : 'N/A'} <span className={`percentage-change ${thisYearData.isPositive.CCU_delta ? 'positive' : 'negative'}`}>{thisYearData.CCU_delta}%</span></td>
-            <td><p className='heading'>Revenue</p>{thisYearData ? thisYearData.Revenue : 'N/A'} </td>
-            <td><p className='heading'>Favouries</p>{thisYearData ? thisYearData.Favorites : 'N/A'}<span className={`percentage-change ${thisYearData.isPositive.Favorites_delta ? 'positive' : 'negative'}`}>{thisYearData.Favorites_delta}%</span></td>
-            <td ><p className='heading'>Rank</p>{thisYearData ? thisYearData.rank : 'N/A'}</td>
+              <td><p className='rankheading'>New visits</p>{thisYearData ? thisYearData.Visits : 'N/A'} <span className={`percentage-change ${thisYearData.isPositive.Visits_delta ? 'positive' : 'negative'}`}>{thisYearData.Visits_delta}%</span></td>
+            <td ><p className='rankheading'>CC. Users</p>{thisYearData ? thisYearData.CCU : 'N/A'} <span className={`percentage-change ${thisYearData.isPositive.CCU_delta ? 'positive' : 'negative'}`}>{thisYearData.CCU_delta}%</span></td>
+            <td><p className='rankheading'>Revenue</p>{thisYearData ? thisYearData.Revenue : 'N/A'} </td>
+            <td><p className='rankheading'>Favouries</p>{thisYearData ? thisYearData.Favorites : 'N/A'}<span className={`percentage-change ${thisYearData.isPositive.Favorites_delta ? 'positive' : 'negative'}`}>{thisYearData.Favorites_delta}%</span></td>
+            <td ><p className='rankheading'>Rank</p>{thisYearData ? thisYearData.rank : 'N/A'}</td>
             <td>
-                <div className='menu-dots' >
+                <div className='rankmenu-dots' >
             <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
             </div>
             </td>
