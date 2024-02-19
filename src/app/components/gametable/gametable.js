@@ -33,7 +33,7 @@ const GamesAnalyticsTable = () => {
             <td className='content'><p >STORES</p>8</td>
             <td>
             <div className='menu-dots' >
-            <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
+            <Image  src="/dots.svg" alt="Game Image" width={10} height={10} />
             </div></td>
           </tr>
           <tr>
@@ -50,7 +50,7 @@ const GamesAnalyticsTable = () => {
             <td className='content'><p >STORES</p>0</td>
             <td>
             <div className='menu-dots' >
-            <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
+            <Image  src="/dots.svg" alt="Game Image" width={10} height={10} />
             </div></td>
           </tr>
           <tr>
@@ -67,7 +67,7 @@ const GamesAnalyticsTable = () => {
             <td className='content'><p >STORES</p>0</td>
             <td>
             <div className='menu-dots' >
-            <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
+            <Image  src="/dots.svg" alt="Game Image" width={10} height={10} />
             </div></td>
           </tr>
           <tr>
@@ -84,7 +84,7 @@ const GamesAnalyticsTable = () => {
             <td className='content'><p >STORES</p>0</td>
             <td>
                 <div className='menu-dots' >
-            <Image  src="/dots.svg" alt="Game Image" width={20} height={20} />
+            <Image  src="/dots.svg" alt="Game Image" width={10} height={10} />
             </div>
             </td>
           </tr>

@@ -1,6 +1,6 @@
 /* Card.module.css */
 
-.card {
+.gamecard {
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -10,7 +10,7 @@
     align-items: start;
     min-height: 250px;
   }
-  .headingsect{
+  .cardheadingsect{
     display: flex;
     align-items: flex-start;
     width: 90%;
@@ -27,12 +27,12 @@
     text-align: left;
     /* white-space: nowrap; */
   }
-  .cardlogo {
+  .gamecardlogo {
     border-radius: 8px;
     margin-right: 10px;
     /* align-items: start; */
   }
-   .textcontent{
+   .gametextcontent{
      display: flex;
     flex-direction: column;
     justify-content: center;
@@ -119,7 +119,7 @@
 
   }
   @media (max-width: 900px) {
-    .headingsect {
+    .cardheadingsect {
 
       display: flex;
       justify-content: left;
@@ -127,10 +127,10 @@
       width: 100%;
     }
 
-    .textcontent{
+    .gametextcontent{
       margin-left: 20px;
     }
-    .cardlogo {
+    .gamecardlogo {
         width: 30px; 
         height: 30px; 
         flex-shrink: 0;
@@ -148,7 +148,7 @@
   }
 
   @media (max-width:550px) {
-    .card {
+    .gamecard {
       background: white;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

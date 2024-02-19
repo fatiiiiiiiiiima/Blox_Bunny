@@ -5,7 +5,7 @@ const StatisticCard = ({ iconPath, mainText, label,trendText,cornerIconPath }) =
   
 
   return (
-    <div className='card'>
+    <div className='statcard'>
       <div className='leftsection'>
       <div className='mainText'>{mainText}</div>
       <div className='label'>{label}</div>
@@ -16,7 +16,7 @@ const StatisticCard = ({ iconPath, mainText, label,trendText,cornerIconPath }) =
       </div>
       <div className='rightsection'>
       <div className='cornerIcon'>
-          <Image src={`/${cornerIconPath}.png`} alt="Corner Icon" width={20} height={20} loading="lazy"/>
+          <Image src={`/${cornerIconPath}.png`} alt="Corner Icon" width={20} height={20} />
         </div>
       </div>
     </div>

@@ -9,12 +9,12 @@ const GameCard = ({rating,rank,ccu,revenue,favorites,logoUrl,title,genre,dislike
     const roundedFavorites = Math.floor(favorites);
     const roundedDisLikes = Math.floor(dislikes);
     return (
-    <div className="card">
-        <div className='headingsect'>
-      <div className="cardlogo">
+    <div className="gamecard">
+        <div className='cardheadingsect'>
+      <div className="gamecardlogo">
         <Image src={logoUrl} alt="Game Logo" width={50} height={70} loading="lazy" />
       </div>
-      <div className='textcontent'>
+      <div className='gametextcontent'>
         <h2 className="title">{title}</h2>
         <p className="subTitle">GARENA INTERNATIONAL II PRIVATE</p>
         </div>
