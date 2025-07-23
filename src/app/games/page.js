@@ -1,7 +1,6 @@
 "use client"
 import Layout from '../components/layout/layout';
 import React, { useState, useEffect, useRef } from 'react';
-import LazyLoad from 'react-lazyload';
 import Link from 'next/link';
 import DateRange from '../components/datarange/datarange';
 import Gamecard from '../components/gamecard/gamecard';
@@ -218,7 +217,6 @@ export default function HomePage() {
             {games.data.slice(0, currentPage * pageSize).map((game) => (
               <Link legacyBehavior href={`/gamedetails?id=${game.Id}`} key={game.Id}>
                 <a className="gamecard-link">
-                  {/* <LazyLoad height={200} offset={100} once> */}
                     <Gamecard
                       logoUrl={game.url}
                       title={game.Title}
@@ -231,7 +229,6 @@ export default function HomePage() {
                       favorites={game.Favorites}
                       id={game.Id}
                     />
-                  {/* </LazyLoad> */}
                 </a>
               </Link>
             ))}
