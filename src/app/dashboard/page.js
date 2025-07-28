@@ -83,84 +83,54 @@ const Dashboard = () =>{
 
   return (
     <Layout>
-      <div className="dashboard-header-row">
-        <div className='heading'>
+
+      <TopBar /> 
+
+      <div className='setdash'>
+        <section className='heading'>
           <div className='textcontent'>
             <h1>Dashboard</h1>
             <p>Here is the information about all Roblox Games</p>
           </div>
-        </div>
-        <TopBar />
-      </div>
-      <div className='setdash'>
-        {/* STATISTIC CARDS ROW */}
-        <div className='cardcontainer'>
+        </section>
+        <section className='cardcontainer'>
           <div className='cards'>
-            <StatisticCard
-              iconPath="increase" 
-              mainText="89,935"
-              label="Total users"
-              trendText="10.2+1.01% this week"
-              cornerIconPath="card1"
-            />
-            <StatisticCard
-              iconPath="increase" 
-              mainText="23,283.5"
-              label="Total Games"
-              trendText="3.1+0.49% this week"
-              cornerIconPath="card2"
-            />
-            <StatisticCard
-              iconPath="decrease" 
-              mainText="46,827"
-              label="Total users"
-              trendText="2.56-0.91% this week"
-              cornerIconPath="card3"
-            />
-            <StatisticCard
-              iconPath="increase" 
-              mainText="124,854"
-              label="Paid Users"
-              trendText="7.2+1.51% this week"
-              cornerIconPath="card4"
-            />
+            <div className="cardgroup">
+              <StatisticCard
+                iconPath="increase" 
+                mainText="89,935"
+                label="Total users"
+                trendText="10.2+1.01% this week"
+                cornerIconPath="card1"
+              />
+              <StatisticCard
+                iconPath="increase" 
+                mainText="23,283.5"
+                label="Total Games"
+                trendText="3.1+0.49% this week"
+                cornerIconPath="card2"
+              />
+            </div>
+            <div className="cardgroup1">
+              <StatisticCard
+                iconPath="decrease" 
+                mainText="46,827"
+                label="Total users"
+                trendText="2.56-0.91% this week"
+                cornerIconPath="card3"
+              />
+              <StatisticCard
+                iconPath="increase" 
+                mainText="124,854"
+                label="Paid Users"
+                trendText="7.2+1.51% this week"
+                cornerIconPath="card4"
+              />
+            </div>
           </div>
-        </div>
-        {/* ANALYTICS + EARNINGS ROW */}
-        <div className="analytics-row">
-          <section className='dashgraphs'>
-            <div className='dashheadingsect'>
-              <h1>Game Analytics</h1>
-              <div className='dashfilter'>
-                <div className="analytics-toggle">
-                  <button 
-                    className={`toggle-btn ${activeToggle === 'Weekly' ? 'active' : ''}`}
-                    onClick={() => handleToggleChange('Weekly')}
-                  >
-                    Weekly
-                  </button>
-                  <button 
-                    className={`toggle-btn ${activeToggle === 'Monthly' ? 'active' : ''}`}
-                    onClick={() => handleToggleChange('Monthly')}
-                  >
-                    Monthly
-                  </button>
-                  <button 
-                    className={`toggle-btn ${activeToggle === 'Yearly' ? 'active' : ''}`}
-                    onClick={() => handleToggleChange('Yearly')}
-                  >
-                    Yearly
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className='dashgraph'> 
-              <Suspense fallback={<div className="lottie-container"><Lottie options={defaultOptions} height={400} width={400} /></div>}>
-                {isDashboardVisible && <LazyAnalytics />}
-              </Suspense>
-            </div>
-          </section>
-          {/* Earnings donut chart now next to the graph */}
+        </section>
+
+        {/* NEW EARNINGS DONUT CHART SECTION */}
           <div className="earnings-section">
             <div className="earnings-header">
               <h3>Earnings</h3>
@@ -180,9 +150,7 @@ const Dashboard = () =>{
               </div>
             </div>
             <div className="donut-container">
-              <div className="donut-chart-wrapper">
-                <canvas id="earningsDonutChart"></canvas>
-              </div>
+              <canvas id="earningsDonutChart"></canvas>
               <div className="donut-legend">
                 <div className="legend-item">
                   <span className="legend-color online"></span>
@@ -199,7 +167,43 @@ const Dashboard = () =>{
               </div>
             </div>
           </div>
-        </div>
+        {/* </section> */}
+        <section className='dashgraphs'>
+          <div className='dashheadingsect'>
+            <h1>Game Analytics</h1>
+            <div className='dashfilter'>
+
+              {/* UPDATED TOGGLE BAR FOR ANALYTICS */}
+              <div className="analytics-toggle">
+                <button 
+                  className={`toggle-btn ${activeToggle === 'Weekly' ? 'active' : ''}`}
+                  onClick={() => handleToggleChange('Weekly')}
+                >
+                  Weekly
+                </button>
+                <button 
+                  className={`toggle-btn ${activeToggle === 'Monthly' ? 'active' : ''}`}
+                  onClick={() => handleToggleChange('Monthly')}
+                >
+                  Monthly
+                </button>
+                <button 
+                  className={`toggle-btn ${activeToggle === 'Yearly' ? 'active' : ''}`}
+                  onClick={() => handleToggleChange('Yearly')}
+                >
+                  Yearly
+                </button>
+              </div>
+            
+            </div>
+          </div>
+          <div className='dashgraph'> 
+            <Suspense fallback={<div className="lottie-container"><Lottie options={defaultOptions} height={400} width={400} /></div>}>
+              {isDashboardVisible && <LazyAnalytics />}
+            </Suspense>
+          </div>
+        </section>
+
         <section className='dashtable'>
           <div className='dashheadingsect'>
             <h1>Game Analytics</h1>
