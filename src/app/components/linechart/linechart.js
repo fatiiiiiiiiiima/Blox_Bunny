@@ -54,7 +54,7 @@ const LineChart = ({ data }) => {
   }, [data]);
 
   return (
-    <div style={{ width: '90%', maxWidth: '750px', padding: '0 15px' }}>
+    <div style={{ width: '100%', maxWidth: '750px' }}>
       <canvas ref={chartRef} style={{ width: '100%', height: '300px' }} />
     </div>
   );

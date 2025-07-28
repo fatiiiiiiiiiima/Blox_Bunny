@@ -105,6 +105,73 @@
     background-color: #4479D9;
 }
 
+
+/* Metrics Sections - TOTAL VISITS and GAME REVENUE */
+.metrics-section {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+  padding: 0 2rem;
+}
+
+.metrics-container {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  min-width: 400px;
+  max-width: 600px;
+}
+
+.metrics-container h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.metrics-subtitle {
+  color: #FF6B6B;
+  font-size: 0.75rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.metrics-button {
+  background: #4A90E2;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.metrics-button:hover {
+  background: #357ABD;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .metrics-container {
+    min-width: 300px;
+    padding: 1.5rem;
+  }
+  
+  .metrics-container h1 {
+    font-size: 1.2rem;
+  }
+  
+  .metrics-subtitle {
+    font-size: 0.7rem;
+  }
+}
+
 .patreon{
     display: flex;
     flex-direction: column;
@@ -213,5 +280,238 @@
         font-weight: 700;
         text-align: center;
       
+    }
+}
+
+/* Add these new styles to your existing globals.css */
+
+/* Chart section headings */
+/* The `.chart-section-title` CSS class is styling a heading element that is likely used to display a
+title for a section related to charts. Here's a breakdown of what each property is doing: */
+ /* .chart-section-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: #232323;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}  */
+
+/* Chart wrapper */
+ /* .chart {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 1rem;
+}  */
+
+/* Main page background */
+/* body {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Update existing mainbody class */
+/* .mainbody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    font-family: 'Jost', sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh; */
+
+
+/* Page container */
+/* .page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+} */
+
+/* Navigation styling (if you have one) */
+/* .nav-container {
+    background: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+} */
+
+/* Chart legend styling */
+/* .chart-legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    font-family: 'Jost', sans-serif;
+} */
+
+/* .legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.legend-color {
+    width: 20px;
+    height: 3px;
+    background-color: #6592E6;
+    margin-right: 0.5rem;
+    border-radius: 2px;
+} */
+
+/* .legend-text {
+    font-size: 0.9rem;
+    color: #666;
+} */ 
+
+
+
+/* Updated CSS for LARGE charts like Figma */
+
+/* Chart container - much bigger */
+.chart-container {
+    background: white;
+    padding: 4rem 3rem; /* Even more padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 4rem auto; /* More space between charts */
+    max-width: 95%; /* Use almost full width */
+    width: 100%;
+    min-height: 600px; /* Much taller container */
+}
+
+/* Chart section headings - bigger */
+.chart-section-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 2.8rem; /* Even bigger title */
+    font-weight: 700;
+    text-align: center;
+    color: #232323;
+    margin-bottom: 3rem; /* More space below title */
+    letter-spacing: 3px; /* More letter spacing */
+}
+
+/* Chart wrapper - MUCH bigger */
+.chart {
+    width: 100%;
+    max-width: none; /* Remove max-width restriction */
+    margin: 0 auto;
+    min-height: 500px; /* Much taller chart area */
+    height: 500px; /* Fixed height to make charts bigger */
+}
+
+/* Users section adjustments */
+.users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6rem; /* Much more bottom margin */
+    padding: 3rem 0; /* More vertical padding */
+    width: 100%;
+    max-width: none; /* Remove width restrictions */
+}
+
+/* Hide the old compact titles
+.users h1 {
+    display: none;
+} */
+
+/* Chart legend - positioned better for large charts */
+.chart-legend {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 2rem;
+    margin-right: 4rem; /* More right margin for big charts */
+    font-family: 'Jost', sans-serif;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.legend-color {
+    width: 30px; /* Bigger color indicator */
+    height: 5px;
+    background-color: #6592E6;
+    margin-right: 1rem;
+    border-radius: 3px;
+}
+
+.legend-text {
+    font-size: 1.1rem; /* Bigger legend text */
+    color: #666;
+    font-weight: 500;
+}
+
+/* Main body - full width for big charts */
+.mainbody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    font-family: 'Jost', sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    width: 100%;
+    max-width: none; /* Remove any width restrictions */
+}
+
+/* Responsive adjustments for large charts */
+@media screen and (max-width: 1400px) {
+    .chart-container {
+        margin: 3rem 1rem;
+        padding: 3rem 2rem;
+        max-width: 98%;
+    }
+    
+    .chart {
+        min-height: 450px;
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .chart-container {
+        margin: 2rem 1rem;
+        padding: 2rem 1rem;
+        max-width: 95%;
+    }
+    
+    .chart-section-title {
+        font-size: 2.2rem;
+    }
+    
+    .chart {
+        min-height: 400px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .chart-container {
+        margin: 1.5rem 0.5rem;
+        padding: 1.5rem 1rem;
+    }
+    
+    .chart-section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .chart {
+        min-height: 300px;
+        height: 300px;
     }
 }
